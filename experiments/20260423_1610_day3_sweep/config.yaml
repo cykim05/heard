@@ -1,0 +1,8 @@
+run_dir: /data2/hai_chanyoung/heard/experiments/20260423_1610_day3_sweep
+tracks: ['ko_native', 'en_subset', 'ko_translated']
+conditions: ['no_node', 'retrieval', 'oracle']
+policies: ['advisory']
+policies_ko_native: ['advisory', 'reflective']
+k: 5
+max_items_per_track: None
+suts: ['kanana_nano', 'qwen25_3b']

@@ -1,0 +1,8 @@
+2026-04-23 15:48:57 INFO    build_idx | loading embedder…
+2026-04-23 15:49:16 INFO    build_idx | device: cuda
+2026-04-23 15:49:17 INFO    build_idx | ko_native[yejin_florist]: 686 utts embedded
+2026-04-23 15:49:17 INFO    build_idx | ko_native[minseok_cafe]: 687 utts embedded
+2026-04-23 15:49:18 INFO    build_idx | ko_native[sunhee_hair]: 673 utts embedded
+2026-04-23 15:49:39 INFO    build_idx | en_subset: 100 items, avg 50.2 sessions
+2026-04-23 15:50:05 INFO    build_idx | ko_translated: 100 items, avg 50.2 sessions
+2026-04-23 15:50:05 INFO    build_idx | DONE — indices under /data2/hai_chanyoung/heard/data/indices

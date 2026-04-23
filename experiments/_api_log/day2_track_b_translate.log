@@ -1,0 +1,13 @@
+2026-04-23 15:16:43 INFO    translate | loaded 100 source items
+2026-04-23 15:17:05 INFO    translate | progress 10/100  ok=10 fail=0  run_spend=0.0020 USD
+2026-04-23 15:17:35 INFO    translate | progress 20/100  ok=20 fail=0  run_spend=0.0059 USD
+2026-04-23 15:17:57 INFO    translate | progress 30/100  ok=30 fail=0  run_spend=0.0080 USD
+2026-04-23 15:18:25 INFO    translate | progress 40/100  ok=40 fail=0  run_spend=0.0108 USD
+2026-04-23 15:18:55 INFO    translate | progress 50/100  ok=50 fail=0  run_spend=0.0140 USD
+2026-04-23 15:19:13 INFO    translate | progress 60/100  ok=60 fail=0  run_spend=0.0161 USD
+2026-04-23 15:19:32 INFO    translate | progress 70/100  ok=70 fail=0  run_spend=0.0191 USD
+2026-04-23 15:20:04 INFO    translate | progress 80/100  ok=80 fail=0  run_spend=0.0228 USD
+2026-04-23 15:20:26 INFO    translate | progress 90/100  ok=90 fail=0  run_spend=0.0269 USD
+2026-04-23 15:20:54 INFO    translate | progress 100/100  ok=100 fail=0  run_spend=0.0303 USD
+2026-04-23 15:20:54 INFO    translate | DONE: 100/100 translated -> /data2/hai_chanyoung/heard/data/final/ko_translated/test.jsonl
+2026-04-23 15:20:54 INFO    translate | metadata -> /data2/hai_chanyoung/heard/data/final/ko_translated/metadata.json

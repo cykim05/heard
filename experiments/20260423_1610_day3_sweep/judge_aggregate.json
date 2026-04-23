@@ -1,0 +1,90 @@
+{
+  "kanana_nano|retrieval": {
+    "specificity": {
+      "advisory_win": 6,
+      "reflective_win": 15,
+      "tie": 3
+    },
+    "non_directive": {
+      "advisory_win": 8,
+      "reflective_win": 16,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 2,
+      "reflective_win": 22,
+      "tie": 0
+    },
+    "open_question": {
+      "advisory_win": 1,
+      "reflective_win": 22,
+      "tie": 1
+    }
+  },
+  "kanana_nano|oracle": {
+    "specificity": {
+      "advisory_win": 6,
+      "reflective_win": 18,
+      "tie": 0
+    },
+    "non_directive": {
+      "advisory_win": 8,
+      "reflective_win": 16,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 2,
+      "reflective_win": 19,
+      "tie": 3
+    },
+    "open_question": {
+      "advisory_win": 2,
+      "reflective_win": 21,
+      "tie": 1
+    }
+  },
+  "qwen25_3b|retrieval": {
+    "specificity": {
+      "advisory_win": 6,
+      "reflective_win": 18,
+      "tie": 0
+    },
+    "non_directive": {
+      "advisory_win": 8,
+      "reflective_win": 16,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    },
+    "open_question": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    }
+  },
+  "qwen25_3b|oracle": {
+    "specificity": {
+      "advisory_win": 13,
+      "reflective_win": 9,
+      "tie": 2
+    },
+    "non_directive": {
+      "advisory_win": 5,
+      "reflective_win": 19,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 2,
+      "reflective_win": 17,
+      "tie": 5
+    },
+    "open_question": {
+      "advisory_win": 2,
+      "reflective_win": 21,
+      "tie": 1
+    }
+  }
+}

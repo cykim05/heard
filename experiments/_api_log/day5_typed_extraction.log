@@ -1,0 +1,90 @@
+2026-04-23 17:42:30 INFO    typed_extract | loaded 2046 utterances
+2026-04-23 17:42:30 INFO    typed_extract | loading SUT kakaocorp/kanana-1.5-2.1b-instruct-2505…
+2026-04-23 17:42:38 INFO    typed_extract | loaded params=2.09B device=cuda:0
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+2026-04-23 17:43:04 INFO    typed_extract | extract 25/2046  ok=25 (100.0%) fallback=0 failed=0  elapsed=27s eta=2149s
+2026-04-23 17:43:23 INFO    typed_extract | extract 50/2046  ok=50 (100.0%) fallback=0 failed=0  elapsed=46s eta=1824s
+2026-04-23 17:43:39 INFO    typed_extract | extract 75/2046  ok=75 (100.0%) fallback=0 failed=0  elapsed=62s eta=1625s
+2026-04-23 17:43:58 INFO    typed_extract | extract 100/2046  ok=100 (100.0%) fallback=0 failed=0  elapsed=80s eta=1556s
+2026-04-23 17:44:15 INFO    typed_extract | extract 125/2046  ok=125 (100.0%) fallback=0 failed=0  elapsed=98s eta=1504s
+2026-04-23 17:44:35 INFO    typed_extract | extract 150/2046  ok=150 (100.0%) fallback=0 failed=0  elapsed=117s eta=1480s
+2026-04-23 17:44:53 INFO    typed_extract | extract 175/2046  ok=175 (100.0%) fallback=0 failed=0  elapsed=135s eta=1448s
+2026-04-23 17:45:11 INFO    typed_extract | extract 200/2046  ok=200 (100.0%) fallback=0 failed=0  elapsed=153s eta=1412s
+2026-04-23 17:45:28 INFO    typed_extract | extract 225/2046  ok=225 (100.0%) fallback=0 failed=0  elapsed=171s eta=1382s
+2026-04-23 17:45:48 INFO    typed_extract | extract 250/2046  ok=250 (100.0%) fallback=0 failed=0  elapsed=190s eta=1365s
+2026-04-23 17:46:06 INFO    typed_extract | extract 275/2046  ok=275 (100.0%) fallback=0 failed=0  elapsed=209s eta=1343s
+2026-04-23 17:46:24 INFO    typed_extract | extract 300/2046  ok=300 (100.0%) fallback=0 failed=0  elapsed=226s eta=1316s
+2026-04-23 17:46:42 INFO    typed_extract | extract 325/2046  ok=325 (100.0%) fallback=0 failed=0  elapsed=244s eta=1294s
+2026-04-23 17:46:58 INFO    typed_extract | extract 350/2046  ok=350 (100.0%) fallback=0 failed=0  elapsed=260s eta=1262s
+2026-04-23 17:47:16 INFO    typed_extract | extract 375/2046  ok=375 (100.0%) fallback=0 failed=0  elapsed=279s eta=1242s
+2026-04-23 17:47:35 INFO    typed_extract | extract 400/2046  ok=400 (100.0%) fallback=0 failed=0  elapsed=297s eta=1223s
+2026-04-23 17:47:52 INFO    typed_extract | extract 425/2046  ok=425 (100.0%) fallback=0 failed=0  elapsed=315s eta=1200s
+2026-04-23 17:48:11 INFO    typed_extract | extract 450/2046  ok=450 (100.0%) fallback=0 failed=0  elapsed=333s eta=1181s
+2026-04-23 17:48:28 INFO    typed_extract | extract 475/2046  ok=475 (100.0%) fallback=0 failed=0  elapsed=350s eta=1158s
+2026-04-23 17:48:45 INFO    typed_extract | extract 500/2046  ok=500 (100.0%) fallback=0 failed=0  elapsed=368s eta=1136s
+2026-04-23 17:49:03 INFO    typed_extract | extract 525/2046  ok=525 (100.0%) fallback=0 failed=0  elapsed=386s eta=1118s
+2026-04-23 17:49:21 INFO    typed_extract | extract 550/2046  ok=550 (100.0%) fallback=0 failed=0  elapsed=404s eta=1098s
+2026-04-23 17:49:41 INFO    typed_extract | extract 575/2046  ok=575 (100.0%) fallback=0 failed=0  elapsed=423s eta=1083s
+2026-04-23 17:49:58 INFO    typed_extract | extract 600/2046  ok=600 (100.0%) fallback=0 failed=0  elapsed=441s eta=1062s
+2026-04-23 17:50:15 INFO    typed_extract | extract 625/2046  ok=625 (100.0%) fallback=0 failed=0  elapsed=457s eta=1040s
+2026-04-23 17:50:31 INFO    typed_extract | extract 650/2046  ok=650 (100.0%) fallback=0 failed=0  elapsed=474s eta=1018s
+2026-04-23 17:50:50 INFO    typed_extract | extract 675/2046  ok=675 (100.0%) fallback=0 failed=0  elapsed=492s eta=999s
+2026-04-23 17:51:09 INFO    typed_extract | extract 700/2046  ok=700 (100.0%) fallback=0 failed=0  elapsed=512s eta=984s
+2026-04-23 17:51:31 INFO    typed_extract | extract 725/2046  ok=725 (100.0%) fallback=0 failed=0  elapsed=534s eta=973s
+2026-04-23 17:51:53 INFO    typed_extract | extract 750/2046  ok=750 (100.0%) fallback=0 failed=0  elapsed=556s eta=960s
+2026-04-23 17:52:15 INFO    typed_extract | extract 775/2046  ok=775 (100.0%) fallback=0 failed=0  elapsed=578s eta=947s
+2026-04-23 17:52:37 INFO    typed_extract | extract 800/2046  ok=798 (99.8%) fallback=2 failed=0  elapsed=599s eta=934s
+2026-04-23 17:52:57 INFO    typed_extract | extract 825/2046  ok=822 (99.6%) fallback=3 failed=0  elapsed=619s eta=916s
+2026-04-23 17:53:20 INFO    typed_extract | extract 850/2046  ok=847 (99.6%) fallback=3 failed=0  elapsed=642s eta=904s
+2026-04-23 17:53:38 INFO    typed_extract | extract 875/2046  ok=872 (99.7%) fallback=3 failed=0  elapsed=661s eta=884s
+2026-04-23 17:54:01 INFO    typed_extract | extract 900/2046  ok=896 (99.6%) fallback=4 failed=0  elapsed=684s eta=870s
+2026-04-23 17:54:23 INFO    typed_extract | extract 925/2046  ok=921 (99.6%) fallback=4 failed=0  elapsed=706s eta=855s
+2026-04-23 17:54:46 INFO    typed_extract | extract 950/2046  ok=946 (99.6%) fallback=4 failed=0  elapsed=728s eta=840s
+2026-04-23 17:55:07 INFO    typed_extract | extract 975/2046  ok=971 (99.6%) fallback=4 failed=0  elapsed=750s eta=824s
+2026-04-23 17:55:30 INFO    typed_extract | extract 1000/2046  ok=995 (99.5%) fallback=5 failed=0  elapsed=773s eta=808s
+2026-04-23 17:55:57 INFO    typed_extract | extract 1025/2046  ok=1020 (99.5%) fallback=5 failed=0  elapsed=800s eta=796s
+2026-04-23 17:56:19 INFO    typed_extract | extract 1050/2046  ok=1045 (99.5%) fallback=5 failed=0  elapsed=822s eta=780s
+2026-04-23 17:56:40 INFO    typed_extract | extract 1075/2046  ok=1070 (99.5%) fallback=5 failed=0  elapsed=842s eta=761s
+2026-04-23 17:56:59 INFO    typed_extract | extract 1100/2046  ok=1095 (99.5%) fallback=5 failed=0  elapsed=862s eta=741s
+2026-04-23 17:57:20 INFO    typed_extract | extract 1125/2046  ok=1120 (99.6%) fallback=5 failed=0  elapsed=882s eta=722s
+2026-04-23 17:57:40 INFO    typed_extract | extract 1150/2046  ok=1145 (99.6%) fallback=5 failed=0  elapsed=902s eta=703s
+2026-04-23 17:58:00 INFO    typed_extract | extract 1175/2046  ok=1170 (99.6%) fallback=5 failed=0  elapsed=922s eta=684s
+2026-04-23 17:58:21 INFO    typed_extract | extract 1200/2046  ok=1195 (99.6%) fallback=5 failed=0  elapsed=944s eta=665s
+2026-04-23 17:58:40 INFO    typed_extract | extract 1225/2046  ok=1220 (99.6%) fallback=5 failed=0  elapsed=963s eta=645s
+2026-04-23 17:59:03 INFO    typed_extract | extract 1250/2046  ok=1245 (99.6%) fallback=5 failed=0  elapsed=985s eta=627s
+2026-04-23 17:59:23 INFO    typed_extract | extract 1275/2046  ok=1269 (99.5%) fallback=6 failed=0  elapsed=1006s eta=608s
+2026-04-23 17:59:42 INFO    typed_extract | extract 1300/2046  ok=1294 (99.5%) fallback=6 failed=0  elapsed=1024s eta=588s
+2026-04-23 18:00:04 INFO    typed_extract | extract 1325/2046  ok=1319 (99.5%) fallback=6 failed=0  elapsed=1046s eta=569s
+2026-04-23 18:00:24 INFO    typed_extract | extract 1350/2046  ok=1343 (99.5%) fallback=7 failed=0  elapsed=1066s eta=550s
+2026-04-23 18:00:44 INFO    typed_extract | extract 1375/2046  ok=1368 (99.5%) fallback=7 failed=0  elapsed=1086s eta=530s
+2026-04-23 18:01:00 INFO    typed_extract | extract 1400/2046  ok=1393 (99.5%) fallback=7 failed=0  elapsed=1102s eta=509s
+2026-04-23 18:01:16 INFO    typed_extract | extract 1425/2046  ok=1418 (99.5%) fallback=7 failed=0  elapsed=1119s eta=487s
+2026-04-23 18:01:34 INFO    typed_extract | extract 1450/2046  ok=1443 (99.5%) fallback=7 failed=0  elapsed=1136s eta=467s
+2026-04-23 18:01:51 INFO    typed_extract | extract 1475/2046  ok=1468 (99.5%) fallback=7 failed=0  elapsed=1154s eta=447s
+2026-04-23 18:02:09 INFO    typed_extract | extract 1500/2046  ok=1493 (99.5%) fallback=7 failed=0  elapsed=1172s eta=426s
+2026-04-23 18:02:25 INFO    typed_extract | extract 1525/2046  ok=1518 (99.5%) fallback=7 failed=0  elapsed=1188s eta=406s
+2026-04-23 18:02:43 INFO    typed_extract | extract 1550/2046  ok=1543 (99.5%) fallback=7 failed=0  elapsed=1205s eta=386s
+2026-04-23 18:03:00 INFO    typed_extract | extract 1575/2046  ok=1568 (99.6%) fallback=7 failed=0  elapsed=1222s eta=366s
+2026-04-23 18:03:18 INFO    typed_extract | extract 1600/2046  ok=1593 (99.6%) fallback=7 failed=0  elapsed=1240s eta=346s
+2026-04-23 18:03:35 INFO    typed_extract | extract 1625/2046  ok=1618 (99.6%) fallback=7 failed=0  elapsed=1257s eta=326s
+2026-04-23 18:03:52 INFO    typed_extract | extract 1650/2046  ok=1643 (99.6%) fallback=7 failed=0  elapsed=1275s eta=306s
+2026-04-23 18:04:09 INFO    typed_extract | extract 1675/2046  ok=1668 (99.6%) fallback=7 failed=0  elapsed=1292s eta=286s
+2026-04-23 18:04:28 INFO    typed_extract | extract 1700/2046  ok=1693 (99.6%) fallback=7 failed=0  elapsed=1310s eta=267s
+2026-04-23 18:04:46 INFO    typed_extract | extract 1725/2046  ok=1718 (99.6%) fallback=7 failed=0  elapsed=1328s eta=247s
+2026-04-23 18:05:02 INFO    typed_extract | extract 1750/2046  ok=1743 (99.6%) fallback=7 failed=0  elapsed=1345s eta=227s
+2026-04-23 18:05:19 INFO    typed_extract | extract 1775/2046  ok=1768 (99.6%) fallback=7 failed=0  elapsed=1361s eta=208s
+2026-04-23 18:05:37 INFO    typed_extract | extract 1800/2046  ok=1793 (99.6%) fallback=7 failed=0  elapsed=1379s eta=188s
+2026-04-23 18:05:55 INFO    typed_extract | extract 1825/2046  ok=1818 (99.6%) fallback=7 failed=0  elapsed=1397s eta=169s
+2026-04-23 18:06:13 INFO    typed_extract | extract 1850/2046  ok=1843 (99.6%) fallback=7 failed=0  elapsed=1416s eta=150s
+2026-04-23 18:06:30 INFO    typed_extract | extract 1875/2046  ok=1868 (99.6%) fallback=7 failed=0  elapsed=1433s eta=131s
+2026-04-23 18:06:49 INFO    typed_extract | extract 1900/2046  ok=1893 (99.6%) fallback=7 failed=0  elapsed=1451s eta=112s
+2026-04-23 18:07:07 INFO    typed_extract | extract 1925/2046  ok=1918 (99.6%) fallback=7 failed=0  elapsed=1470s eta=92s
+2026-04-23 18:07:23 INFO    typed_extract | extract 1950/2046  ok=1943 (99.6%) fallback=7 failed=0  elapsed=1486s eta=73s
+2026-04-23 18:07:41 INFO    typed_extract | extract 1975/2046  ok=1968 (99.6%) fallback=7 failed=0  elapsed=1504s eta=54s
+2026-04-23 18:07:59 INFO    typed_extract | extract 2000/2046  ok=1993 (99.7%) fallback=7 failed=0  elapsed=1521s eta=35s
+2026-04-23 18:08:17 INFO    typed_extract | extract 2025/2046  ok=2017 (99.6%) fallback=8 failed=0  elapsed=1540s eta=16s
+2026-04-23 18:08:32 INFO    typed_extract | extract 2046/2046  ok=2038 (99.6%) fallback=8 failed=0  elapsed=1555s eta=0s
+2026-04-23 18:08:32 INFO    typed_extract | saved 686 nodes -> yejin_florist_nodes.jsonl
+2026-04-23 18:08:32 INFO    typed_extract | saved 687 nodes -> minseok_cafe_nodes.jsonl
+2026-04-23 18:08:32 INFO    typed_extract | saved 673 nodes -> sunhee_hair_nodes.jsonl
+2026-04-23 18:08:32 INFO    typed_extract | report: {'total': 2046, 'parse_ok': 2038, 'parse_fallback': 8, 'parse_failed': 0, 'ok_rate': 0.9960899315738025, 'at_least_categories_rate': 1.0}

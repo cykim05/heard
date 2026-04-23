@@ -1,0 +1,26 @@
+[
+  {
+    "name": "kanana_nano",
+    "hf_id": "kakaocorp/kanana-1.5-2.1b-instruct-2505",
+    "quantization": "fp16",
+    "revision": null,
+    "device": "cuda",
+    "params_billion": 2.087
+  },
+  {
+    "name": "qwen25_3b",
+    "hf_id": "Qwen/Qwen2.5-3B-Instruct",
+    "quantization": "fp16",
+    "revision": null,
+    "device": "cuda",
+    "params_billion": 3.086
+  },
+  {
+    "name": "qwen25_15b",
+    "hf_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "quantization": "fp16",
+    "revision": null,
+    "device": "cuda",
+    "params_billion": 1.544
+  }
+]

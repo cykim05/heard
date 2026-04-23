@@ -1,0 +1,23 @@
+2026-04-23 13:46:23 INFO    scenariogen | corpus split: {'yejin_florist': 686, 'minseok_cafe': 687, 'sunhee_hair': 673}
+2026-04-23 13:46:23 INFO    scenariogen | planned slots: 150  ability_persona breakdown={('sunhee_hair', 'MR'): 9, ('sunhee_hair', 'ABS'): 4, ('minseok_cafe', 'TR'): 9, ('yejin_florist', 'KU'): 9, ('minseok_cafe', 'ABS'): 4, ('yejin_florist', 'MR'): 12, ('sunhee_hair', 'KU'): 7, ('yejin_florist', 'IE'): 16, ('yejin_florist', 'REFL'): 6, ('yejin_florist', 'TR'): 12, ('sunhee_hair', 'IE'): 11, ('minseok_cafe', 'IE'): 11, ('minseok_cafe', 'KU'): 7, ('sunhee_hair', 'TR'): 9, ('yejin_florist', 'ABS'): 7, ('minseok_cafe', 'MR'): 9, ('sunhee_hair', 'REFL'): 4, ('minseok_cafe', 'REFL'): 4}
+2026-04-23 13:47:30 INFO    scenariogen | progress 10/150  ok=10 fail=0  spend=0.0222 USD
+2026-04-23 13:48:05 WARNING src.datagen.scenario_gen | scenario parse failed [yejin_florist|TR|g3_gemini_flash]: Unterminated string starting at: line 2 column 20 (char 21)
+2026-04-23 13:48:22 INFO    scenariogen | progress 20/150  ok=19 fail=1  spend=0.0341 USD
+2026-04-23 13:49:24 INFO    scenariogen | progress 30/150  ok=29 fail=1  spend=0.0522 USD
+2026-04-23 13:50:22 INFO    scenariogen | progress 40/150  ok=39 fail=1  spend=0.0664 USD
+2026-04-23 13:51:14 INFO    scenariogen | progress 50/150  ok=49 fail=1  spend=0.0841 USD
+2026-04-23 13:52:12 INFO    scenariogen | progress 60/150  ok=59 fail=1  spend=0.1010 USD
+2026-04-23 13:53:39 WARNING src.datagen.scenario_gen | scenario parse failed [sunhee_hair|ABS|g3_gemini_flash]: Expecting ',' delimiter: line 3 column 31 (char 117)
+2026-04-23 13:53:51 INFO    scenariogen | progress 70/150  ok=68 fail=2  spend=0.1173 USD
+2026-04-23 13:54:44 INFO    scenariogen | progress 80/150  ok=78 fail=2  spend=0.1366 USD
+2026-04-23 13:55:59 INFO    scenariogen | progress 90/150  ok=88 fail=2  spend=0.1592 USD
+2026-04-23 13:56:57 INFO    scenariogen | progress 100/150  ok=98 fail=2  spend=0.1799 USD
+2026-04-23 13:57:40 INFO    scenariogen | progress 110/150  ok=108 fail=2  spend=0.1997 USD
+2026-04-23 13:58:28 INFO    scenariogen | progress 120/150  ok=118 fail=2  spend=0.2163 USD
+2026-04-23 13:59:27 INFO    scenariogen | progress 130/150  ok=128 fail=2  spend=0.2398 USD
+2026-04-23 13:59:50 WARNING src.datagen.scenario_gen | scenario parse failed [minseok_cafe|ABS|g3_gemini_flash]: Unterminated string starting at: line 5 column 23 (char 140)
+2026-04-23 14:00:18 INFO    scenariogen | progress 140/150  ok=137 fail=3  spend=0.2641 USD
+2026-04-23 14:00:58 WARNING src.datagen.scenario_gen | scenario parse failed [minseok_cafe|MR|g3_gemini_flash]: Unterminated string starting at: line 5 column 3 (char 157)
+2026-04-23 14:01:38 INFO    scenariogen | progress 150/150  ok=146 fail=4  spend=0.2886 USD
+2026-04-23 14:01:38 INFO    scenariogen | DONE: 146 candidates saved (failures=4) -> /data2/hai_chanyoung/heard/data/scenarios/candidates.jsonl
+2026-04-23 14:01:38 INFO    scenariogen | ability counts: {'MR': 29, 'ABS': 13, 'TR': 29, 'KU': 23, 'IE': 38, 'REFL': 14}

@@ -1,0 +1,11 @@
+2026-04-23 15:41:22 INFO    validate | loaded 122 survivors
+2026-04-23 15:41:22 INFO    validate | gate 3 (n-gram overlap < 0.15)…
+2026-04-23 15:41:22 INFO    validate |   gate3: pass=122 fail=0
+2026-04-23 15:41:22 INFO    validate | gate 1 (evidence-answer consistency, 3 trials, min 1)…
+2026-04-23 15:42:28 INFO    validate |   gate1: pass=60 fail=49 skip(ABS)=13
+2026-04-23 15:42:28 INFO    validate | gate 4 (question clarity ≥ 3)…
+2026-04-23 15:42:28 WARNING src.datagen.validation | gate4 err ko_native_cand_0001: Unterminated string starting at: line 3 column 13 (char 30)
+2026-04-23 15:42:52 INFO    validate |   gate4: pass=70 fail=52
+2026-04-23 15:42:52 INFO    validate | ALL GATES: pass=39/122 (32.0%)
+2026-04-23 15:42:52 INFO    validate | wrote 39 final items -> /data2/hai_chanyoung/heard/data/final/ko_native/test.jsonl
+2026-04-23 15:42:52 INFO    validate | validation_report -> /data2/hai_chanyoung/heard/data/final/validation_report.json

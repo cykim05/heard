@@ -1,0 +1,21 @@
+2026-04-23 18:17:18 INFO    option_b | loading embedder…
+2026-04-23 18:17:26 INFO    option_b | loading typed stores for 3 personas…
+2026-04-23 18:17:26 INFO    option_b |   yejin_florist: 686 aligned nodes  per_cat={'mood': 517, 'stock': 220, 'customer': 160, 'pricing': 145, 'decision': 327}
+2026-04-23 18:17:26 INFO    option_b |   minseok_cafe: 687 aligned nodes  per_cat={'stock': 379, 'mood': 397, 'pricing': 320, 'customer': 130, 'decision': 315}
+2026-04-23 18:17:26 INFO    option_b |   sunhee_hair: 673 aligned nodes  per_cat={'customer': 279, 'mood': 547, 'stock': 119, 'decision': 308, 'pricing': 84}
+2026-04-23 18:17:26 INFO    option_b | loading kanana_nano…
+2026-04-23 18:17:29 INFO    option_b | loaded params=2.09B device=cuda:0
+2026-04-23 18:17:29 INFO    src.eval.runner | track=ko_native items=70 SUT=kanana_nano
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+2026-04-23 18:18:16 INFO    src.eval.runner | runs=20  elapsed=47s  rate=0.42/s
+2026-04-23 18:18:48 INFO    src.eval.runner | runs=40  elapsed=79s  rate=0.51/s
+2026-04-23 18:19:24 INFO    src.eval.runner | runs=60  elapsed=115s  rate=0.52/s
+2026-04-23 18:20:00 INFO    src.eval.runner | runs=80  elapsed=151s  rate=0.53/s
+2026-04-23 18:20:31 INFO    src.eval.runner | runs=100  elapsed=182s  rate=0.55/s
+2026-04-23 18:20:57 INFO    src.eval.runner | runs=120  elapsed=208s  rate=0.58/s
+2026-04-23 18:21:28 INFO    src.eval.runner | runs=140  elapsed=239s  rate=0.59/s
+2026-04-23 18:21:59 INFO    src.eval.runner | runs=160  elapsed=270s  rate=0.59/s
+2026-04-23 18:22:35 INFO    src.eval.runner | runs=180  elapsed=306s  rate=0.59/s
+2026-04-23 18:23:16 INFO    src.eval.runner | runs=200  elapsed=347s  rate=0.58/s
+2026-04-23 18:23:28 INFO    src.eval.runner | sweep DONE: 210 total runs, 359s wall
+2026-04-23 18:23:28 INFO    option_b | DONE: /data2/hai_chanyoung/heard/experiments/20260423_1817_option_b/results.jsonl

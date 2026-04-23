@@ -1,0 +1,27 @@
+2026-04-23 14:22:31 INFO    filter | loaded 146 candidates from /data2/hai_chanyoung/heard/data/scenarios/candidates.jsonl
+2026-04-23 14:22:31 INFO    filter | loading 3 SUTs…
+2026-04-23 14:22:31 INFO    filter |   -> kanana_nano (kakaocorp/kanana-1.5-2.1b-instruct-2505)
+2026-04-23 14:22:38 INFO    filter |      loaded (params=2.09B  device=cuda:0)
+2026-04-23 14:22:38 INFO    filter |   -> qwen25_3b (Qwen/Qwen2.5-3B-Instruct)
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [06:21<06:21, 381.82s/it]Fetching 2 files: 100%|██████████| 2/2 [06:21<00:00, 190.91s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.08s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.44it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.33it/s]
+2026-04-23 14:29:11 INFO    filter |      loaded (params=3.09B  device=cuda:0)
+2026-04-23 14:29:11 INFO    filter |   -> qwen25_15b (Qwen/Qwen2.5-1.5B-Instruct)
+2026-04-23 14:29:14 INFO    filter |      loaded (params=1.54B  device=cuda:0)
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+2026-04-23 14:30:22 INFO    src.datagen.adversarial_filter | filter 10/146  kept=8  discard=2  elapsed=67s  eta=917s
+2026-04-23 14:31:03 INFO    src.datagen.adversarial_filter | filter 20/146  kept=16  discard=4  elapsed=109s  eta=688s
+2026-04-23 14:31:43 INFO    src.datagen.adversarial_filter | filter 30/146  kept=24  discard=6  elapsed=149s  eta=574s
+2026-04-23 14:32:22 INFO    src.datagen.adversarial_filter | filter 40/146  kept=34  discard=6  elapsed=187s  eta=497s
+2026-04-23 14:33:05 INFO    src.datagen.adversarial_filter | filter 50/146  kept=42  discard=8  elapsed=230s  eta=443s
+2026-04-23 14:33:50 INFO    src.datagen.adversarial_filter | filter 60/146  kept=50  discard=10  elapsed=275s  eta=395s
+2026-04-23 14:34:28 INFO    src.datagen.adversarial_filter | filter 70/146  kept=59  discard=11  elapsed=314s  eta=341s
+2026-04-23 14:34:56 INFO    src.datagen.adversarial_filter | filter 80/146  kept=66  discard=14  elapsed=342s  eta=282s
+2026-04-23 14:35:51 INFO    src.datagen.adversarial_filter | filter 90/146  kept=75  discard=15  elapsed=397s  eta=247s
+2026-04-23 14:36:36 INFO    src.datagen.adversarial_filter | filter 100/146  kept=83  discard=17  elapsed=442s  eta=203s
+2026-04-23 14:37:24 INFO    src.datagen.adversarial_filter | filter 110/146  kept=93  discard=17  elapsed=490s  eta=160s
+2026-04-23 14:38:10 INFO    src.datagen.adversarial_filter | filter 120/146  kept=102  discard=18  elapsed=536s  eta=116s
+2026-04-23 14:38:54 INFO    src.datagen.adversarial_filter | filter 130/146  kept=111  discard=19  elapsed=580s  eta=71s
+2026-04-23 14:39:50 INFO    filter | filter DONE — kept 122/146 (83.6%)  discarded 24
+2026-04-23 14:39:50 INFO    filter | report -> /data2/hai_chanyoung/heard/data/scenarios/filter_report.json
+2026-04-23 14:39:50 INFO    filter | survivors -> /data2/hai_chanyoung/heard/data/scenarios/survivors.jsonl
