@@ -6,8 +6,8 @@ MIC (speech, out-of-scope for v0.1) → **NODE** (domain memory) →
 **MIRROR** (reflective response).
 
 **Dataset:** https://huggingface.co/datasets/chanyoungkim/heard-bench
-**Report:** [`report/report.md`](report/report.md) · build PDF with
-`bash report/build/build.sh` (requires pandoc + xelatex + Noto CJK)
+**Report:** [`report/report.pdf`](report/report.pdf) (final PDF)
+· [`report/report.md`](report/report.md) (source)
 
 ## Headline results (v0.1, single L40S)
 

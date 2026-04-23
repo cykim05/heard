@@ -11,7 +11,9 @@ __pycache__/
 .Python
 build/
 !report/build/
-# Compiled PDF lives inside report/build/ and should not ship in git.
+# Compiled PDF artifacts under the build toolchain directory are
+# transient; the canonical submission PDF lives at report/report.pdf
+# and is tracked.
 report/build/*.pdf
 dist/
 *.egg-info/

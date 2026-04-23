@@ -1,0 +1,83 @@
+```json
+{
+  "utterances": [
+    {
+      "time": "06:20",
+      "text": "아, 에티오피아 환율이 또 올랐네. 어떻게 가격 반영할지 고민이다. 벌써 400일 전에도 가격 올렸는데, 이젠 진짜 고민이야.",
+      "intended_categories": ["pricing"],
+      "intended_topics": ["bean_price_concern"],
+      "references_historical_event": ["days_ago": 400]
+    },
+    {
+      "time": "07:00",
+      "text": "비 오는 날은 오히려 손님이 많을까? 어제 날씨 좋았는데, 장사가 잘 안 됐어.",
+      "intended_categories": ["mood"],
+      "intended_topics": [],
+      "references_historical_event": []
+    },
+    {
+      "time": "10:15",
+      "text": "김 선생님 부부 오셨다. 오늘도 디카페인 에스프레소 드시겠지? 매주 일요일에 오셔서 시간 가는 줄 모르고 책 읽으신다니까.",
+      "intended_categories": ["customer"],
+      "intended_topics": ["elderly_kim_sunday"],
+      "references_historical_event": []
+    },
+    {
+      "time": "10:30",
+      "text": "이 시간에 원두 수급 확인해봐야겠다. 다음 주에 부족할 수도 있으니까.",
+      "intended_categories": ["stock"],
+      "intended_topics": [],
+      "references_historical_event": []
+    },
+    {
+      "time": "16:00",
+      "text": "아, 박 개발자님 또 오셨네. 오늘은 어떤 원두 추천해드릴까? 매일 오셔서 솔직히 부담스럽기도 해.",
+      "intended_categories": ["customer"],
+      "intended_topics": ["morning_dev_daily"],
+      "references_historical_event": []
+    },
+    {
+      "time": "17:15",
+      "text": "이제 슬슬 마감 준비해야겠다. 오늘 매출이 흔들렸던 거 같아. 길 건너 그 카페 소문이 정말 걱정이네.",
+      "intended_categories": ["mood"],
+      "intended_topics": [],
+      "references_historical_event": ["days_ago": 180]
+    },
+    {
+      "time": "18:00",
+      "text": "아내가 학원비 때문에 스트레스 받는 듯한데, 어떻게 도와줘야 할지 모르겠다. 얘기라도 더 해줬으면 좋겠어.",
+      "intended_categories": ["mood"],
+      "intended_topics": [],
+      "references_historical_event": []
+    },
+    {
+      "time": "19:30",
+      "text": "오늘도 손님들이 치즈케이크 맛있다고 칭찬해주셨다. 자주 오시는 분들이 늘어나면 좋겠다.",
+      "intended_categories": ["customer"],
+      "intended_topics": [],
+      "references_historical_event": []
+    },
+    {
+      "time": "20:45",
+      "text": "원두 가격 여전히 불안정하다. 다음 주에 가격 인상 고민해야겠다.",
+      "intended_categories": ["pricing"],
+      "intended_topics": ["bean_price_concern"],
+      "references_historical_event": []
+    },
+    {
+      "time": "21:30",
+      "text": "로스터기 보일러도 교체한 지 얼마 안 됐는데, 잘 작동하니 다행이다. 다음에 또 문제가 생기면 어쩌지?",
+      "intended_categories": ["mood"],
+      "intended_topics": [],
+      "references_historical_event": ["days_ago": 100]
+    },
+    {
+      "time": "22:00",
+      "text": "이제 마감해야겠다. 오늘도 수고했다. 내일은 더 잘되겠지.",
+      "intended_categories": ["mood"],
+      "intended_topics": [],
+      "references_historical_event": []
+    }
+  ]
+}
+```

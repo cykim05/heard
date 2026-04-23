@@ -1,0 +1,6 @@
+```json
+{
+  "question_text": "길 건너 카페가 처음 오픈했을 때 우리 가게 매출이 얼마나 떨어졌었지? 비슷한 상황이 다시 올까봐 걱정되네.",
+  "question_timestamp_day": 55,
+  "question_timestamp_hhmm": "10:00",
+  "gold_answer_

@@ -1,0 +1,6 @@
+```json
+{
+  "question_text": "콜롬비아 수프리모는 어떤 품종의 원두였지?",
+  "question_timestamp_day": 55,
+  "question_timestamp_hhmm": "10:00",
+  "gold_answer_text": "콜롬비아 수프리

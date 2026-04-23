@@ -41,7 +41,27 @@ rather than optional. A reflective policy dominates an advisory
 baseline on emotional attunement (82 of 96 wins) and open-question
 framing (88 of 96) across 96 pairwise judge decisions.
 
-![Heard v0.1 pipeline and headline results. The top band shows the MIC / NODE / MIRROR architecture, the middle band the dataset construction pipeline and three-condition filmstrip, and the bottom band three headline result panels.](figures/fig_overview.jpg){#fig:overview}
+![Heard v0.1 overview — pipeline and headline results.](figures/fig_overview.jpg){#fig:overview}
+
+**Figure 1.** *Heard v0.1 pipeline and headline results at a
+glance.* The **top band** shows the three-pillar architecture —
+MIC for speech-to-text (dashed, not evaluated in v0.1), NODE for
+the five typed node categories (customer / stock / pricing / mood
+/ decision), and MIRROR for the reflective response style (cite
+past self, no imperative, open question). The **middle band** is
+split into two halves. The left half compresses the dataset
+construction pipeline: three persona cards and the LongMemEval_S
+source feed into a 2,046-utterance corpus and a
+146 → 122 → 70 ko_native funnel, converging on heard-bench v0.1
+(270 items). The right half is a three-condition filmstrip that
+shows what each condition delivers to the SUT: question only
+(`no_node`, 4.7%), question + top-5 retrieved (`retrieval`, 10.9%),
+and question + gold evidence (`oracle`, 15.6%). The **bottom
+band** summarises the three headline findings — the NODE lift on
+`ko_native` (×3.3 end-to-end for Kanana), language-axis decay
+across tracks, and the reflective-vs-advisory judge outcomes on
+emotional attunement (82 wins) and open-question framing (88 wins)
+out of 96 pairwise decisions.
 
 ## 1 Introduction
 
@@ -395,7 +415,26 @@ and in Figure 2 below; detailed ability and latency analyses appear
 in Figure 3. Each panel of Figures 2–3 is referenced from the
 relevant subsection.
 
-![Main results. Panel (a) plots the NODE lift on ko_native by condition and SUT under advisory policy. Panel (b) shows language-axis decay for Kanana retrieval across en_subset, ko_translated, and ko_native. Panel (c) reports the reflective-vs-advisory share of wins across 96 pairwise judge decisions per rubric.](figures/fig_main_results.png){#fig:main}
+![Main results: NODE lift, language axis, and reflective wins.](figures/fig_main_results.png){#fig:main}
+
+**Figure 2.** *Main results, arranged as three side-by-side 7 × 9
+panels.* **Panel (a) — NODE lift on ko_native.** For each SUT
+(Kanana 2.1B in blue, Qwen 2.5 3B in sage, hatched), pass rate
+under advisory policy is shown at three conditions: `no_node`,
+`retrieval`, and `oracle`. Kanana's monotonic
+4.7% → 10.9% → 15.6% progression gives the headline ×3.3
+end-to-end lift annotated with an arrow; the blue-to-green color
+shift tracks the stronger memory signal. **Panel (b) — Language
+axis.** Kanana's retrieval pass rate decays monotonically across
+`en_subset` (0.0%), `ko_translated` (5.0%), and `ko_native`
+(10.9%), establishing that Korean-native data is not optional for
+a Korean on-device assistant. **Panel (c) — Reflective
+dominance.** Each stacked bar aggregates 96 pairwise judge
+decisions (two SUTs × two conditions × two judges × two A/B swaps
+× six REFL items) for one of four rubrics: specificity,
+non-directive, emotional attunement, and open question. The red
+(reflective wins) segment dominates every rubric; its share is
+printed in white at the center of each bar.
 
 ### 3.1 NODE contribution (ko_native pass rate)
 
@@ -451,7 +490,26 @@ tighter but still clearly one-sided margins.
 
 ### 3.4 Ability breakdown and latency
 
-![Ability, latency, and Pareto view. Panel (d) shows per-ability ko_native retrieval pass rate by SUT, panel (e) mean response latency by SUT and condition on a single L40S, and panel (f) the latency / pass-rate Pareto point cloud (ko_native, retrieval, advisory).](figures/fig_ability_latency.png){#fig:details}
+![Ability breakdown, latency by condition, and Pareto plane.](figures/fig_ability_latency.png){#fig:details}
+
+**Figure 3.** *Ability, latency, and Pareto view on ko_native
+retrieval.* **Panel (d) — Ability breakdown.** Retrieval pass
+rate on ko_native split across the five non-REFL abilities
+(IE / MR / KU / TR / ABS) for each SUT. Gains concentrate on the
+factual axes (IE, TR, KU, MR), and abstention (ABS) stays at 0 for
+both SUTs — cosine retrieval always returns a neighbor, which
+encourages hallucinated confirmation instead of refusal. **Panel
+(e) — Latency by condition.** Mean wall-clock response latency per
+SUT × condition on a single NVIDIA L40S. All bars stay under
+2.7 s, comfortably inside the latency budget for a decision-moment
+assistant. Oracle bars are slightly taller than the corresponding
+retrieval bars because the prompt is longer (up to k × 3 = 15
+evidence docs vs k = 5 retrieved neighbors). **Panel (f) —
+Pareto plane.** Each dot is one SUT at the ko_native retrieval
+point; the scatter sits in the upper-left for Qwen 2.5 3B and
+lower-right for Kanana 2.1B, indicating that the larger
+multilingual model still competes on-device when compute is not
+the bottleneck.
 
 Per-ability pass rates on `ko_native` retrieval show gains
 concentrating on factual abilities (IE, TR, KU, and MR), matching
