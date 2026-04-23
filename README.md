@@ -5,9 +5,9 @@
 Natural Language Processing (2150534701) · Term Project #1 · 2026 · Chanyoung Kim (20243053)
 
 [![Part 1 Proposal](https://img.shields.io/badge/Part_1-Proposal_PDF-6b7280?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](report/260419_NLP_termproject_1.pdf)
-[![Part 2 Report](https://img.shields.io/badge/Part_2-Report_PDF-EF4444?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](report/report.pdf)
+[![Part 2 Technical Report](https://img.shields.io/badge/Part_2-Technical_Report-EF4444?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](report/report.pdf)
 [![HuggingFace Dataset](https://img.shields.io/badge/🤗_Dataset-heard--bench-FFD21E?style=for-the-badge)](https://huggingface.co/datasets/chanyoungkim/heard-bench)
-[![Code MIT](https://img.shields.io/badge/Code-MIT-0A84FF?style=for-the-badge)](LICENSE)
+[![Code Apache 2.0](https://img.shields.io/badge/Code-Apache_2.0-0A84FF?style=for-the-badge)](LICENSE)
 [![Dataset CC-BY-4.0](https://img.shields.io/badge/Dataset-CC--BY--4.0-34C759?style=for-the-badge)](https://creativecommons.org/licenses/by/4.0/)
 
 ![Heard v0.1 overview](report/figures/fig_overview.jpg)
@@ -37,6 +37,10 @@ built for that conversation. Its architecture has three pillars:
 The goal isn't to give advice. It's to hand back a sentence the
 user once said to themselves, and let them make their own call.
 
+> 📄 Full Part-1 framing (motivation, prior art, architecture
+> sketch) is in the **proposal PDF**:
+> [`report/260419_NLP_termproject_1.pdf`](report/260419_NLP_termproject_1.pdf).
+
 ---
 
 ## What v0.1 shipped
@@ -57,11 +61,15 @@ advisory vs reflective prompt policies, and a pairwise LLM-as-judge
 for REFL quality. All runs stay on a single L40S, and per-response
 latency is under 2.7 s.
 
-**A one-page technical report** at
+**The full Part 2 technical report** at
 [`report/report.pdf`](report/report.pdf) with three 21 : 9 result
 figures and a single Paperbanana overview (shown above). Raw
 source at [`report/report.md`](report/report.md); pandoc + xelatex
 build toolchain at [`report/build/`](report/build/).
+
+> 📄 **Technical report →** [`report/report.pdf`](report/report.pdf)
+> · Proposal (Part 1) →
+> [`report/260419_NLP_termproject_1.pdf`](report/260419_NLP_termproject_1.pdf)
 
 ---
 
@@ -222,10 +230,11 @@ non-obvious calls:
 
 ## License
 
-- **Code** — [MIT](LICENSE)
+- **Code** — [Apache 2.0](LICENSE) · attribution + explicit patent grant
 - **Dataset** — [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
 - **Upstream** — Track A inherits LongMemEval_S (MIT); attribution
-  appears per-item in `en_subset/metadata.json`.
+  appears per-item in `en_subset/metadata.json`. See [NOTICE](NOTICE)
+  for third-party attributions.
 
 ---
 

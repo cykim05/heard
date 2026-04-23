@@ -147,7 +147,8 @@ where applicable) is in the code repo under
 
 - Dataset: **CC-BY-4.0**. Compatible with LongMemEval_S (MIT) —
   attribution appears on each `en_subset` item's metadata.
-- Code: MIT (see the repo at `github.com/cykim05/heard`).
+- Code: **Apache 2.0** with an accompanying NOTICE file — see the
+  repo at `github.com/cykim05/heard`.
 
 ## Ethical considerations
 

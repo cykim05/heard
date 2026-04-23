@@ -139,7 +139,7 @@ released on HuggingFace under CC-BY-4.0.
 ## 2 Methods
 
 All code, configurations, and experiment artifacts are available at
-**https://github.com/cykim05/heard** (MIT). The dataset is published
+**https://github.com/cykim05/heard** (Apache 2.0). The dataset is published
 at **https://huggingface.co/datasets/chanyoungkim/heard-bench**
 (CC-BY-4.0). Per-call API logs under `experiments/_api_log/` and
 per-run folders under `experiments/<run_id>/` enable full

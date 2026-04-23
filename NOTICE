@@ -1,0 +1,34 @@
+heard
+Copyright 2026 Chanyoung Kim
+
+This product includes software developed by Chanyoung Kim as a
+Part 2 term-project submission for Natural Language Processing
+(2150534701), 2026.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+A copy of the License is distributed alongside this product in the
+LICENSE file; you may also obtain it at
+http://www.apache.org/licenses/LICENSE-2.0.
+
+This product additionally depends on third-party work, credited here
+for attribution. Their respective licenses govern use of those works.
+
+- LongMemEval_S (xiaowu0162/longmemeval, MIT) — Track A items in
+  heard-bench inherit the upstream question, answer, and haystack
+  content; per-item metadata records the upstream question_id.
+- intfloat/multilingual-e5-small (MIT) — dense retriever used in the
+  evaluation pipeline.
+- kakaocorp/kanana-1.5-2.1b-instruct-2505 (Apache-2.0) — one of the
+  two SUTs in the Day-3 sweep.
+- Qwen/Qwen2.5-3B-Instruct (Apache-2.0) — the second SUT in the Day-3
+  sweep.
+- OpenAI, Anthropic, and Google AI models invoked via OpenRouter
+  acted as data generators and LLM-as-judge graders only; their
+  outputs are not redistributed in this repository beyond the
+  derived dataset at huggingface.co/datasets/chanyoungkim/heard-bench
+  (CC-BY-4.0).
+
+The dataset (under data/final/) and its HuggingFace release are
+licensed separately under CC-BY-4.0. See the dataset README for
+attribution requirements specific to heard-bench.
