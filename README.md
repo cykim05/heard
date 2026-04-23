@@ -2,14 +2,14 @@
 
 **A Korean on-device LLM that reflects your past self back at you at decision moments.**
 
-> Individual term project · NLP 자연어처리 수업 (Part 2) · Chanyoung Kim (20243053)
+> Natural Language Processing (2150534701) · Term Project #1, Part 2 · 2026 · Chanyoung Kim (20243053)
 
-[![🤗 Dataset](https://img.shields.io/badge/🤗%20Dataset-chanyoungkim%2Fheard--bench-yellow)](https://huggingface.co/datasets/chanyoungkim/heard-bench)
-[![Report](https://img.shields.io/badge/📄%20Report-PDF-red)](report/report.pdf)
-[![Code](https://img.shields.io/badge/Code-MIT-blue)](LICENSE)
-[![Dataset](https://img.shields.io/badge/Dataset-CC--BY--4.0-green)](https://huggingface.co/datasets/chanyoungkim/heard-bench)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-3776ab)](requirements.txt)
-[![Course](https://img.shields.io/badge/Course-NLP%20Term%20Project-lightgrey)](report/report.pdf)
+[![HuggingFace Dataset](https://img.shields.io/badge/🤗_Dataset-chanyoungkim%2Fheard--bench-FFD21E?style=for-the-badge)](https://huggingface.co/datasets/chanyoungkim/heard-bench)
+[![Report PDF](https://img.shields.io/badge/Report-PDF-EF4444?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](report/report.pdf)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](requirements.txt)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](requirements.txt)
+[![Code License](https://img.shields.io/badge/Code-MIT-0A84FF?style=for-the-badge)](LICENSE)
+[![Dataset License](https://img.shields.io/badge/Dataset-CC--BY--4.0-34C759?style=for-the-badge)](https://creativecommons.org/licenses/by/4.0/)
 
 ![Heard v0.1 overview](report/figures/fig_overview.jpg)
 
