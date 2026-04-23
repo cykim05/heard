@@ -1,0 +1,44 @@
+{
+  "candidates_in": 146,
+  "survivors": 122,
+  "discarded_by_filter": 24,
+  "refl_bypassed": 14,
+  "by_ability": {
+    "MR": {
+      "total": 29,
+      "kept": 22,
+      "discarded": 7,
+      "bypass": 0
+    },
+    "ABS": {
+      "total": 13,
+      "kept": 13,
+      "discarded": 0,
+      "bypass": 0
+    },
+    "TR": {
+      "total": 29,
+      "kept": 25,
+      "discarded": 4,
+      "bypass": 0
+    },
+    "KU": {
+      "total": 23,
+      "kept": 19,
+      "discarded": 4,
+      "bypass": 0
+    },
+    "IE": {
+      "total": 38,
+      "kept": 29,
+      "discarded": 9,
+      "bypass": 0
+    },
+    "REFL": {
+      "total": 14,
+      "kept": 14,
+      "discarded": 0,
+      "bypass": 14
+    }
+  }
+}

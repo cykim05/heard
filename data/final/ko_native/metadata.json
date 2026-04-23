@@ -1,0 +1,18 @@
+{
+  "track": "ko_native",
+  "item_count": 70,
+  "source": "Generated from corpus at data/raw/utterances.jsonl via scripts/03_generate_scenarios.py → 04_adversarial_filter.py → 06_auto_validation.py",
+  "ability_counts": {
+    "ABS": 10,
+    "TR": 15,
+    "KU": 13,
+    "MR": 7,
+    "IE": 19,
+    "REFL": 6
+  },
+  "persona_counts": {
+    "sunhee_hair": 22,
+    "minseok_cafe": 21,
+    "yejin_florist": 27
+  }
+}

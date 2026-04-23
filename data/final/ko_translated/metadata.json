@@ -1,0 +1,13 @@
+{
+  "track": "ko_translated",
+  "source": "xiaowu0162/longmemeval:longmemeval_s",
+  "derived_from": "data/final/en_subset/test.jsonl",
+  "total_in": 100,
+  "translated": 100,
+  "parse_failures": 0,
+  "generator_distribution": {
+    "g1_claude": 36,
+    "g2_gpt4o_mini": 36,
+    "g3_gemini_flash": 28
+  }
+}

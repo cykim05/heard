@@ -1,0 +1,16 @@
+{
+  "track": "en_subset",
+  "source": "xiaowu0162/longmemeval:longmemeval_s",
+  "source_license": "MIT",
+  "source_total_items": 500,
+  "sampled_count": 100,
+  "per_ability_target": 20,
+  "per_ability_actual": {
+    "IE": 20,
+    "MR": 20,
+    "KU": 20,
+    "TR": 20,
+    "ABS": 20
+  },
+  "seed": 42
+}
