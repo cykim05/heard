@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Block AI-authorship attribution in commit messages.
+# Runs after the message is finalized (git passes its path as $1).
+# See docs/plans/GIT_WORKFLOW.md §1.2–1.4.
+set -eu
+
+msg_file="${1:?commit-msg hook requires the message file as arg}"
+
+# Strip comment lines (git's default template adds '#'-prefixed help text).
+msg=$(grep -v '^#' "$msg_file" || true)
+
+attribution_patterns='claude code|co-authored-by:.*(claude|anthropic|ai-|bot)|(ai|claude|anthropic)[- ]generated|generated (by|with) (claude|ai|anthropic)|with assistance (from|of) (ai|claude|anthropic)|🤖'
+
+if printf '%s\n' "$msg" | grep -iE "$attribution_patterns" > /dev/null 2>&1; then
+  echo "commit-msg: commit message contains AI authorship attribution." >&2
+  echo "commit-msg: blocked patterns — coauthor trailers naming the assistant," >&2
+  echo "            tool name 'Claude Code', emoji 🤖, generator/assistance phrasing." >&2
+  echo "commit-msg: bare provider names as model IDs (e.g. 'anthropic/claude-sonnet-4.5') are allowed." >&2
+  exit 1
+fi
+
+exit 0

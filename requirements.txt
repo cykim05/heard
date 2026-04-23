@@ -1,0 +1,38 @@
+# Core runtime
+python-dotenv>=1.0
+pyyaml>=6.0
+pydantic>=2.6
+httpx>=0.27
+tenacity>=8.2
+diskcache>=5.6
+tqdm>=4.66
+orjson>=3.10
+
+# Data
+numpy>=1.26
+
+# LLMs & embeddings.
+# transformers pinned <5.0 — 5.x added strict config validators that
+# reject valid checkpoints such as Kanana (hidden_size not divisible by
+# num_heads).
+transformers>=4.46,<5.0
+accelerate>=1.0
+sentencepiece>=0.2
+bitsandbytes>=0.43
+torch>=2.3
+
+# Plotting (Day-4 figures)
+matplotlib>=3.8
+
+# HF upload + Track-A download
+huggingface_hub>=0.24
+datasets>=2.20
+
+# MIC — speech-to-text front-end (not evaluated in v0.1 but shipped)
+sounddevice>=0.4
+scipy>=1.11
+faster-whisper>=1.0
+
+# Dev
+pytest>=8.0
+ruff>=0.4

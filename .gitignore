@@ -1,0 +1,66 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+!report/build/
+# Compiled PDF lives inside report/build/ and should not ship in git.
+report/build/*.pdf
+dist/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Model weights & large binaries (use git-lfs if tracked)
+checkpoints/
+wandb/
+*.ckpt
+*.pt
+*.bin
+*.safetensors
+
+# Caches
+.cache/
+hf_cache/
+runs/
+
+# OpenRouter / API response disk cache
+.api_cache/
+
+# Large deterministic derived files — regenerate via scripts/
+# (metadata.json alongside stays tracked so reviewers can verify
+#  the upstream source, license, and sampling seed)
+data/final/en_subset/test.jsonl
+data/final/ko_translated/test.jsonl
+
+# Embedding indices (~120 MB) — regenerate via scripts/07a_build_indices.py
+data/indices/
+
+# Logs
+*.log
+logs/
+# but keep experiment run logs — they are reproducibility artifacts
+!experiments/**/*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

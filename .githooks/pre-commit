@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Block AI-authorship attribution in staged diff (code comments only).
+# See docs/plans/GIT_WORKFLOW.md §1.4. Commit message is validated by commit-msg hook.
+set -eu
+
+diff_attribution='(written|generated|authored) by (claude|ai|anthropic)|# (ai|claude)-generated|// (ai|claude)-generated'
+
+# Exclude .githooks/ so the rule file does not self-match when edited.
+if git diff --cached -- . ':(exclude).githooks/' | grep -iE "$diff_attribution" > /dev/null 2>&1; then
+  echo "pre-commit: staged diff contains AI authorship attribution in code." >&2
+  exit 1
+fi
+
+exit 0
