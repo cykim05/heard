@@ -1,0 +1,44 @@
+---
+title: "Heard v0.1: A Korean Long-Term Memory Benchmark and On-Device Retrieval Pipeline for Solo-Business Monologue"
+author:
+  - name: "Chanyoung Kim"
+    affiliation: "NLP Term Project Part 2"
+date: "2026-04-28"
+
+# Language / script — XeLaTeX + xeCJK handles Korean.
+lang: en
+mainlang: en
+
+# Page geometry — academic single-column
+documentclass: article
+classoption:
+  - a4paper
+  - 11pt
+geometry:
+  - margin=1in
+  - headheight=14pt
+
+# Figures: prefer here/top placement, caption below, numbered
+fig_caption: true
+figureTitle: "Figure"
+tableTitle: "Table"
+figPrefix:
+  - "Figure"
+  - "Figures"
+tblPrefix:
+  - "Table"
+  - "Tables"
+
+# Section numbering (Markdown ## becomes LaTeX section)
+number-sections: true
+secnumdepth: 3
+toc: false
+
+# Hyperlink and reference handling
+links-as-notes: false
+link-citations: true
+
+# Typography knobs for academic feel
+linestretch: 1.15
+indent: false              # block paragraphs (not first-line indent)
+...

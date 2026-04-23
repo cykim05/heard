@@ -1,0 +1,83 @@
+% ---------------------------------------------------------------
+% preamble.tex — academic-paper LaTeX preamble for the Heard v0.1
+% technical report. Loaded by pandoc via `--include-in-header`.
+% Requires xelatex + texlive-xetex + fonts-noto-cjk.
+% ---------------------------------------------------------------
+
+% ----- typography -------------------------------------------------
+\usepackage{microtype}                  % kerning, expansion
+\usepackage[english]{babel}
+\usepackage{xeCJK}                      % Korean support via XeLaTeX
+\setCJKmainfont[Ligatures=TeX]{Noto Serif CJK KR}
+\setCJKsansfont{Noto Sans CJK KR}
+\setCJKmonofont{Noto Sans Mono CJK KR}
+
+% ----- page geometry ---------------------------------------------
+% geometry is set by pandoc --variable; we fine-tune margins here
+% only if pandoc did not receive a geometry variable.
+
+% ----- table & figure styling ------------------------------------
+\usepackage{booktabs}                   % \toprule, \midrule, \bottomrule
+\usepackage{array}
+\renewcommand{\arraystretch}{1.15}
+\usepackage[hang,small,labelfont=bf,labelsep=period]{caption}
+\captionsetup{belowskip=4pt,aboveskip=8pt}
+\usepackage{float}
+\usepackage{graphicx}
+% Default max image width — prevents 21:9 figures from overflowing
+\setkeys{Gin}{width=\linewidth,keepaspectratio}
+
+% ----- section titles --------------------------------------------
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\large\bfseries}{\thesection}{0.75em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}{\thesubsection}{0.7em}{}
+\titlespacing*{\section}{0pt}{1.8ex plus 0.4ex minus 0.2ex}{0.8ex plus 0.15ex}
+\titlespacing*{\subsection}{0pt}{1.4ex plus 0.3ex minus 0.15ex}{0.5ex plus 0.1ex}
+
+% ----- header / footer -------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Heard v0.1 · NLP Term Project Part 2}
+\fancyhead[R]{\small Chanyoung Kim}
+\fancyfoot[C]{\small \thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ----- hyperlinks -------------------------------------------------
+\usepackage[breaklinks=true,hidelinks]{hyperref}
+\hypersetup{%
+  colorlinks=true,
+  linkcolor={black!60!blue},
+  urlcolor={black!70!blue},
+  citecolor={black!60!blue},
+}
+\urlstyle{same}
+
+% ----- code listing aesthetics -----------------------------------
+% pandoc uses verbatim for code fences; soften it so the Algorithm
+% pseudocode blocks in §2 do not look like angry terminal dumps.
+\usepackage{fancyvrb}
+\fvset{%
+  frame=single,
+  framesep=6pt,
+  rulecolor=\color{black!15},
+  fontsize=\small,
+  numbers=none,
+  commandchars=\\\{\},
+}
+\usepackage{xcolor}
+
+% ----- math / symbols (used in pseudocode) -----------------------
+\usepackage{amsmath,amssymb}
+
+% ----- Summary / Abstract-like styling ---------------------------
+% Reserve the first heading 'Summary' as a narrower block so it
+% reads as an abstract when the PDF is printed.
+\newenvironment{abstractbox}{%
+  \begin{quote}\small\itshape%
+}{%
+  \end{quote}%
+}
