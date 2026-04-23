@@ -2,14 +2,13 @@
 
 **A Korean on-device LLM that reflects your past self back at you at decision moments.**
 
-> Natural Language Processing (2150534701) · Term Project #1, Part 2 · 2026 · Chanyoung Kim (20243053)
+Natural Language Processing (2150534701) · Term Project #1 · 2026 · Chanyoung Kim (20243053)
 
-[![HuggingFace Dataset](https://img.shields.io/badge/🤗_Dataset-chanyoungkim%2Fheard--bench-FFD21E?style=for-the-badge)](https://huggingface.co/datasets/chanyoungkim/heard-bench)
-[![Report PDF](https://img.shields.io/badge/Report-PDF-EF4444?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](report/report.pdf)
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](requirements.txt)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](requirements.txt)
-[![Code License](https://img.shields.io/badge/Code-MIT-0A84FF?style=for-the-badge)](LICENSE)
-[![Dataset License](https://img.shields.io/badge/Dataset-CC--BY--4.0-34C759?style=for-the-badge)](https://creativecommons.org/licenses/by/4.0/)
+[![Part 1 Proposal](https://img.shields.io/badge/Part_1-Proposal_PDF-6b7280?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](report/260419_NLP_termproject_1.pdf)
+[![Part 2 Report](https://img.shields.io/badge/Part_2-Report_PDF-EF4444?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](report/report.pdf)
+[![HuggingFace Dataset](https://img.shields.io/badge/🤗_Dataset-heard--bench-FFD21E?style=for-the-badge)](https://huggingface.co/datasets/chanyoungkim/heard-bench)
+[![Code MIT](https://img.shields.io/badge/Code-MIT-0A84FF?style=for-the-badge)](LICENSE)
+[![Dataset CC-BY-4.0](https://img.shields.io/badge/Dataset-CC--BY--4.0-34C759?style=for-the-badge)](https://creativecommons.org/licenses/by/4.0/)
 
 ![Heard v0.1 overview](report/figures/fig_overview.jpg)
 
