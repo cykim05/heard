@@ -1,0 +1,94 @@
+# Model registry for Heard. DATASET.md §4.1 (generators), §6 (SUTs), §4.1 (judges).
+# All OpenRouter IDs verified against openrouter.ai model list.
+
+generators:
+  # G1–G3 via OpenRouter; G4 is local HF (Apache-2.0 license constraint, DATASET.md §4.1).
+  # Cost-constrained tier (ADR 0002, 2026-04-23): small/flash variants only.
+  g1_claude:
+    transport: openrouter
+    model_id: anthropic/claude-haiku-4.5
+    role: primary_korean_natural
+    share: 0.30
+  g2_gpt4o_mini:
+    transport: openrouter
+    model_id: openai/gpt-4o-mini
+    role: logical_structured
+    share: 0.30
+  g3_gemini_flash:
+    transport: openrouter
+    model_id: google/gemini-2.5-flash
+    role: long_context_temporal
+    share: 0.20
+  g4_kanana:
+    transport: local_hf
+    hf_id: kakaocorp/kanana-1.5-8b-instruct-2505
+    license: apache-2.0
+    role: korean_native_idiom
+    share: 0.20
+    note: "Deferred to Day 2 — local inference setup required. Day 1 rotation falls back to G1/G2/G3 (shares renormalized)."
+
+judges:
+  # Cheap-tier judges. Per-item family exclusion enforced in src/eval/judge.py
+  # (Day 2): if generator == gpt-4o-mini family -> route to J2 (haiku), and vice versa.
+  j1_gpt4o_mini:
+    transport: openrouter
+    model_id: openai/gpt-4o-mini
+    role: primary_judge
+  j2_claude_haiku:
+    transport: openrouter
+    model_id: anthropic/claude-haiku-4.5
+    role: agreement_measurement
+
+# SUTs for evaluation sweep (DATASET.md §6.1–6.3). All local HF.
+suts:
+  # Primary Korean (3 × fp16, 3 × int4 = 6 configs)
+  kanana_nano:
+    hf_id: kakaocorp/kanana-1.5-2.1b-instruct-2505
+    params: 2.1e9
+    license: apache-2.0
+    quantizations: [fp16, int4]
+  exaone_24b:
+    hf_id: LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct
+    params: 2.4e9
+    license: exaone-nc-research
+    quantizations: [fp16, int4]
+    trust_remote_code: true
+  hyperclova_seed_15b:
+    hf_id: naver-hyperclovax/HyperCLOVAX-SEED-Text-Instruct-1.5B
+    params: 1.5e9
+    quantizations: [fp16, int4]
+
+  # Non-Korean baselines
+  qwen_3b:
+    hf_id: Qwen/Qwen2.5-3B-Instruct
+    params: 3.0e9
+    quantizations: [fp16]
+  gemma2_2b:
+    hf_id: google/gemma-2-2b-it
+    params: 2.0e9
+    quantizations: [fp16]
+    gated: true
+    fallback_hf_id: meta-llama/Llama-3.2-3B-Instruct
+
+  # Reference ceiling
+  kanana_8b_ref:
+    hf_id: kakaocorp/kanana-1.5-8b-instruct-2505
+    params: 8.0e9
+    license: apache-2.0
+    quantizations: [fp16]
+
+# Default GPU assignment
+hardware:
+  device: "cuda"
+  cuda_visible_devices: "6"   # user allocation 2026-04-23
+  fallback_devices: ["7"]
+
+# Budget limits (USD, via OpenRouter billing)
+budget:
+  total_cap_usd: 30.0
+  warning_threshold_usd: 20.0
+  per_phase_cap_usd:
+    utterance_generation: 10.0
+    scenario_generation: 8.0
+    judging: 10.0
+    misc: 2.0

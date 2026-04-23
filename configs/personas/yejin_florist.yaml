@@ -1,0 +1,66 @@
+persona:
+  id: yejin_florist
+  name: 예진
+  age: 38
+  occupation: 꽃집 사장 (4년차)
+  shop_name: 보송
+  location: 서울 마포구 망원동
+  family: [남편 (직장인, 37), 아들 (초등 2학년)]
+  work_hours: "05:00-24:00, 주 6일 (월요일 휴무)"
+  personality:
+    - perfectionist
+    - ruminative_at_night
+    - avoids_burdening_family
+    - self_critical_before_decisions
+  voice_notes:
+    - 혼잣말은 완전한 문장보다 짧게 끊어지고 어미 생략이 잦음
+    - 남편 앞에서 못하는 말을 가게 마감 후 풀어놓는 경향
+    - 돈 얘기는 우회적으로 시작해서 구체 숫자로 끝남
+
+regulars:
+  - id: grandma_park
+    name: 박 할머니
+    preference: [pink_rose, baby_breath]
+    visit_frequency: weekly
+    backstory: 매주 수요일 오전, 손녀 결혼식 꽃장식 이후 단골
+  - id: office_kim
+    name: 김 과장
+    preference: [white_lily, eucalyptus]
+    visit_frequency: monthly
+    backstory: 회사 리셉션용 정기 납품, 결제는 법카
+  - id: couple_lee
+    name: 이 부부
+    preference: [anniversary_bouquet, mixed_pastel]
+    visit_frequency: every_2_weeks
+    backstory: 2년 전 결혼기념일 꽃다발로 시작, 매 둘째 주 토요일 픽업
+
+stock_items:
+  - {name: 장미(빨강),  cost_per_stem: 1500, price: 3000}
+  - {name: 장미(핑크),  cost_per_stem: 1800, price: 3500}
+  - {name: 장미(화이트), cost_per_stem: 1600, price: 3200}
+  - {name: 안개꽃,      cost_per_stem:  500, price: 1200}
+  - {name: 튤립(혼합),  cost_per_stem: 1200, price: 2500}
+  - {name: 유칼립투스,  cost_per_stem:  700, price: 1500}
+  - {name: 리시안셔스,  cost_per_stem: 1300, price: 2800}
+
+recurring_stressors:
+  - 도매가 변동 (양재 꽃시장 월 단위 등락)
+  - 단골 이탈 불안
+  - SNS 관리 피로 (인스타 릴스)
+  - 남편에게 솔직하지 못함 (적자를 숨김)
+  - 발주 과소/과대 — 주말 이벤트 예측 실패
+
+historical_events:
+  - {days_ago: 380, event: "작년 4월 장미값 500원 인상. 단골 이탈 거의 없었음"}
+  - {days_ago: 210, event: "안개꽃 도매처 양재→경동 변경. 품질 개선, 단가 비슷"}
+  - {days_ago: 120, event: "박 할머니 손녀 출산, 6주간 방문 중단"}
+  - {days_ago:  90, event: "SNS 릴스 하나가 터져서 주말 매출 2배, 재고 소진"}
+  - {days_ago:  45, event: "김 과장 회사 리셉션 캔슬 1회"}
+
+ability_hooks:
+  IE: [pricing_history, stock_counts, customer_preferences]
+  MR: [repeat_decisions_over_weeks, seasonal_pattern]
+  KU: [supplier_change, price_update]
+  TR: ["작년 4월", "지난 여름", "저번 주"]
+  ABS: [일어나지_않은_이벤트_문의]
+  REFL: [가격_인상_고민, 단골_이탈_불안, 남편에게_말_못함]

@@ -1,0 +1,66 @@
+persona:
+  id: minseok_cafe
+  name: 민석
+  age: 42
+  occupation: 로스터리 카페 사장 (6년차)
+  shop_name: 성수로스터스
+  location: 서울 성동구 성수동
+  family: [아내 (프리랜서 디자이너, 39), 딸 (중학교 1학년)]
+  work_hours: "07:00-22:00, 주 6일 (화요일 휴무)"
+  personality:
+    - analytical
+    - numbers_driven
+    - quietly_stubborn_on_quality
+    - competitive_with_neighboring_cafes
+  voice_notes:
+    - 혼잣말에 원두 kg당 단가, 추출 시간 초 단위가 자주 등장
+    - 경쟁 카페 이름을 직접 말하지 않고 "저기 코너" / "길 건너" 식으로 지칭
+    - 감정 표현은 숫자 뒤에 숨기는 경향
+
+regulars:
+  - id: morning_dev
+    name: 박 개발자
+    preference: [에티오피아_예가체프, 핸드드립, 노_시럽]
+    visit_frequency: daily
+    backstory: 평일 오전 8시, 테이크아웃만. 원두 취향에 까다로움
+  - id: studio_jung
+    name: 정 실장
+    preference: [원두_1kg_정기배송, 콜드브루_원액]
+    visit_frequency: bi_weekly
+    backstory: 2층 스튜디오 운영, 클라이언트 미팅용 콜드브루 정기
+  - id: elderly_couple_kim
+    name: 김 선생님 부부
+    preference: [디카페인_에스프레소, 치즈케이크]
+    visit_frequency: weekly
+    backstory: 매주 일요일 오후 3시, 2시간씩 책 읽고 감
+
+stock_items:
+  - {name: 에티오피아 예가체프 (생두),  cost_per_kg:  18000, price_per_shot: 4500}
+  - {name: 콜롬비아 수프리모 (생두),    cost_per_kg:  14000, price_per_shot: 4000}
+  - {name: 과테말라 안티구아 (생두),    cost_per_kg:  15000, price_per_shot: 4200}
+  - {name: 케냐 AA (생두),              cost_per_kg:  22000, price_per_shot: 5000}
+  - {name: 우유 (일반),                 cost_per_L:    2800}
+  - {name: 오트밀크,                    cost_per_L:    4500}
+  - {name: 치즈케이크 (수제),           cost_per_slice: 2500, price_per_slice: 6500}
+
+recurring_stressors:
+  - 원두 환율 변동 (에티오피아/케냐 달러 결제)
+  - 길 건너 프랜차이즈 카페 출점 소문
+  - 로스팅 일관성 (날씨에 따라 발현 차이)
+  - 딸 학원비 압박, 아내가 직접 말은 안 함
+  - 주말 테이블 회전율 vs 장시간 체류 손님 갈등
+
+historical_events:
+  - {days_ago: 400, event: "에티오피아 예가체프 kg당 14,000→18,000원 인상. 가격 반영 망설임"}
+  - {days_ago: 300, event: "오트밀크 도입. 여성 고객 증가 체감"}
+  - {days_ago: 180, event: "길 건너 대형 프랜차이즈 출점. 오픈 주간 매출 -30%, 2주 후 회복"}
+  - {days_ago: 100, event: "로스팅 머신 보일러 교체. 3일 휴업"}
+  - {days_ago:  30, event: "콜드브루 원액 정기배송 10건 확보"}
+
+ability_hooks:
+  IE: [bean_prices_per_kg, brewing_times, customer_orders]
+  MR: [price_passthrough_debates, competitor_response]
+  KU: [supplier_switch, menu_addition]
+  TR: ["작년 환율", "지난 겨울", "3개월 전"]
+  ABS: [팔지_않는_원두, 없는_서비스]
+  REFL: [가격_인상_고민, 프랜차이즈_경쟁, 학원비_압박]

@@ -1,0 +1,66 @@
+persona:
+  id: sunhee_hair
+  name: 선희
+  age: 45
+  occupation: 미용실 원장 (12년차, 1인숍)
+  shop_name: 홍제헤어
+  location: 서울 서대문구 홍제동
+  family: [남편 (택시기사, 48), 아들 (대학생, 21)]
+  work_hours: "10:00-20:00, 주 6일 (일요일 휴무)"
+  personality:
+    - warm_with_regulars
+    - remembers_every_detail_about_customers
+    - tired_but_proud
+    - gossips_internally_never_externally
+  voice_notes:
+    - 혼잣말에 단골 이름 + 시술 이력이 자연스럽게 섞임
+    - 손님 얘기는 험담이 아니라 "그때 그분 어떠셨더라..." 식의 회상
+    - 남편 험담은 가벼운 한탄, 아들 얘기는 자랑과 걱정이 섞임
+
+regulars:
+  - id: teacher_choi
+    name: 최 선생님
+    preference: [단발_레이어, 6주_간격_컷, 매직_반기]
+    visit_frequency: every_6_weeks
+    backstory: 고등학교 국어 교사, 12년 단골 (개업 때부터)
+  - id: mom_lim
+    name: 임 어머님
+    preference: [파마_세팅, 염색_월_1회, 새치_커버]
+    visit_frequency: monthly
+    backstory: 근처 아파트 주민, 70대, 사위 흉보러 옴
+  - id: bride_ahn
+    name: 안 신부
+    preference: [웨딩_업스타일_예약, 리허설_컷]
+    visit_frequency: one_off_recurring
+    backstory: 미용실 앞 미용학원 수강생 시절 단골, 결혼 준비 중
+
+services:
+  - {name: 커트 (여성),    duration_min: 40, price:  25000}
+  - {name: 커트 (남성),    duration_min: 30, price:  18000}
+  - {name: 염색 (전체),    duration_min: 120, price: 80000}
+  - {name: 염색 (뿌리),    duration_min: 60,  price: 45000}
+  - {name: 매직 (전체),    duration_min: 210, price: 150000}
+  - {name: 파마 (디지털),  duration_min: 180, price: 120000}
+  - {name: 세팅 (업스타일), duration_min: 60,  price:  55000}
+
+recurring_stressors:
+  - 예약 노쇼 (주말 피크타임 공백)
+  - 펌·염색제 도매가 인상
+  - 혼자 운영이라 점심·화장실 타이밍 실패
+  - 남편 일 늦게 끝날 때 저녁 혼자
+  - 아들 등록금 방학마다 고민
+
+historical_events:
+  - {days_ago: 365, event: "파마제 브랜드 교체 (가격은 그대로, 컬 유지력 개선)"}
+  - {days_ago: 240, event: "최 선생님 매직 실패 1회 — 지나친 열로 끝 상함. 다음 방문까지 3주 걱정"}
+  - {days_ago: 180, event: "카카오톡 예약봇 도입. 노쇼 20%→8%로 감소"}
+  - {days_ago:  90, event: "임 어머님 새치 커버 주기를 월 1 → 3주 1회로 단축"}
+  - {days_ago:  20, event: "안 신부 예약 리허설 1차. 업스타일 시안 3개 확정"}
+
+ability_hooks:
+  IE: [service_prices, customer_past_styles, appointment_intervals]
+  MR: [customer_preference_drift, retention_patterns]
+  KU: [new_product_adoption, booking_system_change]
+  TR: ["지난 봄", "작년 이맘때", "한 달 전"]
+  ABS: [안_하는_시술, 없는_단골_이름]
+  REFL: [시술_실패_회상, 아들_등록금_걱정, 노쇼_스트레스]
