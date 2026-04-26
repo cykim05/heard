@@ -47,6 +47,10 @@ SUT_CHOICES = [
     ("qwen25_3b",     "Qwen/Qwen2.5-3B-Instruct",                        "int4", False),
     ("qwen25_7b",     "Qwen/Qwen2.5-7B-Instruct",                        "fp16", False),
 
+    # Korean-native — HyperCLOVA-X SEED (gated, runtime account granted)
+    ("hclova_seed_15b", "naver-hyperclovax/HyperCLOVAX-SEED-Text-Instruct-1.5B", "fp16", False),
+    ("hclova_seed_15b", "naver-hyperclovax/HyperCLOVAX-SEED-Text-Instruct-1.5B", "int4", False),
+
     # Korean-tuned community models
     ("eeve_10b",      "yanolja/EEVE-Korean-Instruct-10.8B-v1.0",         "fp16", False),
     ("bllossom_8b",   "MLP-KTLim/llama-3-Korean-Bllossom-8B",            "fp16", False),
