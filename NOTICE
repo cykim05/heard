@@ -19,10 +19,32 @@ for attribution. Their respective licenses govern use of those works.
   content; per-item metadata records the upstream question_id.
 - intfloat/multilingual-e5-small (MIT) — dense retriever used in the
   evaluation pipeline.
-- kakaocorp/kanana-1.5-2.1b-instruct-2505 (Apache-2.0) — one of the
-  two SUTs in the Day-3 sweep.
-- Qwen/Qwen2.5-3B-Instruct (Apache-2.0) — the second SUT in the Day-3
-  sweep.
+- kakaocorp/kanana-1.5-2.1b-instruct-2505 (Apache-2.0) — Korean
+  on-device SUT and reference scenario generator.
+- kakaocorp/kanana-1.5-8b-instruct-2505 (Apache-2.0) — reference-
+  ceiling Korean SUT in the v0.2 sweep.
+- Qwen/Qwen2.5-3B-Instruct (Apache-2.0) — multilingual baseline SUT.
+- Qwen/Qwen2.5-7B-Instruct (Apache-2.0) — larger multilingual
+  baseline SUT.
+- LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct (EXAONE NC research license)
+  — Korean SUT used solely for local evaluation. Its outputs are
+  retained in `experiments/` for analysis only and are NOT
+  redistributed via the heard-bench HuggingFace dataset, which
+  keeps the published dataset's CC-BY-4.0 status clean of EXAONE
+  output dependencies.
+- naver-hyperclovax/HyperCLOVAX-SEED-Text-Instruct-1.5B (gated
+  HyperCLOVA-X SEED public license, requires HF account approval)
+  — Korean SUT included where the runtime account has been
+  granted access.
+- yanolja/EEVE-Korean-Instruct-10.8B-v1.0 (Apache-2.0) — Korean-
+  tuned community model, included as a v0.2 SUT.
+- MLP-KTLim/llama-3-Korean-Bllossom-8B (Llama 3 Community License)
+  — Korean-tuned Llama 3 derivative, included as a v0.2 SUT.
+- beomi/Llama-3-Open-Ko-8B-Instruct-preview (Llama 3 Community
+  License) — Korean-tuned Llama 3 derivative, included as a v0.2
+  SUT.
+- upstage/SOLAR-10.7B-Instruct-v1.0 (Apache-2.0) — Korean-English
+  bilingual SUT, included as a v0.2 SUT.
 - OpenAI, Anthropic, and Google AI models invoked via OpenRouter
   acted as data generators and LLM-as-judge graders only; their
   outputs are not redistributed in this repository beyond the

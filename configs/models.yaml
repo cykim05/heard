@@ -39,41 +39,77 @@ judges:
     model_id: anthropic/claude-haiku-4.5
     role: agreement_measurement
 
-# SUTs for evaluation sweep (DATASET.md §6.1–6.3). All local HF.
+# SUTs for the v0.2 evaluation sweep. All local HF.
+# Six model architectures × {fp16, int4 (bnb-nf4)} where listed,
+# = 11 configs total. Sweep iterates conditions (no_node / retrieval /
+# oracle) × policies (advisory / reflective).
 suts:
-  # Primary Korean (3 × fp16, 3 × int4 = 6 configs)
+  # ─── Korean-native models (Apache 2.0) ──────────────────────────
   kanana_nano:
     hf_id: kakaocorp/kanana-1.5-2.1b-instruct-2505
     params: 2.1e9
     license: apache-2.0
     quantizations: [fp16, int4]
+  kanana_8b:
+    hf_id: kakaocorp/kanana-1.5-8b-instruct-2505
+    params: 8.0e9
+    license: apache-2.0
+    quantizations: [fp16, int4]
+
+  # ─── Korean-native model — EXAONE NC research license ──────────
+  # Output may not be redistributed for commercial training. We use
+  # this SUT only as an evaluation target — the model's responses
+  # land in experiments/.../results.jsonl and never enter the
+  # heard-bench HF dataset, which keeps the dataset CC-BY-4.0 clean.
   exaone_24b:
     hf_id: LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct
     params: 2.4e9
     license: exaone-nc-research
     quantizations: [fp16, int4]
     trust_remote_code: true
+
+  # ─── Korean-native model — HyperCLOVA-X SEED (HF-gated) ────────
+  # Requires HF account approval on the model card. Smoke load
+  # below will skip this config if approval is not yet granted.
   hyperclova_seed_15b:
     hf_id: naver-hyperclovax/HyperCLOVAX-SEED-Text-Instruct-1.5B
     params: 1.5e9
+    license: hyperclova-x-seed-public
     quantizations: [fp16, int4]
+    gated: true
 
-  # Non-Korean baselines
-  qwen_3b:
+  # ─── Multilingual baselines (Apache 2.0) ───────────────────────
+  qwen25_3b:
     hf_id: Qwen/Qwen2.5-3B-Instruct
     params: 3.0e9
-    quantizations: [fp16]
-  gemma2_2b:
-    hf_id: google/gemma-2-2b-it
-    params: 2.0e9
-    quantizations: [fp16]
-    gated: true
-    fallback_hf_id: meta-llama/Llama-3.2-3B-Instruct
+    license: apache-2.0
+    quantizations: [fp16, int4]
+  qwen25_7b:
+    hf_id: Qwen/Qwen2.5-7B-Instruct
+    params: 7.0e9
+    license: apache-2.0
+    quantizations: [fp16]   # 7B int4 deferred to keep sweep under wall-clock
 
-  # Reference ceiling
-  kanana_8b_ref:
-    hf_id: kakaocorp/kanana-1.5-8b-instruct-2505
+  # ─── Korean-tuned community models ─────────────────────────────
+  eeve_10b:
+    hf_id: yanolja/EEVE-Korean-Instruct-10.8B-v1.0
+    params: 10.8e9
+    license: apache-2.0
+    quantizations: [fp16]
+  bllossom_8b:
+    hf_id: MLP-KTLim/llama-3-Korean-Bllossom-8B
     params: 8.0e9
+    license: llama-3
+    quantizations: [fp16]
+    note: "Llama 3 derivative; permits research and commercial use under Llama 3 Community License."
+  open_ko_8b:
+    hf_id: beomi/Llama-3-Open-Ko-8B-Instruct-preview
+    params: 8.0e9
+    license: llama-3
+    quantizations: [fp16]
+  solar_10b:
+    hf_id: upstage/SOLAR-10.7B-Instruct-v1.0
+    params: 10.7e9
     license: apache-2.0
     quantizations: [fp16]
 

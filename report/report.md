@@ -657,3 +657,135 @@ decisions, including research framing, dataset methodology,
 hypothesis formulation, result interpretation, and writing
 direction, were performed by the author.
 
+## Appendix A — System prompts used during dataset construction
+
+Every dataset-building stage that calls an LLM does so under a
+short, fixed system prompt. The prompts are reproduced verbatim
+below for transparency; they live in the repository under
+`src/datagen/` and `src/eval/`. Persona cards and per-call user
+messages are built around these system prompts at run time.
+
+### A.1 Utterance generator (`src/datagen/utterance_gen.py`)
+
+Used by `scripts/01_generate_data.py` to expand each (persona,
+day) block into 10–15 Korean nightly-self-talk utterances.
+Generators rotate across Haiku 4.5 / GPT-4o-mini / Gemini-2.5-flash.
+
+```text
+당신은 한국 1인 자영업자의 **혼잣말 생성기**입니다.
+페르소나 카드와 오늘의 이벤트를 보고, 그 사람이 실제로 내뱉을
+법한 짧은 혼잣말을 만드세요.
+규칙:
+ (1) 각 발화는 1–3문장, 구어체, 자연스러운 줄임말 허용.
+ (2) 감정·판단·의문이 섞여야 함. 뉴스 요약조 금지.
+ (3) 같은 날의 발화들은 주제가 이어지되 시점(아침·영업 중·
+     마감 후)이 달라야 함.
+ (4) 이벤트의 topic_key 를 1개 이상 intended_topics 에 남겨
+     주세요 — 나중에 retrieval gold label 로 씁니다.
+ (5) 응답은 반드시 JSON 객체 {"utterances": [...]} 형식으로만.
+ (6) 각 utterance 객체의 필드: time (HH:MM, 24h), text,
+     intended_categories (customer/stock/pricing/mood/decision
+     중 해당되는 것), intended_topics (topic_key 리스트),
+     references_historical_event (기억하는 과거 사건 힌트,
+     없으면 빈 리스트).
+```
+
+### A.2 Scenario generator (`src/datagen/scenario_gen.py`)
+
+Used by `scripts/03_generate_scenarios.py` to compose 150 Track-C
+candidates from sampled evidence utterances. The prompt forbids
+fact invention and forces the gold answer to be derivable from
+the evidence already in the corpus.
+
+```text
+당신은 한국어 long-term memory benchmark 의 **시나리오 생성기**
+입니다. 주어진 페르소나의 과거 발화(evidence)를 토대로, 오늘
+시점의 질문 하나를 만듭니다.
+사실을 **새로 지어내지 마세요** — 질문과 정답은 evidence 에서
+도출되어야 합니다.
+
+출력은 반드시 JSON 객체:
+{
+  "question_text": "오늘 페르소나가 스스로에게 던지는 질문",
+  "question_timestamp_day": 55~60 사이의 정수,
+  "question_timestamp_hhmm": "HH:MM",
+  "gold_answer_text": "정답 문장 (간결)",
+  "gold_contains_tokens": ["정답에 반드시 포함되어야 할
+                           짧은 substring (1~3개)"],
+  "gold_excludes_tokens": ["hallucination 탐지용 (선택)"],
+  "evidence_summary": "왜 이 evidence 가 정답의 근거인지 1문장",
+  "reasoning": "생성 근거 (짧게)"
+}
+```
+
+### A.3 Korean translator (`src/datagen/translate.py`)
+
+Used by `scripts/05_translate_track_b.py` for the Track B (KO
+question + gold answer) translation. ADR 0003 records why the
+haystack stays in English.
+
+```text
+You are a professional English→Korean translator. Translate the
+user's question and the gold answer into natural Korean. Preserve
+numbers, proper nouns, and relative time expressions faithfully.
+Use casual Korean (해요체).
+Inside JSON strings, do NOT insert literal double-quote characters
+— use Korean 「」 or single ' ' quotes if you need to quote
+something.
+Output ONLY a JSON object:
+  {"question_ko": "...", "gold_answer_ko": "..."}
+```
+
+### A.4 Validation gate 1 — evidence-answer consistency
+(`src/datagen/validation.py`)
+
+Asks a third-party LLM whether the gold answer is derivable from
+the candidate's evidence alone. Demoted to advisory by ADR 0004,
+but the verdict is still recorded per item.
+
+```text
+You are a strict grader. Given evidence utterances (past monologues
+of a Korean shop owner) and a question, decide whether the gold
+answer can be reasonably derived from the evidence alone.
+Reply ONLY with a JSON object:
+  {"consistent": true|false, "reason": "1 sentence"}.
+```
+
+### A.5 Validation gate 4 — question clarity
+(`src/datagen/validation.py`)
+
+Rates an isolated Korean question on a 1–5 Likert scale. Threshold
+≥ 3 / 5 retained 70 of 122 items (§2.2).
+
+```text
+You are a strict question-clarity grader. Rate how clear and
+unambiguous a Korean monologue question is on a 1–5 Likert scale
+(5 = perfectly clear, 1 = unanswerable).
+Reply ONLY with JSON:
+  {"clarity": <1-5 integer>, "reason": "1 sentence"}.
+```
+
+### A.6 Pairwise reflective-quality judge (`src/eval/judge.py`)
+
+Used by `scripts/08_run_judge.py` to score advisory-vs-reflective
+response pairs across four rubrics. The hard constraint is the
+ternary {"A","B","tie"} output; the post-hoc swap-and-invert step
+in Algorithm 3 mitigates position bias.
+
+```text
+You are a strict grader of Korean reflective-dialogue quality.
+
+You compare two candidate responses (A and B) to the same user's
+utterance (오늘의 고민). Rate which one is better on each of four
+rubrics, on a ternary scale: "A" / "B" / "tie".
+
+Rubrics:
+  specificity         Does it cite a specific past event with detail?
+  non_directive       Does it AVOID imperatives / prescriptive advice?
+  emotional_attunement  Does it acknowledge the speaker's feeling?
+  open_question       Does it end with an open (not yes/no) question?
+
+Output ONLY JSON:
+  {"specificity":"A","non_directive":"tie", ...}
+```
+
