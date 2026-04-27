@@ -1,0 +1,266 @@
+2026-04-26 16:16:14 INFO    sweep | filter --only=['kanana_8b', 'qwen25_7b', 'eeve_10b', 'solar_10b'] leaves 5 configs
+2026-04-26 16:16:14 INFO    sweep | loading embedder…
+2026-04-26 16:16:21 INFO    sweep | loading SUT kanana_8b (kakaocorp/kanana-1.5-8b-instruct-2505, fp16)…
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.04s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.01it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.05it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.49it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.27it/s]
+2026-04-26 16:16:26 INFO    sweep |   loaded params=8.03B device=cuda:0
+2026-04-26 16:16:26 INFO    src.eval.runner | track=ko_native items=70 SUT=kanana_8b
+2026-04-26 16:17:35 INFO    src.eval.runner | runs=20  elapsed=68s  rate=0.29/s
+2026-04-26 16:18:47 INFO    src.eval.runner | runs=40  elapsed=140s  rate=0.29/s
+2026-04-26 16:19:45 INFO    src.eval.runner | runs=60  elapsed=198s  rate=0.30/s
+2026-04-26 16:20:46 INFO    src.eval.runner | runs=80  elapsed=260s  rate=0.31/s
+2026-04-26 16:21:46 INFO    src.eval.runner | runs=100  elapsed=319s  rate=0.31/s
+2026-04-26 16:22:55 INFO    src.eval.runner | runs=120  elapsed=389s  rate=0.31/s
+2026-04-26 16:24:00 INFO    src.eval.runner | runs=140  elapsed=453s  rate=0.31/s
+2026-04-26 16:25:12 INFO    src.eval.runner | runs=160  elapsed=526s  rate=0.30/s
+2026-04-26 16:26:13 INFO    src.eval.runner | runs=180  elapsed=587s  rate=0.31/s
+2026-04-26 16:27:18 INFO    src.eval.runner | runs=200  elapsed=652s  rate=0.31/s
+2026-04-26 16:28:18 INFO    src.eval.runner | runs=220  elapsed=712s  rate=0.31/s
+2026-04-26 16:29:20 INFO    src.eval.runner | runs=240  elapsed=774s  rate=0.31/s
+2026-04-26 16:30:20 INFO    src.eval.runner | runs=260  elapsed=833s  rate=0.31/s
+2026-04-26 16:31:29 INFO    src.eval.runner | runs=280  elapsed=903s  rate=0.31/s
+2026-04-26 16:32:30 INFO    src.eval.runner | runs=300  elapsed=964s  rate=0.31/s
+2026-04-26 16:33:45 INFO    src.eval.runner | runs=320  elapsed=1039s  rate=0.31/s
+2026-04-26 16:34:46 INFO    src.eval.runner | runs=340  elapsed=1100s  rate=0.31/s
+2026-04-26 16:35:19 INFO    src.eval.runner | sweep DONE: 350 total runs, 1133s wall
+2026-04-26 16:35:19 INFO    src.eval.runner | track=en_subset items=100 SUT=kanana_8b
+2026-04-26 16:36:21 INFO    src.eval.runner | runs=20  elapsed=63s  rate=0.32/s
+2026-04-26 16:37:26 INFO    src.eval.runner | runs=40  elapsed=127s  rate=0.32/s
+2026-04-26 16:38:31 INFO    src.eval.runner | runs=60  elapsed=192s  rate=0.31/s
+2026-04-26 16:39:08 INFO    src.eval.runner | runs=80  elapsed=229s  rate=0.35/s
+2026-04-26 16:40:01 INFO    src.eval.runner | runs=100  elapsed=282s  rate=0.35/s
+2026-04-26 16:41:05 INFO    src.eval.runner | runs=120  elapsed=346s  rate=0.35/s
+2026-04-26 16:42:20 INFO    src.eval.runner | runs=140  elapsed=421s  rate=0.33/s
+2026-04-26 16:43:48 INFO    src.eval.runner | runs=160  elapsed=510s  rate=0.31/s
+2026-04-26 16:45:18 INFO    src.eval.runner | runs=180  elapsed=599s  rate=0.30/s
+2026-04-26 16:46:59 INFO    src.eval.runner | runs=200  elapsed=700s  rate=0.29/s
+2026-04-26 16:48:29 INFO    src.eval.runner | runs=220  elapsed=791s  rate=0.28/s
+2026-04-26 16:49:47 INFO    src.eval.runner | runs=240  elapsed=869s  rate=0.28/s
+2026-04-26 16:50:42 INFO    src.eval.runner | runs=260  elapsed=924s  rate=0.28/s
+2026-04-26 16:51:56 INFO    src.eval.runner | runs=280  elapsed=997s  rate=0.28/s
+2026-04-26 16:53:02 INFO    src.eval.runner | runs=300  elapsed=1063s  rate=0.28/s
+2026-04-26 16:54:05 INFO    src.eval.runner | runs=320  elapsed=1126s  rate=0.28/s
+2026-04-26 16:54:56 INFO    src.eval.runner | runs=340  elapsed=1178s  rate=0.29/s
+2026-04-26 16:55:57 INFO    src.eval.runner | runs=360  elapsed=1238s  rate=0.29/s
+2026-04-26 16:57:04 INFO    src.eval.runner | runs=380  elapsed=1306s  rate=0.29/s
+2026-04-26 16:58:07 INFO    src.eval.runner | runs=400  elapsed=1368s  rate=0.29/s
+2026-04-26 16:59:11 INFO    src.eval.runner | runs=420  elapsed=1432s  rate=0.29/s
+2026-04-26 17:00:15 INFO    src.eval.runner | runs=440  elapsed=1496s  rate=0.29/s
+2026-04-26 17:01:33 INFO    src.eval.runner | runs=460  elapsed=1574s  rate=0.29/s
+2026-04-26 17:02:52 INFO    src.eval.runner | runs=480  elapsed=1653s  rate=0.29/s
+2026-04-26 17:04:03 INFO    src.eval.runner | runs=500  elapsed=1724s  rate=0.29/s
+2026-04-26 17:04:03 INFO    src.eval.runner | sweep DONE: 500 total runs, 1724s wall
+2026-04-26 17:04:03 INFO    src.eval.runner | track=ko_translated items=100 SUT=kanana_8b
+2026-04-26 17:05:30 INFO    src.eval.runner | runs=20  elapsed=87s  rate=0.23/s
+2026-04-26 17:06:57 INFO    src.eval.runner | runs=40  elapsed=174s  rate=0.23/s
+2026-04-26 17:08:21 INFO    src.eval.runner | runs=60  elapsed=258s  rate=0.23/s
+2026-04-26 17:09:55 INFO    src.eval.runner | runs=80  elapsed=352s  rate=0.23/s
+2026-04-26 17:11:31 INFO    src.eval.runner | runs=100  elapsed=448s  rate=0.22/s
+2026-04-26 17:12:58 INFO    src.eval.runner | runs=120  elapsed=534s  rate=0.22/s
+2026-04-26 17:14:31 INFO    src.eval.runner | runs=140  elapsed=628s  rate=0.22/s
+2026-04-26 17:16:09 INFO    src.eval.runner | runs=160  elapsed=726s  rate=0.22/s
+2026-04-26 17:17:58 INFO    src.eval.runner | runs=180  elapsed=835s  rate=0.22/s
+2026-04-26 17:20:06 INFO    src.eval.runner | runs=200  elapsed=963s  rate=0.21/s
+2026-04-26 17:21:49 INFO    src.eval.runner | runs=220  elapsed=1066s  rate=0.21/s
+2026-04-26 17:23:34 INFO    src.eval.runner | runs=240  elapsed=1171s  rate=0.21/s
+2026-04-26 17:25:02 INFO    src.eval.runner | runs=260  elapsed=1259s  rate=0.21/s
+2026-04-26 17:26:35 INFO    src.eval.runner | runs=280  elapsed=1352s  rate=0.21/s
+2026-04-26 17:28:08 INFO    src.eval.runner | runs=300  elapsed=1445s  rate=0.21/s
+2026-04-26 17:29:34 INFO    src.eval.runner | runs=320  elapsed=1531s  rate=0.21/s
+2026-04-26 17:30:57 INFO    src.eval.runner | runs=340  elapsed=1614s  rate=0.21/s
+2026-04-26 17:32:27 INFO    src.eval.runner | runs=360  elapsed=1704s  rate=0.21/s
+2026-04-26 17:33:46 INFO    src.eval.runner | runs=380  elapsed=1783s  rate=0.21/s
+2026-04-26 17:35:24 INFO    src.eval.runner | runs=400  elapsed=1881s  rate=0.21/s
+2026-04-26 17:36:58 INFO    src.eval.runner | runs=420  elapsed=1975s  rate=0.21/s
+2026-04-26 17:38:32 INFO    src.eval.runner | runs=440  elapsed=2069s  rate=0.21/s
+2026-04-26 17:40:13 INFO    src.eval.runner | runs=460  elapsed=2169s  rate=0.21/s
+2026-04-26 17:41:49 INFO    src.eval.runner | runs=480  elapsed=2266s  rate=0.21/s
+2026-04-26 17:43:16 INFO    src.eval.runner | runs=500  elapsed=2353s  rate=0.21/s
+2026-04-26 17:43:16 INFO    src.eval.runner | sweep DONE: 500 total runs, 2353s wall
+2026-04-26 17:43:16 INFO    sweep | loading SUT kanana_8b_int4 (kakaocorp/kanana-1.5-8b-instruct-2505, int4)…
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:14,  4.72s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.13s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.78s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.63s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.17s/it]
+2026-04-26 17:43:33 INFO    sweep |   loaded params=4.54B device=cuda:0
+2026-04-26 17:43:34 INFO    src.eval.runner | track=ko_native items=70 SUT=kanana_8b_int4
+2026-04-26 17:44:38 INFO    src.eval.runner | runs=20  elapsed=64s  rate=0.31/s
+2026-04-26 17:45:51 INFO    src.eval.runner | runs=40  elapsed=137s  rate=0.29/s
+2026-04-26 17:46:48 INFO    src.eval.runner | runs=60  elapsed=195s  rate=0.31/s
+2026-04-26 17:47:54 INFO    src.eval.runner | runs=80  elapsed=260s  rate=0.31/s
+2026-04-26 17:48:54 INFO    src.eval.runner | runs=100  elapsed=321s  rate=0.31/s
+2026-04-26 17:50:02 INFO    src.eval.runner | runs=120  elapsed=389s  rate=0.31/s
+2026-04-26 17:50:57 INFO    src.eval.runner | runs=140  elapsed=443s  rate=0.32/s
+2026-04-26 17:52:06 INFO    src.eval.runner | runs=160  elapsed=512s  rate=0.31/s
+2026-04-26 17:53:09 INFO    src.eval.runner | runs=180  elapsed=575s  rate=0.31/s
+2026-04-26 17:54:12 INFO    src.eval.runner | runs=200  elapsed=639s  rate=0.31/s
+2026-04-26 17:55:15 INFO    src.eval.runner | runs=220  elapsed=701s  rate=0.31/s
+2026-04-26 17:56:17 INFO    src.eval.runner | runs=240  elapsed=764s  rate=0.31/s
+2026-04-26 17:57:16 INFO    src.eval.runner | runs=260  elapsed=822s  rate=0.32/s
+2026-04-26 17:58:25 INFO    src.eval.runner | runs=280  elapsed=892s  rate=0.31/s
+2026-04-26 17:59:28 INFO    src.eval.runner | runs=300  elapsed=954s  rate=0.31/s
+2026-04-26 18:00:36 INFO    src.eval.runner | runs=320  elapsed=1023s  rate=0.31/s
+2026-04-26 18:01:42 INFO    src.eval.runner | runs=340  elapsed=1088s  rate=0.31/s
+2026-04-26 18:02:09 INFO    src.eval.runner | sweep DONE: 350 total runs, 1116s wall
+2026-04-26 18:02:10 INFO    src.eval.runner | track=en_subset items=100 SUT=kanana_8b_int4
+2026-04-26 18:03:01 INFO    src.eval.runner | runs=20  elapsed=52s  rate=0.38/s
+2026-04-26 18:04:01 INFO    src.eval.runner | runs=40  elapsed=111s  rate=0.36/s
+2026-04-26 18:04:58 INFO    src.eval.runner | runs=60  elapsed=169s  rate=0.35/s
+2026-04-26 18:05:34 INFO    src.eval.runner | runs=80  elapsed=205s  rate=0.39/s
+2026-04-26 18:06:22 INFO    src.eval.runner | runs=100  elapsed=253s  rate=0.40/s
+2026-04-26 18:07:33 INFO    src.eval.runner | runs=120  elapsed=323s  rate=0.37/s
+2026-04-26 18:08:46 INFO    src.eval.runner | runs=140  elapsed=397s  rate=0.35/s
+2026-04-26 18:09:56 INFO    src.eval.runner | runs=160  elapsed=466s  rate=0.34/s
+2026-04-26 18:11:21 INFO    src.eval.runner | runs=180  elapsed=552s  rate=0.33/s
+2026-04-26 18:12:45 INFO    src.eval.runner | runs=200  elapsed=636s  rate=0.31/s
+2026-04-26 18:14:02 INFO    src.eval.runner | runs=220  elapsed=713s  rate=0.31/s
+2026-04-26 18:15:05 INFO    src.eval.runner | runs=240  elapsed=776s  rate=0.31/s
+2026-04-26 18:15:57 INFO    src.eval.runner | runs=260  elapsed=828s  rate=0.31/s
+2026-04-26 18:16:56 INFO    src.eval.runner | runs=280  elapsed=886s  rate=0.32/s
+2026-04-26 18:17:54 INFO    src.eval.runner | runs=300  elapsed=945s  rate=0.32/s
+2026-04-26 18:18:50 INFO    src.eval.runner | runs=320  elapsed=1000s  rate=0.32/s
+2026-04-26 18:19:44 INFO    src.eval.runner | runs=340  elapsed=1055s  rate=0.32/s
+2026-04-26 18:20:41 INFO    src.eval.runner | runs=360  elapsed=1112s  rate=0.32/s
+2026-04-26 18:21:41 INFO    src.eval.runner | runs=380  elapsed=1172s  rate=0.32/s
+2026-04-26 18:22:28 INFO    src.eval.runner | runs=400  elapsed=1218s  rate=0.33/s
+2026-04-26 18:23:28 INFO    src.eval.runner | runs=420  elapsed=1279s  rate=0.33/s
+2026-04-26 18:24:18 INFO    src.eval.runner | runs=440  elapsed=1329s  rate=0.33/s
+2026-04-26 18:25:28 INFO    src.eval.runner | runs=460  elapsed=1399s  rate=0.33/s
+2026-04-26 18:26:27 INFO    src.eval.runner | runs=480  elapsed=1458s  rate=0.33/s
+2026-04-26 18:27:18 INFO    src.eval.runner | runs=500  elapsed=1509s  rate=0.33/s
+2026-04-26 18:27:18 INFO    src.eval.runner | sweep DONE: 500 total runs, 1509s wall
+2026-04-26 18:27:19 INFO    src.eval.runner | track=ko_translated items=100 SUT=kanana_8b_int4
+2026-04-26 18:28:35 INFO    src.eval.runner | runs=20  elapsed=77s  rate=0.26/s
+2026-04-26 18:29:53 INFO    src.eval.runner | runs=40  elapsed=155s  rate=0.26/s
+2026-04-26 18:31:01 INFO    src.eval.runner | runs=60  elapsed=222s  rate=0.27/s
+2026-04-26 18:32:12 INFO    src.eval.runner | runs=80  elapsed=294s  rate=0.27/s
+2026-04-26 18:33:29 INFO    src.eval.runner | runs=100  elapsed=370s  rate=0.27/s
+2026-04-26 18:34:52 INFO    src.eval.runner | runs=120  elapsed=453s  rate=0.26/s
+2026-04-26 18:36:09 INFO    src.eval.runner | runs=140  elapsed=530s  rate=0.26/s
+2026-04-26 18:37:31 INFO    src.eval.runner | runs=160  elapsed=613s  rate=0.26/s
+2026-04-26 18:39:04 INFO    src.eval.runner | runs=180  elapsed=705s  rate=0.26/s
+2026-04-26 18:40:40 INFO    src.eval.runner | runs=200  elapsed=802s  rate=0.25/s
+2026-04-26 18:42:04 INFO    src.eval.runner | runs=220  elapsed=886s  rate=0.25/s
+2026-04-26 18:43:26 INFO    src.eval.runner | runs=240  elapsed=968s  rate=0.25/s
+2026-04-26 18:44:35 INFO    src.eval.runner | runs=260  elapsed=1036s  rate=0.25/s
+2026-04-26 18:45:47 INFO    src.eval.runner | runs=280  elapsed=1109s  rate=0.25/s
+2026-04-26 18:46:59 INFO    src.eval.runner | runs=300  elapsed=1181s  rate=0.25/s
+2026-04-26 18:48:15 INFO    src.eval.runner | runs=320  elapsed=1256s  rate=0.25/s
+2026-04-26 18:49:28 INFO    src.eval.runner | runs=340  elapsed=1330s  rate=0.26/s
+2026-04-26 18:50:47 INFO    src.eval.runner | runs=360  elapsed=1408s  rate=0.26/s
+2026-04-26 18:51:44 INFO    src.eval.runner | runs=380  elapsed=1466s  rate=0.26/s
+2026-04-26 18:53:01 INFO    src.eval.runner | runs=400  elapsed=1542s  rate=0.26/s
+2026-04-26 18:54:23 INFO    src.eval.runner | runs=420  elapsed=1624s  rate=0.26/s
+2026-04-26 18:55:40 INFO    src.eval.runner | runs=440  elapsed=1701s  rate=0.26/s
+2026-04-26 18:57:01 INFO    src.eval.runner | runs=460  elapsed=1782s  rate=0.26/s
+2026-04-26 18:58:17 INFO    src.eval.runner | runs=480  elapsed=1859s  rate=0.26/s
+2026-04-26 18:59:36 INFO    src.eval.runner | runs=500  elapsed=1937s  rate=0.26/s
+2026-04-26 18:59:36 INFO    src.eval.runner | sweep DONE: 500 total runs, 1937s wall
+2026-04-26 18:59:36 INFO    sweep | loading SUT qwen25_7b (Qwen/Qwen2.5-7B-Instruct, fp16)…
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.14it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.22it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.22it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.30it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.26it/s]
+2026-04-26 18:59:42 INFO    sweep |   loaded params=7.62B device=cuda:0
+2026-04-26 18:59:42 INFO    src.eval.runner | track=ko_native items=70 SUT=qwen25_7b
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+2026-04-26 19:00:32 INFO    src.eval.runner | runs=20  elapsed=50s  rate=0.40/s
+2026-04-26 19:01:29 INFO    src.eval.runner | runs=40  elapsed=107s  rate=0.37/s
+2026-04-26 19:02:21 INFO    src.eval.runner | runs=60  elapsed=159s  rate=0.38/s
+2026-04-26 19:03:12 INFO    src.eval.runner | runs=80  elapsed=210s  rate=0.38/s
+2026-04-26 19:03:58 INFO    src.eval.runner | runs=100  elapsed=256s  rate=0.39/s
+2026-04-26 19:04:57 INFO    src.eval.runner | runs=120  elapsed=315s  rate=0.38/s
+2026-04-26 19:05:42 INFO    src.eval.runner | runs=140  elapsed=360s  rate=0.39/s
+2026-04-26 19:06:30 INFO    src.eval.runner | runs=160  elapsed=408s  rate=0.39/s
+2026-04-26 19:07:15 INFO    src.eval.runner | runs=180  elapsed=453s  rate=0.40/s
+2026-04-26 19:08:07 INFO    src.eval.runner | runs=200  elapsed=505s  rate=0.40/s
+2026-04-26 19:08:52 INFO    src.eval.runner | runs=220  elapsed=550s  rate=0.40/s
+2026-04-26 19:09:41 INFO    src.eval.runner | runs=240  elapsed=599s  rate=0.40/s
+2026-04-26 19:10:33 INFO    src.eval.runner | runs=260  elapsed=651s  rate=0.40/s
+2026-04-26 19:11:31 INFO    src.eval.runner | runs=280  elapsed=709s  rate=0.39/s
+2026-04-26 19:12:19 INFO    src.eval.runner | runs=300  elapsed=757s  rate=0.40/s
+2026-04-26 19:13:24 INFO    src.eval.runner | runs=320  elapsed=822s  rate=0.39/s
+2026-04-26 19:14:08 INFO    src.eval.runner | runs=340  elapsed=866s  rate=0.39/s
+2026-04-26 19:14:27 INFO    src.eval.runner | sweep DONE: 350 total runs, 885s wall
+2026-04-26 19:14:27 INFO    src.eval.runner | track=en_subset items=100 SUT=qwen25_7b
+2026-04-26 19:15:20 INFO    src.eval.runner | runs=20  elapsed=53s  rate=0.38/s
+2026-04-26 19:16:12 INFO    src.eval.runner | runs=40  elapsed=105s  rate=0.38/s
+2026-04-26 19:17:09 INFO    src.eval.runner | runs=60  elapsed=162s  rate=0.37/s
+2026-04-26 19:17:50 INFO    src.eval.runner | runs=80  elapsed=203s  rate=0.39/s
+2026-04-26 19:18:36 INFO    src.eval.runner | runs=100  elapsed=249s  rate=0.40/s
+2026-04-26 19:19:33 INFO    src.eval.runner | runs=120  elapsed=306s  rate=0.39/s
+2026-04-26 19:20:30 INFO    src.eval.runner | runs=140  elapsed=363s  rate=0.39/s
+2026-04-26 19:21:29 INFO    src.eval.runner | runs=160  elapsed=422s  rate=0.38/s
+2026-04-26 19:22:32 INFO    src.eval.runner | runs=180  elapsed=485s  rate=0.37/s
+2026-04-26 19:23:41 INFO    src.eval.runner | runs=200  elapsed=554s  rate=0.36/s
+2026-04-26 19:24:57 INFO    src.eval.runner | runs=220  elapsed=630s  rate=0.35/s
+2026-04-26 19:26:10 INFO    src.eval.runner | runs=240  elapsed=703s  rate=0.34/s
+2026-04-26 19:27:15 INFO    src.eval.runner | runs=260  elapsed=768s  rate=0.34/s
+2026-04-26 19:28:15 INFO    src.eval.runner | runs=280  elapsed=828s  rate=0.34/s
+2026-04-26 19:29:15 INFO    src.eval.runner | runs=300  elapsed=888s  rate=0.34/s
+2026-04-26 19:30:06 INFO    src.eval.runner | runs=320  elapsed=939s  rate=0.34/s
+2026-04-26 19:31:08 INFO    src.eval.runner | runs=340  elapsed=1001s  rate=0.34/s
+2026-04-26 19:32:00 INFO    src.eval.runner | runs=360  elapsed=1053s  rate=0.34/s
+2026-04-26 19:32:51 INFO    src.eval.runner | runs=380  elapsed=1104s  rate=0.34/s
+2026-04-26 19:33:45 INFO    src.eval.runner | runs=400  elapsed=1158s  rate=0.35/s
+2026-04-26 19:34:42 INFO    src.eval.runner | runs=420  elapsed=1215s  rate=0.35/s
+2026-04-26 19:35:39 INFO    src.eval.runner | runs=440  elapsed=1272s  rate=0.35/s
+2026-04-26 19:36:43 INFO    src.eval.runner | runs=460  elapsed=1336s  rate=0.34/s
+2026-04-26 19:37:43 INFO    src.eval.runner | runs=480  elapsed=1396s  rate=0.34/s
+2026-04-26 19:38:36 INFO    src.eval.runner | runs=500  elapsed=1449s  rate=0.35/s
+2026-04-26 19:38:36 INFO    src.eval.runner | sweep DONE: 500 total runs, 1449s wall
+2026-04-26 19:38:36 INFO    src.eval.runner | track=ko_translated items=100 SUT=qwen25_7b
+2026-04-26 19:39:48 INFO    src.eval.runner | runs=20  elapsed=72s  rate=0.28/s
+2026-04-26 19:40:53 INFO    src.eval.runner | runs=40  elapsed=137s  rate=0.29/s
+2026-04-26 19:41:54 INFO    src.eval.runner | runs=60  elapsed=198s  rate=0.30/s
+2026-04-26 19:43:02 INFO    src.eval.runner | runs=80  elapsed=266s  rate=0.30/s
+2026-04-26 19:44:01 INFO    src.eval.runner | runs=100  elapsed=325s  rate=0.31/s
+2026-04-26 19:45:19 INFO    src.eval.runner | runs=120  elapsed=403s  rate=0.30/s
+2026-04-26 19:46:26 INFO    src.eval.runner | runs=140  elapsed=470s  rate=0.30/s
+2026-04-26 19:47:44 INFO    src.eval.runner | runs=160  elapsed=548s  rate=0.29/s
+2026-04-26 19:49:16 INFO    src.eval.runner | runs=180  elapsed=640s  rate=0.28/s
+2026-04-26 19:50:51 INFO    src.eval.runner | runs=200  elapsed=735s  rate=0.27/s
+2026-04-26 19:52:15 INFO    src.eval.runner | runs=220  elapsed=820s  rate=0.27/s
+2026-04-26 19:53:42 INFO    src.eval.runner | runs=240  elapsed=907s  rate=0.26/s
+2026-04-26 19:54:56 INFO    src.eval.runner | runs=260  elapsed=980s  rate=0.27/s
+2026-04-26 19:56:10 INFO    src.eval.runner | runs=280  elapsed=1054s  rate=0.27/s
+2026-04-26 19:57:20 INFO    src.eval.runner | runs=300  elapsed=1125s  rate=0.27/s
+2026-04-26 19:58:33 INFO    src.eval.runner | runs=320  elapsed=1198s  rate=0.27/s
+2026-04-26 19:59:47 INFO    src.eval.runner | runs=340  elapsed=1271s  rate=0.27/s
+2026-04-26 20:01:00 INFO    src.eval.runner | runs=360  elapsed=1344s  rate=0.27/s
+2026-04-26 20:01:58 INFO    src.eval.runner | runs=380  elapsed=1403s  rate=0.27/s
+2026-04-26 20:03:13 INFO    src.eval.runner | runs=400  elapsed=1477s  rate=0.27/s
+2026-04-26 20:04:17 INFO    src.eval.runner | runs=420  elapsed=1541s  rate=0.27/s
+2026-04-26 20:05:32 INFO    src.eval.runner | runs=440  elapsed=1617s  rate=0.27/s
+2026-04-26 20:06:42 INFO    src.eval.runner | runs=460  elapsed=1686s  rate=0.27/s
+2026-04-26 20:08:00 INFO    src.eval.runner | runs=480  elapsed=1765s  rate=0.27/s
+2026-04-26 20:09:10 INFO    src.eval.runner | runs=500  elapsed=1834s  rate=0.27/s
+2026-04-26 20:09:10 INFO    src.eval.runner | sweep DONE: 500 total runs, 1834s wall
+2026-04-26 20:09:10 INFO    sweep | loading SUT eeve_10b (yanolja/EEVE-Korean-Instruct-10.8B-v1.0, fp16)…
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:07<00:31,  7.98s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:15<00:22,  7.43s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:34<00:26, 13.13s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:54<00:15, 15.82s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:57<00:00, 11.09s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:57<00:00, 11.52s/it]
+2026-04-26 20:10:11 INFO    sweep |   loaded params=10.80B device=cuda:0
+2026-04-26 20:10:11 INFO    src.eval.runner | track=ko_native items=70 SUT=eeve_10b
+2026-04-26 20:13:51 INFO    src.eval.runner | runs=20  elapsed=220s  rate=0.09/s
+2026-04-26 20:17:55 INFO    src.eval.runner | runs=40  elapsed=464s  rate=0.09/s
+2026-04-26 20:21:20 INFO    src.eval.runner | runs=60  elapsed=669s  rate=0.09/s
+2026-04-26 20:25:02 INFO    src.eval.runner | runs=80  elapsed=891s  rate=0.09/s
+2026-04-26 20:28:10 INFO    src.eval.runner | runs=100  elapsed=1079s  rate=0.09/s
+2026-04-26 20:32:04 INFO    src.eval.runner | runs=120  elapsed=1313s  rate=0.09/s
+2026-04-26 20:35:39 INFO    src.eval.runner | runs=140  elapsed=1527s  rate=0.09/s
+2026-04-26 20:39:00 INFO    src.eval.runner | runs=160  elapsed=1729s  rate=0.09/s
+2026-04-26 20:42:34 INFO    src.eval.runner | runs=180  elapsed=1943s  rate=0.09/s
+2026-04-26 20:46:17 INFO    src.eval.runner | runs=200  elapsed=2166s  rate=0.09/s
+2026-04-26 20:49:28 INFO    src.eval.runner | runs=220  elapsed=2357s  rate=0.09/s
+2026-04-26 20:53:28 INFO    src.eval.runner | runs=240  elapsed=2597s  rate=0.09/s
+2026-04-26 20:57:15 INFO    src.eval.runner | runs=260  elapsed=2824s  rate=0.09/s
+2026-04-26 21:01:22 INFO    src.eval.runner | runs=280  elapsed=3071s  rate=0.09/s
+2026-04-26 21:04:09 INFO    src.eval.runner | runs=300  elapsed=3238s  rate=0.09/s
+2026-04-26 21:08:51 INFO    src.eval.runner | runs=320  elapsed=3520s  rate=0.09/s
+2026-04-26 21:12:26 INFO    src.eval.runner | runs=340  elapsed=3734s  rate=0.09/s
+2026-04-26 21:13:58 INFO    src.eval.runner | sweep DONE: 350 total runs, 3827s wall
+2026-04-26 21:13:58 INFO    src.eval.runner | track=en_subset items=100 SUT=eeve_10b
+This is a friendly reminder - the current text generation call has exceeded the model's predefined maximum length (4096). Depending on the model, you may observe exceptions, performance degradation, or nothing at all.
+2026-04-26 21:50:38 INFO    src.eval.runner | runs=20  elapsed=2200s  rate=0.01/s
+2026-04-26 22:04:20 INFO    src.eval.runner | runs=40  elapsed=3022s  rate=0.01/s
+2026-04-26 22:18:46 INFO    src.eval.runner | runs=60  elapsed=3888s  rate=0.02/s
+2026-04-26 22:36:47 INFO    src.eval.runner | runs=80  elapsed=4969s  rate=0.02/s
+2026-04-26 22:50:54 INFO    src.eval.runner | runs=100  elapsed=5816s  rate=0.02/s
+2026-04-26 23:24:11 INFO    src.eval.runner | runs=120  elapsed=7813s  rate=0.02/s
+2026-04-27 00:02:57 INFO    src.eval.runner | runs=140  elapsed=10139s  rate=0.01/s
+2026-04-27 00:37:50 INFO    src.eval.runner | runs=160  elapsed=12232s  rate=0.01/s
+2026-04-27 01:20:00 INFO    src.eval.runner | runs=180  elapsed=14762s  rate=0.01/s
+2026-04-27 02:25:11 INFO    src.eval.runner | runs=200  elapsed=18673s  rate=0.01/s
+2026-04-27 03:34:45 INFO    src.eval.runner | runs=220  elapsed=22847s  rate=0.01/s

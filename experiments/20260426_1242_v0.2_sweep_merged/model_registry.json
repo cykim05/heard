@@ -1,0 +1,90 @@
+[
+  {
+    "name": "kanana_nano",
+    "hf_id": "kakaocorp/kanana-1.5-2.1b-instruct-2505",
+    "quantization": "fp16",
+    "revision": null,
+    "device": "cuda",
+    "params_billion": 2.087
+  },
+  {
+    "name": "kanana_nano_int4",
+    "hf_id": "kakaocorp/kanana-1.5-2.1b-instruct-2505",
+    "quantization": "int4",
+    "revision": null,
+    "device": "cuda",
+    "params_billion": 1.158
+  },
+  {
+    "name": "kanana_8b",
+    "hf_id": "kakaocorp/kanana-1.5-8b-instruct-2505",
+    "quantization": "fp16",
+    "revision": null,
+    "device": "cuda",
+    "params_billion": 8.03
+  },
+  {
+    "name": "qwen25_3b",
+    "hf_id": "Qwen/Qwen2.5-3B-Instruct",
+    "quantization": "fp16",
+    "revision": null,
+    "device": "cuda",
+    "params_billion": 3.086
+  },
+  {
+    "name": "qwen25_3b_int4",
+    "hf_id": "Qwen/Qwen2.5-3B-Instruct",
+    "quantization": "int4",
+    "revision": null,
+    "device": "cuda",
+    "params_billion": 1.699
+  },
+  {
+    "name": "hclova_seed_15b",
+    "hf_id": "naver-hyperclovax/HyperCLOVAX-SEED-Text-Instruct-1.5B",
+    "quantization": "fp16",
+    "revision": null,
+    "device": "cuda",
+    "params_billion": 1.586
+  },
+  {
+    "name": "hclova_seed_15b_int4",
+    "hf_id": "naver-hyperclovax/HyperCLOVAX-SEED-Text-Instruct-1.5B",
+    "quantization": "int4",
+    "revision": null,
+    "device": "cuda",
+    "params_billion": 0.906
+  },
+  {
+    "name": "bllossom_8b",
+    "hf_id": "MLP-KTLim/llama-3-Korean-Bllossom-8B",
+    "quantization": "fp16",
+    "revision": null,
+    "device": "cuda",
+    "params_billion": 8.03
+  },
+  {
+    "name": "open_ko_8b",
+    "hf_id": "beomi/Llama-3-Open-Ko-8B-Instruct-preview",
+    "quantization": "fp16",
+    "revision": null,
+    "device": "cuda",
+    "params_billion": 8.03
+  },
+  {
+    "name": "kanana_8b_int4",
+    "hf_id": "kakaocorp/kanana-1.5-8b-instruct-2505",
+    "quantization": "int4",
+    "revision": null,
+    "device": "cuda",
+    "params_billion": 4.541
+  },
+  {
+    "name": "qwen25_7b",
+    "hf_id": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "fp16",
+    "revision": null,
+    "device": "cuda",
+    "params_billion": 7.616
+  }
+]

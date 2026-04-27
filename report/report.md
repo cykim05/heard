@@ -1,4 +1,4 @@
-# Heard v0.1: A Korean Long-Term Memory Benchmark and On-Device Retrieval Pipeline for Solo-Business Monologue
+# Heard v0.1 → v0.2: A Korean Long-Term Memory Benchmark and On-Device Retrieval Pipeline for Solo-Business Monologue
 
 **Chanyoung Kim** · NLP Term Project Part 2 · 2026-04-28
 
@@ -32,14 +32,33 @@ personas, adversarially filtered against no-memory baselines,
 4-gate auto-validated, and author-reviewed. The dataset is released
 on HuggingFace under CC-BY-4.0.
 
-On the resulting benchmark, dense retrieval lifts Kanana-2.1B's
-ko_native pass rate from 4.7% (no memory) to 10.9% (retrieval) to
-15.6% (oracle), a 3.3× end-to-end gain. Pass rate decays
-monotonically across language tracks (ko_native 10.9%, ko_translated
-5.0%, en_subset 0.0%), establishing Korean-native data as necessary
-rather than optional. A reflective policy dominates an advisory
-baseline on emotional attunement (82 of 96 wins) and open-question
-framing (88 of 96) across 96 pairwise judge decisions.
+On the resulting benchmark, the v0.2 sweep evaluates eleven SUT
+configurations across four model families (Kanana 1.5, Qwen 2.5,
+HyperCLOVA-X SEED, and the Korean-tuned Llama 3 derivatives
+Bllossom and Open-Ko), three parameter scales (1.5–8 B), and a
+4-bit-NF4 quantization axis applied wherever the model fits within
+a 30 GB memory budget. The sweep totals 14,850 SUT generations and
+2,112 pairwise judge verdicts.
+
+Three results are robust across the lineup. First, dense retrieval
+lifts contains-pass on `ko_native` for every configuration (mean
++11.8 pp `retrieval`−`no_node`, minimum +6.2 pp, no negative
+deltas), with the on-device 2.1 B target named in Part 1
+(`kanana_nano`) following the canonical 4.7 % → 10.9 % → 15.6 %
+trajectory. Second, the reflective policy dominates the advisory
+baseline on every rubric across 528 pairwise judge decisions per
+rubric, with the two "mirror, do not advise" rubrics — emotional
+attunement and open-question framing — landing at 88.1 % and
+88.3 % reflective share. Third, the language-axis ordering
+en_subset ≤ ko_translated < ko_native is preserved by ten of
+eleven SUTs, establishing Korean-native data as necessary rather
+than optional. The strongest single configurations on `ko_native`
+retrieval are `kanana_nano_int4` (20.3 %, but borderline-noise
+under paired analysis), `kanana_8b` and `kanana_8b_int4` (18.8 %),
+and `open_ko_8b` (17.2 %); combining retrieval pass, reflective
+share, latency, and quantization sensitivity, we recommend
+`kanana_8b` as the v0.2 default deployment SUT for the *Heard*
+product.
 
 ![Heard v0.1 overview — pipeline and headline results.](figures/fig_overview.jpg){#fig:overview}
 
@@ -298,18 +317,91 @@ take cosine top-5. The index is per-persona for ko_native
 (~680 utterances each) and per-item for en_subset and
 ko_translated (~50 sessions per item).
 
-### 2.4 SUTs (systems under test)
+### 2.4 Systems under test
 
-| Logical | HF id | Params | Quant |
-|---|---|---:|---|
-| kanana_nano | `kakaocorp/kanana-1.5-2.1b-instruct-2505` | 2.09 B | fp16 |
-| qwen25_3b   | `Qwen/Qwen2.5-3B-Instruct`                | 3.09 B | fp16 |
+The v0.1 sweep evaluated two SUTs (`kanana_nano` and `qwen25_3b`,
+both fp16), and the v0.2 expansion this report describes runs the
+strict superset shown in Table A. The two v0.1 rows are retained
+verbatim in the table for continuity; reading the table top-to-
+bottom recovers the v0.1 sweep, while reading all eleven rows
+gives the v0.2 sweep. All configurations run sequentially on a
+single NVIDIA L40S 48 GB, with the embedder and the SUT
+co-resident in memory; the listed memory budget for int4 is the
+observed peak during the sweep run.
 
-Both SUTs run on a single NVIDIA L40S 48 GB, sequentially loaded.
-Models excluded from v0.1: EXAONE-3.5 and HyperCLOVA-X-SEED
-(requiring additional license acceptance), Gemma-2 (gated), the
-int4 quantization axis, and Kanana-8B as reference ceiling. All
-are concrete v2 items.
+**Table A.** *SUT lineup (v0.2 = strict superset of v0.1).
+Configurations marked v0.1 are the two-SUT reference set from the
+v0.1 release (results archived under
+`experiments/20260423_1610_day3_sweep/`); all eleven rows are
+evaluated in §3.1–§3.5 of this report.*
+
+| Logical | HF id | Params | Quant | License | Sweep |
+|---|---|---:|---|---|:---:|
+| kanana_nano          | `kakaocorp/kanana-1.5-2.1b-instruct-2505`             | 2.09 B | fp16 | Apache-2.0 | v0.1, v0.2 |
+| qwen25_3b            | `Qwen/Qwen2.5-3B-Instruct`                            | 3.09 B | fp16 | Apache-2.0 | v0.1, v0.2 |
+| kanana_nano_int4     | `kakaocorp/kanana-1.5-2.1b-instruct-2505`             | 2.09 B | int4 | Apache-2.0 | v0.2 |
+| kanana_8b            | `kakaocorp/kanana-1.5-8b-instruct-2505`               | 8.03 B | fp16 | Apache-2.0 | v0.2 |
+| kanana_8b_int4       | `kakaocorp/kanana-1.5-8b-instruct-2505`               | 8.03 B | int4 | Apache-2.0 | v0.2 |
+| hclova_seed_15b      | `naver-hyperclovax/HyperCLOVAX-SEED-Text-Instruct-1.5B` | 1.59 B | fp16 | HCX-SEED-Public (gated) | v0.2 |
+| hclova_seed_15b_int4 | `naver-hyperclovax/HyperCLOVAX-SEED-Text-Instruct-1.5B` | 1.59 B | int4 | HCX-SEED-Public (gated) | v0.2 |
+| qwen25_3b_int4       | `Qwen/Qwen2.5-3B-Instruct`                            | 3.09 B | int4 | Apache-2.0 | v0.2 |
+| qwen25_7b            | `Qwen/Qwen2.5-7B-Instruct`                            | 7.62 B | fp16 | Apache-2.0 | v0.2 |
+| bllossom_8b          | `MLP-KTLim/llama-3-Korean-Bllossom-8B`                | 8.03 B | fp16 | Llama-3 Community | v0.2 |
+| open_ko_8b           | `beomi/Llama-3-Open-Ko-8B-Instruct-preview`           | 8.03 B | fp16 | Llama-3 Community | v0.2 |
+
+The v0.2 sweep extends the v0.1 lineup along three axes: a third
+parameter decade (`hclova_seed_15b` at 1.5 B and `kanana_8b` at
+8 B), a model-architecture axis (the Korean-tuned Llama 3
+derivatives `bllossom_8b` and `open_ko_8b`), and a 4-bit-NF4
+quantization axis on the four configurations that fit under a
+30 GB memory budget. HyperCLOVA-X SEED 1.5B was admitted once
+HuggingFace gated-access approval was granted. Three further
+SUTs were attempted but dropped: `LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct`
+(the installed `transformers` 4.57.6 lacks the `RopeParameters`
+symbol the EXAONE config imports), `yanolja/EEVE-Korean-Instruct-10.8B-v1.0`,
+and `upstage/SOLAR-10.7B-Instruct-v1.0` (fp16 throughput too low
+under the reflective policy to finish within the wall-clock budget,
+≈47 and ≈200 generations per hour respectively); all three remain
+v0.3 candidates.
+
+**Per-family description.** Four model families participate in the
+v0.2 sweep, each chosen for a specific role.
+
+- **Kakao Kanana 1.5 (Apache-2.0).** Kanana-1.5-2.1B is the
+  primary on-device target for the *Heard* product and the SUT
+  whose v0.1 numbers anchor §3.1; the 8B sibling Kanana-1.5-8B is
+  included as an in-family reference ceiling. Both are
+  Korean-native instruction-tuned models from Kakao, available
+  under a permissive Apache-2.0 license that does not restrict
+  redistribution of model output.
+- **NAVER HyperCLOVA-X SEED (HCX-SEED-Public, gated).**
+  HyperCLOVAX-SEED-Text-Instruct-1.5B is NAVER's smallest
+  Korean-native instruction model and the lightest configuration
+  in the lineup at 1.59 B. Its license requires HuggingFace
+  gated-access approval, which was granted to the runtime account
+  on 2026-04-26; outputs are retained in `experiments/` and the
+  model is not redistributed by this report.
+- **Alibaba Qwen 2.5 (Apache-2.0).** Qwen 2.5-3B and Qwen 2.5-7B
+  are multilingual instruction-tuned baselines, included to
+  measure how much a strong general multilingual model can close
+  the gap against a Korean-native model on Korean-language
+  evaluation. The 3B variant anchors v0.1 alongside Kanana 2.1B;
+  the 7B variant tests whether scaling the multilingual baseline
+  catches up to Korean-native specialists at similar parameter
+  count.
+- **Korean-tuned Llama 3 derivatives (Llama-3 Community License).**
+  Bllossom-8B and Open-Ko-8B are independent Korean fine-tunes of
+  Meta Llama 3 8B, released by MLP-KTLim and `beomi` respectively.
+  They test whether a Korean fine-tune of a stronger non-Korean
+  base outperforms a Korean-native model at the same parameter
+  count; the Llama-3 Community License permits research use and
+  redistribution under attribution and naming rules that we
+  preserve in the repository's `NOTICE` file.
+
+The retriever is shared across all SUTs:
+[`intfloat/multilingual-e5-small`](https://huggingface.co/intfloat/multilingual-e5-small)
+(MIT, 118 M parameters), with mean-pooled L2-normalized
+embeddings and a top-5 cosine policy as described in §2.3.
 
 ### 2.5 MIRROR policies
 
@@ -410,121 +502,363 @@ per-SUT model revisions) are committed under
 
 ## 3 Results
 
-The headline results are summarized in the bottom band of Figure 1
-and in Figure 2 below; detailed ability and latency analyses appear
-in Figure 3. Each panel of Figures 2–3 is referenced from the
-relevant subsection.
+We report results from the v0.2 expanded sweep, which evaluates
+all eleven SUT configurations of Table A on the full v0.1 dataset
+under both advisory and reflective policies. Numbers are organized
+around the five Tables 1–6 introduced below; Figure 2 visualizes
+the three primary findings.
 
-![Main results: NODE lift, language axis, and reflective wins.](figures/fig_main_results.png){#fig:main}
+![v0.2 results across eleven SUTs: (a) NODE lift on `ko_native`, (b) reflective-share per SUT from the pairwise judge, (c) fp16 vs int4 paired contains-pass with item-level discordance.](figures/fig_v02_results.png){#fig:v02}
 
-**Figure 2.** *Main results, arranged as three side-by-side 7 × 9
-panels.* **Panel (a) — NODE lift on ko_native.** For each SUT
-(Kanana 2.1B in blue, Qwen 2.5 3B in sage, hatched), pass rate
-under advisory policy is shown at three conditions: `no_node`,
-`retrieval`, and `oracle`. Kanana's monotonic
-4.7% → 10.9% → 15.6% progression gives the headline ×3.3
-end-to-end lift annotated with an arrow; the blue-to-green color
-shift tracks the stronger memory signal. **Panel (b) — Language
-axis.** Kanana's retrieval pass rate decays monotonically across
-`en_subset` (0.0%), `ko_translated` (5.0%), and `ko_native`
-(10.9%), establishing that Korean-native data is not optional for
-a Korean on-device assistant. **Panel (c) — Reflective
-dominance.** Each stacked bar aggregates 96 pairwise judge
-decisions (two SUTs × two conditions × two judges × two A/B swaps
-× six REFL items) for one of four rubrics: specificity,
-non-directive, emotional attunement, and open question. The red
-(reflective wins) segment dominates every rubric; its share is
-printed in white at the center of each bar.
+**Figure 2.** *v0.2 results, three side-by-side panels.*
+**Panel (a) — NODE lift on `ko_native`.** Eleven v0.2 SUTs,
+sorted left-to-right by retrieval pass rate, with grouped bars
+for the three memory conditions (`no_node` grey, `retrieval` blue,
+`oracle` sage). Every SUT records a positive
+`retrieval`−`no_node` delta; the strongest configuration
+(`kanana_nano_int4`) ties retrieval and oracle at 20.3 %.
+**Panel (b) — Reflective share per SUT.** Each horizontal bar
+aggregates 192 pairwise judge decisions per SUT (4 rubrics × 6
+REFL items × 2 conditions × 2 judges × 2 A/B swaps); the red
+segment is reflective wins, the tan segment advisory, the light
+grey segment ties. Reflective share spans 58 % (`open_ko_8b`) to
+88 % (`kanana_8b`). **Panel (c) — fp16 vs int4 paired.** For each
+of the four SUT families with both quantizations, the two bars
+show contains-pass on `ko_native` retrieval (n = 64 paired items);
+the annotation above each pair gives the item-level discordance —
+items where exactly one quantization passed — together with the
+McNemar z-score. Three of four pairs have z ≤ 1.13; only Kanana
+2.1B reaches a marginal z = 1.90.
 
-### 3.1 NODE contribution (ko_native pass rate)
+### 3.1 NODE lift across the v0.2 lineup (Table 1)
+
+The first headline result is that dense embedding retrieval lifts
+contains-pass on `ko_native` for every SUT in the lineup. Table 1
+gives the per-SUT, per-condition pass rate under the advisory
+policy (n = 64 non-REFL items per cell, sorted by retrieval pass
+rate descending); Figure 2(a) is a graphical rendering of the
+same data.
+
+**Table 1.** *Advisory pass rate on `ko_native`, contains-token
+metric, n = 64. Sorted by `retrieval`.*
+
+| SUT | no_node | retrieval | oracle | Δ retrieval−no_node |
+|---|---:|---:|---:|---:|
+| kanana_nano_int4      | 6.2% | **20.3%** | 20.3% | +14.1 pp |
+| kanana_8b             | 1.6% |    18.8%  |  7.8% | +17.2 pp |
+| kanana_8b_int4        | 0.0% |    18.8%  | 10.9% | +18.8 pp |
+| open_ko_8b            | 6.2% |    17.2%  | 12.5% | +11.0 pp |
+| bllossom_8b           | 3.1% |    15.6%  |  9.4% | +12.5 pp |
+| hclova_seed_15b_int4  | 0.0% |    15.6%  | 14.1% | +15.6 pp |
+| qwen25_3b             | 3.1% |    12.5%  | 10.9% |  +9.4 pp |
+| qwen25_3b_int4        | 1.6% |    12.5%  | 10.9% | +10.9 pp |
+| hclova_seed_15b       | 3.1% |    10.9%  |  7.8% |  +7.8 pp |
+| kanana_nano           | 4.7% |    10.9%  | 15.6% |  +6.2 pp |
+| qwen25_7b             | 4.7% |    10.9%  |  6.2% |  +6.2 pp |
+
+The retrieval lift is universal across the lineup. The mean
+`retrieval`−`no_node` delta is +11.8 pp and the minimum is +6.2 pp
+(`kanana_nano` and `qwen25_7b`); no configuration regresses with
+retrieval relative to the memoryless baseline. The Korean-native
+families (Kanana 1.5 and HyperCLOVA-X SEED) and the Korean-tuned
+Llama 3 derivatives populate the top half of the table; the
+multilingual Qwen 2.5 baselines remain mid-pack and never lead.
+The strongest single configuration is `kanana_nano_int4` at
+20.3 % retrieval, followed by `kanana_8b` and `kanana_8b_int4`
+at 18.8 %. The on-device 2.1 B target named in Part 1 of the
+proposal — `kanana_nano` — sits at 10.9 % retrieval (4.7 % no_node,
+15.6 % oracle), preserving the v0.1 headline trajectory of
+4.7 % → 10.9 % → 15.6 % as a within-table reference point.
+
+A second pattern in Table 1 is that retrieval and oracle no
+longer move in lockstep across the lineup. Five of eleven
+configurations record `oracle` strictly below `retrieval`,
+including the strongest large model `kanana_8b` (7.8 % oracle vs
+18.8 % retrieval). The regression is concentrated in the 7–8 B
+SUTs and is absent in the smallest (`kanana_nano`,
+`hclova_seed_15b`); we read this as evidence that long oracle
+prompts (up to k × 3 = 15 evidence documents) push larger SUTs
+into a long-context summarization mode that recapitulates the
+evidence rather than answering the question. We previously
+discussed this effect, on Qwen 2.5 3B alone, in §4.2 of v0.1; the
+v0.2 expansion shows it generalizes well beyond Qwen and is
+worth treating as a first-class artifact rather than a model-
+specific anomaly. A natural mitigation is an "answer-first"
+prompt guardrail; we leave it to v0.3 because its evaluation
+requires re-running the oracle column rather than re-aggregating
+existing data.
+
+### 3.2 Quantization axis (Table 2; Figure 2c)
+
+Four SUT families admit a 4-bit-NF4 quantization variant under
+the 30 GB memory budget; Table 2 contrasts their fp16 and int4
+pass rates and latencies on the `ko_native` retrieval cell, and
+Figure 2(c) renders the corresponding paired item-level
+analysis. The aggregate reading from the marginal table is that
+the two smallest SUTs gain materially under int4 (Kanana 2.1B
++9.4 pp, HyperCLOVA-X SEED 1.5B +4.7 pp) while the two larger
+SUTs are unchanged. We argue below that this aggregate reading
+overstates the int4 effect.
+
+**Table 2.** *int4 vs fp16 on `ko_native` retrieval (advisory).
+Δpass = int4 − fp16 in percentage points; latencies are mean
+seconds per generation across n = 64.*
+
+| SUT family | fp16 pass | int4 pass | Δpass | fp16 latency | int4 latency |
+|---|---:|---:|---:|---:|---:|
+| kanana_nano (2.1 B)        | 10.9 % | 20.3 % | **+9.4 pp** | 2.54 s | 5.22 s |
+| hclova_seed_15b (1.5 B)    | 10.9 % | 15.6 % | **+4.7 pp** | 1.83 s | 3.45 s |
+| kanana_8b (8.0 B)          | 18.8 % | 18.8 % |   0.0 pp    | 3.73 s | 3.60 s |
+| qwen25_3b (3.0 B)          | 12.5 % | 12.5 % |   0.0 pp    | 2.66 s | 4.81 s |
+
+A paired item-level analysis modulates the marginal +9.4 pp and
++4.7 pp gains substantially. For each of the four SUT families,
+we count the items where fp16 and int4 disagree — items where
+exactly one of the two quantizations passed contains-token — and
+apply a McNemar two-sided z test. The discordance counts and
+z-scores reported in Figure 2(c) are: Kanana 2.1B int4 8 / fp16 2
+(z = 1.90, p ≈ 0.06), HyperCLOVA-X SEED 1.5B int4 5 / fp16 2
+(z = 1.13), Kanana 8B int4 1 / fp16 1 (z = 0), Qwen 2.5 3B int4 3
+/ fp16 3 (z = 0). Only Kanana 2.1B reaches marginal significance,
+and even that result rests on a 6-item swing within a 64-item
+denominator with base pass rate near 15 %, where the standard
+error of a single configuration's pass rate is approximately
+±5 pp. The +4.7 pp HyperCLOVA-X SEED gain is not significant.
+
+A second confound is decoding behavior. Mean response length on
+`ko_native` retrieval is 261 characters for `hclova_seed_15b`
+fp16 and 401 characters for `hclova_seed_15b_int4`; the int4
+variant produces responses ≈ 1.5× longer on average, while
+Kanana 8B and Qwen 3B produce responses of statistically
+indistinguishable length under the two quantizations (243 vs
+226 chars and 244 vs 239 chars respectively). Because contains-
+token is a substring metric, longer responses are mechanically
+more likely to contain the gold tokens by coincidence; the
+HyperCLOVA-X SEED int4 gain is therefore at least partially a
+length artifact rather than evidence of better question
+answering. We do not have an analogous length explanation for
+the Kanana 2.1B gain (mean lengths 316 vs 322 chars), where the
+discordance is genuinely paired but borderline-significant.
+
+The latency story is uncomplicated: int4 is *not* faster than
+fp16 on this hardware. Three of four SUT families show int4
+latency 1.3–2.0× longer than fp16, and only `kanana_8b` is
+neutral (3.60 s vs 3.73 s). The slowdown is consistent with the
+known dequantization overhead of bitsandbytes-NF4 on short
+generations — the per-token saving from the smaller weight
+matrix is offset by the per-generation fixed cost of unpacking
+4-bit integers into half-precision compute — and is in line with
+the published benchmarks for this quantizer. For decision-moment
+assistants where the relevant deployment budget is GPU memory
+rather than wall-clock latency (an L40S can otherwise hold a
+fp16 8 B SUT and the retriever simultaneously, so the memory
+saving matters most below the L40S class), int4 remains an
+attractive option for the small Korean-native SUTs and a neutral
+option for the larger ones. We do *not* read the small-model
+contains-pass gains as evidence of better question answering
+under int4; they are best read as borderline-significant decoding
+artifacts in a 64-item benchmark.
+
+### 3.3 Cross-track language axis (Table 4)
+
+Table 4 reports advisory retrieval pass rate across the three
+heard-bench tracks for all eleven SUTs, generalizing the v0.1
+single-SUT language-axis report. The denominators are the
+per-track non-REFL counts established in §2.2: 64 on `ko_native`,
+100 on `en_subset` and `ko_translated`.
+
+**Table 4.** *Cross-track advisory retrieval pass rate, contains-
+token metric. Sorted by `ko_native`.*
+
+| SUT | en_subset | ko_translated | ko_native |
+|---|---:|---:|---:|
+| kanana_nano_int4      | 0.0 % | 6.0 % | **20.3 %** |
+| kanana_8b             | 2.0 % | 5.0 % |   18.8 %   |
+| kanana_8b_int4        | 0.0 % | 2.0 % |   18.8 %   |
+| open_ko_8b            | 2.0 % | 2.0 % |   17.2 %   |
+| bllossom_8b           | 2.0 % | 4.0 % |   15.6 %   |
+| hclova_seed_15b_int4  | 0.0 % | 2.0 % |   15.6 %   |
+| qwen25_3b             | 0.0 % | 2.0 % |   12.5 %   |
+| qwen25_3b_int4        | 0.0 % | 1.0 % |   12.5 %   |
+| hclova_seed_15b       | 0.0 % | 1.0 % |   10.9 %   |
+| kanana_nano           | 0.0 % | 5.0 % |   10.9 %   |
+| qwen25_7b             | 1.0 % | 2.0 % |   10.9 %   |
+
+The v0.1 language-axis ordering en_subset ≤ ko_translated <
+ko_native is preserved by ten of eleven configurations
+(`open_ko_8b` ties en_subset and ko_translated at 2.0 %). Mean
+pass rates over the lineup are 0.6 % on en_subset, 2.9 % on
+ko_translated, and 14.8 % on ko_native — a 25× gap between the
+two endpoints. The multilingual Qwen 2.5 baselines do not close
+the en_subset gap despite English being their native training
+distribution, which we attribute to the LongMemEval haystack
+length (sessions span hundreds of utterances per item) and the
+absence of session-level retrieval in our pipeline; this is the
+v0.1 limitation we discuss in §4.4 and is unchanged in v0.2.
+A second observation is that ko_translated sits closer to
+en_subset than to ko_native across the board even though the
+question and gold answer are in Korean — confirming the
+ADR-0003 hypothesis that haystack language dominates for this
+kind of task and motivating a future `ko_translated_full` track
+that translates the haystack as well as the question.
+
+### 3.4 Reflective policy: contains-token neutrality and pairwise dominance (Tables 3, 5, 6; Figure 2b)
+
+We measure the reflective policy along two axes: contains-token
+accuracy (does the reflective response still surface the gold
+substring?) and the pairwise reflective-quality judge described
+in §2.7 (does it sound more like a mirror?). The contains-token
+view (Table 3) shows the policy is approximately accuracy-
+neutral; the pairwise view (Tables 5 and 6, Figure 2b) shows it
+dominates on the qualitative rubrics that operationalize the
+"mirror, do not advise" thesis.
+
+**Table 3.** *Reflective − Advisory contains-pass on `ko_native`
+retrieval, percentage points.*
+
+| SUT | advisory | reflective | Δ (refl − adv) |
+|---|---:|---:|---:|
+| bllossom_8b           | 15.6 % | **28.1 %** | **+12.5 pp** |
+| kanana_nano           | 10.9 % | **20.3 %** | **+9.4 pp**  |
+| qwen25_7b             | 10.9 % | 14.1 %     |  +3.1 pp     |
+| kanana_8b             | 18.8 % | 21.9 %     |  +3.1 pp     |
+| kanana_8b_int4        | 18.8 % | 18.8 %     |   0.0 pp     |
+| qwen25_3b_int4        | 12.5 % | 10.9 %     |  −1.6 pp     |
+| hclova_seed_15b       | 10.9 % |  9.4 %     |  −1.6 pp     |
+| hclova_seed_15b_int4  | 15.6 % | 12.5 %     |  −3.1 pp     |
+| qwen25_3b             | 12.5 % |  9.4 %     |  −3.1 pp     |
+| kanana_nano_int4      | 20.3 % | 17.2 %     |  −3.1 pp     |
+| open_ko_8b            | 17.2 % | 10.9 %     |  −6.2 pp     |
+
+Across eleven SUTs the mean contains-pass shift from advisory to
+reflective is +0.9 pp with median 0.0 pp, four positive deltas,
+two zero, and five negative; the spread (−6.2 to +12.5 pp) is
+within the noise band one would expect from a 64-item
+denominator. We read the policy as accuracy-neutral on the
+contains-token metric — the hard constraints (cite a memory
+verbatim, no imperatives, end with an open question) do not
+prevent the SUT from surfacing the gold substring, they merely
+route it through a different stylistic shell.
+
+The pairwise judge measures the value of that shell directly.
+Each (item, SUT, condition) triple where both advisory and
+reflective responses exist is scored under two judges (`gpt-4o-
+mini`, `claude-haiku-4.5`) with A/B-swap symmetrization on each
+of four rubrics (specificity, non-directive, emotional
+attunement, open question). The v0.2 sweep yields 132 valid
+triples (eleven SUTs × six REFL items × two retrieval-augmented
+conditions; reflective × `no_node` is excluded by the runner
+because the two policies degenerate without retrieved context),
+and 132 × 2 × 2 × 4 = 2,112 verdicts in total. Table 5 sums
+verdicts across all SUTs and conditions per rubric; Table 6 sums
+across all conditions and rubrics per SUT (n = 192 decisions per
+SUT).
+
+**Table 5.** *Pairwise judge totals per rubric, summed across all
+eleven SUTs and both retrieval-augmented conditions. Each rubric
+column sums to 528 = 11 SUTs × 2 conditions × 6 REFL items × 2
+judges × 2 A/B swaps.*
+
+| Rubric | Advisory wins | Reflective wins | Tie | Reflective share |
+|---|---:|---:|---:|---:|
+| specificity            | 158 | 348 | 22 | 65.9 % |
+| non_directive          | 178 | 350 |  0 | 66.3 % |
+| emotional_attunement   |  32 | **465** | 31 | **88.1 %** |
+| open_question          |  33 | **466** | 29 | **88.3 %** |
+
+**Table 6.** *Reflective share per SUT, summed across both
+conditions and all four rubrics (n = 192 decisions per SUT).
+Sorted by reflective share.*
+
+| SUT | Advisory wins | Reflective wins | Tie | Reflective share |
+|---|---:|---:|---:|---:|
+| kanana_8b             | 22 | **168** |  2 | **87.5 %** |
+| kanana_8b_int4        | 26 | 165     |  1 | 85.9 %     |
+| hclova_seed_15b       | 28 | 160     |  4 | 83.3 %     |
+| qwen25_7b             | 28 | 158     |  6 | 82.3 %     |
+| kanana_nano           | 35 | 149     |  8 | 77.6 %     |
+| kanana_nano_int4      | 38 | 148     |  6 | 77.1 %     |
+| hclova_seed_15b_int4  | 35 | 148     |  9 | 77.1 %     |
+| qwen25_3b             | 37 | 147     |  8 | 76.6 %     |
+| qwen25_3b_int4        | 40 | 140     | 12 | 72.9 %     |
+| bllossom_8b           | 49 | 134     |  9 | 69.8 %     |
+| open_ko_8b            | 63 | 112     | 17 | 58.3 %     |
+
+The reflective policy wins every rubric by a clear margin; the
+two rubrics that operationalize the "mirror, do not advise"
+thesis — emotional attunement and open-question framing — land at
+88.1 % and 88.3 % reflective share respectively, recovering the
+v0.1 numbers (82/96 ≈ 85 % and 88/96 ≈ 92 %) under a 5.5×-larger
+sample. Specificity and non-directive remain tighter at 66 %; the
+advisory policy occasionally wins on specificity by virtue of
+being less constrained in surface form, and on non-directive by
+accident when the advisory generation phrases a recommendation as
+a question.
+
+The per-SUT view is more discriminating than the per-rubric
+average. Reflective share spans 58.3 % (`open_ko_8b`) to 87.5 %
+(`kanana_8b`); every SUT has the reflective policy ahead, but the
+margin varies considerably. The two strongest SUTs on this
+metric are the Kanana 8B family (fp16 87.5 %, int4 85.9 %), and
+the two weakest are the Korean-tuned Llama 3 derivatives
+(`bllossom_8b` 69.8 %, `open_ko_8b` 58.3 %). We attribute the
+Llama-3-derivative weakness to a stronger advisory baseline
+rather than weaker reflective output: `bllossom_8b` and
+`open_ko_8b` accumulate the highest advisory-win counts in the
+lineup (49 and 63 respectively, against ≤ 40 elsewhere),
+indicating these models follow advisory imperative templates
+more willingly than the Kanana / Qwen / HyperCLOVA-X families.
+The reflective policy still wins, but it is competing against a
+more imperatively-styled advisory response and the margin
+narrows.
+
+### 3.5 Latency and SUT recommendation
+
+Table 7 summarizes mean per-generation latency on `ko_native`
+across all eleven SUTs and three conditions, on a single L40S 48
+GB. The table is the v0.2 analogue of the v0.1 Pareto plot, but
+without the figure: with eleven SUTs in two parameter decades, a
+scatter plot is no longer a clean visual.
+
+**Table 7.** *Mean wall-clock latency per response (s) on
+`ko_native`, advisory policy.*
 
 | SUT | no_node | retrieval | oracle |
 |---|---:|---:|---:|
-| kanana_nano (2.1 B) | 4.7% | 10.9% | 15.6% |
-| qwen25_3b (3.0 B)   | 3.1% | 12.5% | 10.9% |
+| hclova_seed_15b      | 1.78 | 1.83 | 1.78 |
+| kanana_nano          | 2.25 | 2.54 | 2.40 |
+| qwen25_3b            | 1.90 | 2.66 | 2.16 |
+| qwen25_7b            | 2.74 | 3.15 | 2.58 |
+| kanana_8b            | 3.25 | 3.73 | 3.27 |
+| kanana_8b_int4       | 3.17 | 3.60 | 3.29 |
+| hclova_seed_15b_int4 | 3.37 | 3.45 | 3.37 |
+| open_ko_8b           | 3.41 | 3.87 | 3.63 |
+| qwen25_3b_int4       | 4.07 | 4.81 | 4.01 |
+| bllossom_8b          | 4.90 | 4.94 | 4.91 |
+| kanana_nano_int4     | 4.83 | 5.22 | 5.05 |
 
-Kanana shows the monotonic progression we predicted: memory
-doubles pass rate over a memoryless baseline, and the oracle
-upper bound extends another 1.4× beyond the retriever. The
-five-point gap between retrieval and oracle is the retriever's
-headroom against perfect recall. Denominator is 64 non-REFL
-items, so Kanana solves 3, 7, and 10 of them as memory
-conditions strengthen.
+Latencies range from 1.78 s (`hclova_seed_15b` no_node) to 5.22 s
+(`kanana_nano_int4` retrieval). The lineup splits roughly into a
+sub-3 s tier (the Korean-native fp16 SUTs at 1.5–8 B) and a 3–5 s
+tier (most int4 variants and the Llama 3 derivatives). All SUTs
+remain within the rough on-device latency budget of 5–7 s for a
+decision-moment assistant operating at human conversational
+pacing.
 
-Qwen-3B does not follow the same progression; its oracle
-condition underperforms its retrieval condition (10.9% vs 12.5%).
-One hypothesis is a summarization bias under long oracle contexts,
-where Qwen appears to recapitulate the evidence sessions rather
-than answering the today-question. We return to this in §4.2,
-where a simple prompt guardrail is the expected fix.
-
-### 3.2 Language axis (Kanana retrieval)
-
-| Track | Pass rate |
-|---|---:|
-| en_subset     |  0.0% |
-| ko_translated |  5.0% |
-| ko_native     | 10.9% |
-
-Kanana is a Korean-native 2.1 B SUT, so performance on raw English
-haystacks (en_subset) collapses even with retrieval; KO-question
-over EN-haystack (ko_translated) is a midpoint; fully Korean
-(ko_native) gives the best signal. The progression supports
-Korean-native data as a requirement rather than a preference.
-
-### 3.3 Reflective vs advisory (pairwise judge)
-
-| Rubric | Advisory wins | Reflective wins | Tie |
-|---|---:|---:|---:|
-| specificity           | 31 | 60 | 5 |
-| non_directive         | 29 | 67 | 0 |
-| emotional_attunement |  6 | 82 | 8 |
-| open_question        |  5 | 88 | 3 |
-
-Summed across both SUTs and both retrieval and oracle conditions,
-the reflective policy wins every rubric. The advisory-vs-reflective
-gap is largest on the two rubrics that operationalize the "mirror,
-do not advise" thesis: emotional attunement at 85% reflective and
-open-question framing at 92%. Specificity and non-directive win by
-tighter but still clearly one-sided margins.
-
-### 3.4 Ability breakdown and latency
-
-![Ability breakdown, latency by condition, and Pareto plane.](figures/fig_ability_latency.png){#fig:details}
-
-**Figure 3.** *Ability, latency, and Pareto view on ko_native
-retrieval.* **Panel (d) — Ability breakdown.** Retrieval pass
-rate on ko_native split across the five non-REFL abilities
-(IE / MR / KU / TR / ABS) for each SUT. Gains concentrate on the
-factual axes (IE, TR, KU, MR), and abstention (ABS) stays at 0 for
-both SUTs — cosine retrieval always returns a neighbor, which
-encourages hallucinated confirmation instead of refusal. **Panel
-(e) — Latency by condition.** Mean wall-clock response latency per
-SUT × condition on a single NVIDIA L40S. All bars stay under
-2.7 s, comfortably inside the latency budget for a decision-moment
-assistant. Oracle bars are slightly taller than the corresponding
-retrieval bars because the prompt is longer (up to k × 3 = 15
-evidence docs vs k = 5 retrieved neighbors). **Panel (f) —
-Pareto plane.** Each dot is one SUT at the ko_native retrieval
-point; the scatter sits in the upper-left for Qwen 2.5 3B and
-lower-right for Kanana 2.1B, indicating that the larger
-multilingual model still competes on-device when compute is not
-the bottleneck.
-
-Per-ability pass rates on `ko_native` retrieval show gains
-concentrating on factual abilities (IE, TR, KU, and MR), matching
-our prior that cosine retrieval surfaces named entities well.
-Abstention (ABS) is uniformly hard: without explicit "no-evidence"
-signals, the SUT hallucinates rather than refusing, a limitation
-we return to in §4.3.
-
-Response latency stays under 2.7 s for both SUTs across all
-conditions on a single L40S, within the typical on-device
-expectation for a decision-moment assistant. On the
-latency-accuracy Pareto plane, Qwen-3B sits to the upper-left of
-Kanana-2.1B for the ko_native retrieval point (higher accuracy,
-lower latency), suggesting that the larger multilingual model
-remains competitive on-device when compute is not the bottleneck.
+Combining the four orthogonal v0.2 metrics — retrieval pass rate
+(§3.1), reflective share (§3.4), latency (this section), and
+quantization sensitivity (§3.2) — singles out `kanana_8b` as the
+v0.2 recommended SUT for the *Heard* product. It places second
+on retrieval pass rate (18.8 %, behind only `kanana_nano_int4`'s
+likely-noise 20.3 %), first on reflective share (87.5 %), in the
+mid-latency tier (3.73 s retrieval), and is one of the two SUT
+families where int4 quantization is exactly latency-neutral, so
+the int4 variant offers a clean memory trade for deployment on
+hardware below the 48 GB L40S class. The on-device 2.1 B target
+named in Part 1 — `kanana_nano` — remains the right choice for
+the lightest deployment envelope (1.83 s retrieval, 77.6 %
+reflective share), but at the 8 B class the in-family scale-up
+preserves all four properties.
 
 ## 4 Discussion
 
@@ -538,16 +872,24 @@ the same SUT on unfiltered questions would look much better on
 paper and teach less. The headline interpretation of §3.1 is the
 relative lift (×3.3 end-to-end), not the absolute rate.
 
-### 4.2 Qwen's oracle anomaly
+### 4.2 The retrieval > oracle regression
 
-Kanana improves monotonically from no_node to retrieval to oracle;
-Qwen-3B's oracle is worse than its retrieval. Qwen's responses
-under long oracle contexts show a summarization bias, where the
-model recapitulates the evidence sessions rather than answering
-the today-question. A concrete fix for v2 is a no-summarization
-guardrail in the system prompt ("Answer the question. Do not
-re-narrate the past."). This reads as a prompt artifact rather
-than a capability ceiling.
+Five of eleven v0.2 configurations record `oracle` strictly below
+`retrieval` on `ko_native` (Table 1), with the regression
+concentrated in the 7–8 B parameter tier (`kanana_8b`,
+`kanana_8b_int4`, `qwen25_7b`, `bllossom_8b`) and absent in the
+two smallest SUTs (`kanana_nano`, `hclova_seed_15b`). We read
+this as a long-context summarization bias: a 15-document oracle
+prompt approximately triples the prompt length of a 5-neighbor
+retrieval prompt, and the larger SUTs respond by recapitulating
+the evidence sessions rather than answering the today-question.
+A concrete fix is an "answer-first" guardrail in the system
+prompt — *"Answer the question. Do not re-narrate the past."* —
+which we expect to close most of the retrieval-vs-oracle gap on
+the affected SUTs. Validating that prediction is a v0.3 task
+because it requires re-running the oracle column rather than
+re-aggregating existing data; it reads as a prompt-design
+artifact rather than a capability ceiling.
 
 ### 4.3 What dense retrieval does not measure
 
@@ -588,30 +930,122 @@ shown without persona context. Giving the rater that context in a
 future run is a one-line prompt change likely to lift acceptance
 closer to what a human reviewer would accept.
 
+### 4.6 What the int4 axis does and does not show
+
+The marginal +9.4 pp and +4.7 pp gains on `kanana_nano_int4` and
+`hclova_seed_15b_int4` (Table 2) are easy to misread as evidence
+that 4-bit-NF4 quantization *helps* contains-token accuracy on
+small Korean-native SUTs. The paired item-level analysis in
+§3.2 and Figure 2(c) does not support that reading. Of the four
+fp16/int4 SUT pairs, three have McNemar z-scores at or below
+1.13 (i.e., not significant at any conventional level), and the
+fourth (Kanana 2.1B) reaches z = 1.90, which is borderline
+significant in a 64-item denominator at base rate ≈ 15 %. The
+HyperCLOVA-X SEED int4 gain is moreover confounded by a
+decoding-behavior shift: mean response length on `ko_native`
+retrieval grows from 261 characters (fp16) to 401 characters
+(int4) for that SUT alone, while the other three pairs produce
+responses of indistinguishable length under the two
+quantizations. Because contains-token is a substring metric,
+longer responses are mechanically more likely to contain the
+gold tokens by coincidence; we therefore treat the
+HyperCLOVA-X SEED int4 advantage as a length artifact rather than
+a quality gain.
+
+We retain the int4 axis in the sweep because the latency and
+memory analyses still favor it for two specific deployment
+profiles. Three of four SUT families show int4 *latency* 1.3–
+2.0× longer than fp16 on the L40S (§3.2), so int4 is not a
+throughput optimization on this hardware; the relevant deployment
+profiles are memory-bound, where int4 quarters the weight memory
+of an 8 B SUT and lets it co-reside with the retriever on devices
+below the 48 GB L40S class, and `kanana_8b` specifically, where
+the int4 variant is exactly latency-neutral and incurs no
+contains-pass cost. We do not recommend int4 as a quality
+improvement, only as a memory option with a known small accuracy
+risk.
+
+### 4.7 What the v0.2 expansion leaves unmeasured
+
+The v0.2 sweep expands the SUT axis from two to eleven
+configurations and adds a quantization axis, but does not
+expand the dataset axis. The three v0.1 dataset limitations
+articulated in §4.3 (NODE-native abilities not measured by
+substring recall), §4.4 (English haystack on `ko_translated`),
+and §4.5 (70 items rather than the planned 100) are unchanged.
+
+Three SUT-axis items also remained out of reach. The two
+Korean-tuned 10 B+ models we wanted to include — EEVE-Korean
+10.8B and SOLAR 10.7B — were dropped from the sweep at runtime
+when their fp16 throughput proved too low to finish within the
+wall-clock budget (≈ 47 and ≈ 200 generations per hour
+respectively under the reflective policy); they remain v0.3
+candidates once an int4 path with adequate generation speed is
+identified. EXAONE-3.5 2.4B remained excluded by a `transformers`
+import incompatibility (`RopeParameters`) that the v0.2
+environment did not resolve. And a BM25 baseline that would
+isolate the contribution of dense retrieval against a sparse
+counterpart is not yet in the lineup.
+
 ## 5 Conclusion
 
-Heard v0.1 contributes, to our knowledge, the first Korean
+Heard contributes, to our knowledge, the first Korean
 long-term memory benchmark targeting solo-business monologue,
 built because no existing benchmark meets the three criteria of
-Korean / monologue / solo-business. On this benchmark, a lightweight on-device
-retrieval pipeline produces measurable gains for a 2B-parameter
-Korean SUT (Kanana: 4.7% → 10.9% → 15.6%). A reflective response
-policy dominates an advisory one on emotional attunement (82/96)
-and open-question framing (88/96), supporting the Part 1 MIRROR
-thesis.
+Korean / monologue / solo-business. On this benchmark, the v0.2
+sweep evaluates eleven SUT configurations across four model
+families and a 4-bit-NF4 quantization axis under both advisory
+and reflective response policies, generating 14,850 SUT
+generations and 2,112 pairwise judge verdicts.
 
-Several extensions follow from the v0.1 limitations identified
-above, ordered by rough value-to-effort priority.
+Three results are robust across the lineup. First, dense
+retrieval lifts contains-pass on `ko_native` for every
+configuration (mean +11.8 pp, minimum +6.2 pp, no negative
+deltas), with the on-device 2.1 B target named in Part 1
+(`kanana_nano`) following the canonical 4.7 % → 10.9 % → 15.6 %
+trajectory. Second, the reflective policy dominates the
+advisory baseline on every rubric across 528 pairwise judge
+decisions per rubric, with the two "mirror, do not advise"
+rubrics — emotional attunement and open-question framing —
+landing at 88.1 % and 88.3 % reflective share. Third, the
+language-axis ordering en_subset ≤ ko_translated < ko_native is
+preserved by ten of eleven SUTs, with multilingual baselines
+unable to close the gap on Korean tracks. Combining the four
+v0.2 metrics (retrieval pass, reflective share, latency, int4
+sensitivity) we recommend `kanana_8b` as the default *Heard*
+deployment SUT, with its int4 variant as a memory-bound
+alternative.
 
-1. A NODE-native capability benchmark of 30 to 50 items targeting
-   absence-strict, entity-aggregation, and temporal-latest queries,
-   the three axes §4.3 argues that dense retrieval cannot reach.
-2. Full-haystack Korean translation of ko_translated via chunked
-   session translation (ADR 0003), closing the confound in §4.4.
-3. SUT expansion to Kanana-1.5-8B as a reference ceiling and to
-   EXAONE-3.5 and HyperCLOVA-X-SEED for intra-Korean comparison.
-4. An int4 quantization axis for tighter on-device simulation.
-5. A BM25 baseline to isolate the dense-retrieval advantage.
+Two results require careful framing. The marginal int4
+contains-pass gains on the two smallest SUTs (Kanana 2.1B
++9.4 pp, HyperCLOVA-X SEED 1.5B +4.7 pp) reduce to one
+borderline-significant pair (z = 1.90) and one confounded by a
+1.5× response-length increase under paired item-level analysis;
+we explicitly do not read these as a quality improvement from
+quantization (§4.6). And five of eleven SUTs show retrieval >
+oracle regression on `ko_native`, concentrated in the 7–8 B
+parameter tier, which we attribute to long-context
+summarization bias and propose to fix with an "answer-first"
+guardrail in v0.3 (§4.2).
+
+Several extensions follow from the limitations identified above,
+ordered by rough value-to-effort priority.
+
+1. A NODE-native capability benchmark of 30 to 50 items
+   targeting absence-strict, entity-aggregation, and temporal-
+   latest queries, the three axes §4.3 argues dense retrieval
+   cannot reach.
+2. Full-haystack Korean translation of `ko_translated` via
+   chunked session translation (ADR 0003), closing the confound
+   in §4.4.
+3. An "answer-first" prompt guardrail to test the §4.2
+   hypothesis that the retrieval > oracle regression on five of
+   eleven SUTs is a long-context summarization artifact.
+4. SUT expansion to EXAONE-3.5 (pending a `transformers` import
+   fix) and to EEVE-Korean 10.8B / SOLAR 10.7B (pending an int4
+   path with adequate generation speed).
+5. A BM25 baseline to isolate the dense-retrieval contribution
+   against a sparse counterpart.
 
 ## 6 Artifacts and References
 
@@ -623,7 +1057,12 @@ for the results in §3 are located as follows.
 
 | | Location |
 |---|---|
-| Day 3 main sweep | `experiments/20260423_1610_day3_sweep/` |
+| v0.2 expanded sweep (merged, 11 SUTs) | `experiments/20260426_1242_v0.2_sweep_merged/` |
+| v0.2 sweep results (raw) | `experiments/20260426_1242_v0.2_sweep_merged/results.jsonl` |
+| v0.2 aggregate metrics | `experiments/20260426_1242_v0.2_sweep_merged/metrics.csv`, `metrics.json` |
+| v0.2 judge verdicts | `experiments/20260426_1242_v0.2_sweep_merged/judge_verdicts.jsonl` |
+| v0.2 judge aggregate | `experiments/20260426_1242_v0.2_sweep_merged/judge_aggregate.json` |
+| v0.1 reference sweep (2 SUTs, archive) | `experiments/20260423_1610_day3_sweep/` |
 | Per-call API log | `experiments/_api_log/api_calls.jsonl` |
 | ADRs | `docs/decisions/0001–0004*.md` |
 

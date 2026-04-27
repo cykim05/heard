@@ -1,0 +1,5827 @@
+{
+  "en_subset": {
+    "bllossom_8b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.9
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.902
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.903
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.905
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.901
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.902
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 5.96
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 5.881
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.267
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.789
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.457
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.933
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.2,
+            "avg_latency_s": 5.967
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.04,
+            "avg_latency_s": 5.892
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.278
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.799
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.47
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.944
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 6.018
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 6.303
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.023
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.695
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.599
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.179
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.35,
+            "avg_latency_s": 6.027
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.07,
+            "avg_latency_s": 6.313
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.033
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.704
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.609
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.19
+          }
+        }
+      }
+    },
+    "hclova_seed_15b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.739
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.753
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.744
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.741
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.743
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.799
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.999
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.983
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.786
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.917
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.217
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.995
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 2.001
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 1.986
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.787
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.92
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.221
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.998
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.046
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.181
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.071
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.38
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.296
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.114
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 2.048
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 2.186
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.075
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.384
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.306
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.116
+          }
+        }
+      }
+    },
+    "hclova_seed_15b_int4": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.328
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.327
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.326
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.334
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.318
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.327
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 3.461
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 3.447
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.35
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.431
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.54
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.456
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 3.464
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 3.447
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.341
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.434
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.542
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.456
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.472
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.523
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.486
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.6
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.563
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.496
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.473
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.519
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.465
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.595
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.566
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.498
+          }
+        }
+      }
+    },
+    "kanana_8b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 2.509
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 2.545
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.471
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.454
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.738
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.553
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 3.857
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 3.402
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.994
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.264
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.708
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.188
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.307
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.195
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.62
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.134
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.142
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.774
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 4.336
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 4.198
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.74
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.711
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.891
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.31
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.78
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.894
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.274
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.574
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.42
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.421
+          }
+        }
+      }
+    },
+    "kanana_8b_int4": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.273
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.307
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.325
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.261
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.537
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.138
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 2.937
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 2.9
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.017
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.806
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.011
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.728
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.76
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.769
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.249
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.621
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.83
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.385
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.503
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.663
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.146
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.9
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.621
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.145
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.058
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.444
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.875
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.832
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.173
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.283
+          }
+        }
+      }
+    },
+    "kanana_nano": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.113
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.178
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.201
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.139
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.122
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.314
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 2.099
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 1.767
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.285
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.869
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.263
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.319
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 1.561
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 1.329
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 0.734
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.345
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.699
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.304
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.358
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.169
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.124
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.469
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.292
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.6
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 1.584
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 1.734
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.422
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.126
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.054
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.484
+          }
+        }
+      }
+    },
+    "kanana_nano_int4": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 4.167
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 3.979
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.839
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.798
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.844
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.249
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.599
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.681
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.946
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.045
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.158
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.659
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.126
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.614
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.446
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.016
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.529
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.951
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.199
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.108
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.201
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.543
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.892
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.703
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.615
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.166
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.453
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.567
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.733
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.463
+          }
+        }
+      }
+    },
+    "open_ko_8b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.359
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.647
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.795
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.078
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.366
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.637
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.481
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.724
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.259
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.619
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.076
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.185
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 1.467
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 1.556
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.026
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.748
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.355
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.183
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 1.869
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 2.781
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.831
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.989
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.375
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.841
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.15,
+            "avg_latency_s": 1.908
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.03,
+            "avg_latency_s": 2.552
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.961
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.59
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.514
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.785
+          }
+        }
+      }
+    },
+    "qwen25_3b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 1.82
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 2.109
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.01
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.074
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.44
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.2
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.604
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.798
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.46
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.1
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.052
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.772
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.011
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.151
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 0.718
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.508
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.574
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 0.945
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.597
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.889
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.465
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.401
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.895
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.088
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 0.981
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.343
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.021
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.885
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.461
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.366
+          }
+        }
+      }
+    },
+    "qwen25_3b_int4": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.496
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.072
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.009
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.409
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.514
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.933
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.134
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.463
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.844
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.918
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.782
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.636
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.784
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.254
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.432
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.955
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.076
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.025
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.421
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.821
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.575
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.529
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.009
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.571
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.0
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.446
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.052
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.475
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.706
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.994
+          }
+        }
+      }
+    },
+    "qwen25_7b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 2.042
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 2.271
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.259
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.246
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.503
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.304
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.924
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.411
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.632
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.632
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.576
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.288
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.072
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.004
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.503
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.163
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.358
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.925
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 4.297
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 4.146
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.783
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.05
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.971
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.628
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.219
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.649
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.268
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.605
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.822
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.33
+          }
+        }
+      }
+    }
+  },
+  "ko_native": {
+    "bllossom_8b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.903
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.03125,
+            "avg_latency_s": 4.9
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.05263157894736842,
+            "avg_latency_s": 4.899
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 4.899
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.899
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 4.899
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.899
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.9
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.09375,
+            "avg_latency_s": 4.908
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.15789473684210525,
+            "avg_latency_s": 4.912
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 4.911
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 4.91
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 4.912
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 4.904
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.904
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.28125,
+            "avg_latency_s": 4.913
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.2631578947368421,
+            "avg_latency_s": 4.916
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 4.917
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.2857142857142857,
+            "avg_latency_s": 4.917
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 4.913
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.6,
+            "avg_latency_s": 4.91
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.931
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.15625,
+            "avg_latency_s": 4.942
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.21052631578947367,
+            "avg_latency_s": 4.951
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 4.936
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.2857142857142857,
+            "avg_latency_s": 4.935
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 4.962
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.2,
+            "avg_latency_s": 4.939
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.2,
+            "avg_latency_s": 4.936
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.28125,
+            "avg_latency_s": 4.946
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.3684210526315789,
+            "avg_latency_s": 4.949
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.23076923076923078,
+            "avg_latency_s": 4.943
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 4.943
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 4.964
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.3333333333333333,
+            "avg_latency_s": 4.944
+          }
+        }
+      }
+    },
+    "hclova_seed_15b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.866
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.03125,
+            "avg_latency_s": 1.779
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.773
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 1.75
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 1.779
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 1.786
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.749
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.829
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.078125,
+            "avg_latency_s": 1.78
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.10526315789473684,
+            "avg_latency_s": 1.77
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 1.778
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 1.798
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 1.749
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 1.764
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.818
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.125,
+            "avg_latency_s": 1.775
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.2631578947368421,
+            "avg_latency_s": 1.756
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.79
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.794
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 1.755
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.2,
+            "avg_latency_s": 1.754
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.889
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.109375,
+            "avg_latency_s": 1.831
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.2631578947368421,
+            "avg_latency_s": 1.83
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 1.803
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.808
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 1.812
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 1.838
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.818
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.09375,
+            "avg_latency_s": 1.768
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.10526315789473684,
+            "avg_latency_s": 1.747
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 1.747
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 1.785
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 1.754
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 1.778
+          }
+        }
+      }
+    },
+    "hclova_seed_15b_int4": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.37
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.367
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.357
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.376
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.389
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.354
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.364
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.36
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.140625,
+            "avg_latency_s": 3.368
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.21052631578947367,
+            "avg_latency_s": 3.368
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.23076923076923078,
+            "avg_latency_s": 3.378
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 3.368
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.35
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 3.371
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.353
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.125,
+            "avg_latency_s": 3.372
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.15789473684210525,
+            "avg_latency_s": 3.38
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 3.37
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 3.363
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.369
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.13333333333333333,
+            "avg_latency_s": 3.384
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.1,
+            "avg_latency_s": 3.451
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.15625,
+            "avg_latency_s": 3.454
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.21052631578947367,
+            "avg_latency_s": 3.451
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 3.465
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.433
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.46
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.2,
+            "avg_latency_s": 3.455
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.348
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.125,
+            "avg_latency_s": 3.358
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.15789473684210525,
+            "avg_latency_s": 3.368
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 3.357
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 3.351
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.345
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.13333333333333333,
+            "avg_latency_s": 3.359
+          }
+        }
+      }
+    },
+    "kanana_8b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.471
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.015625,
+            "avg_latency_s": 3.253
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.411
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.092
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 3.22
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.31
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.037
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.381
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.078125,
+            "avg_latency_s": 3.27
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.15789473684210525,
+            "avg_latency_s": 3.102
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 3.715
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.335
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.643
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.844
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.437
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.296875,
+            "avg_latency_s": 2.542
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.3684210526315789,
+            "avg_latency_s": 2.392
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 2.408
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.2857142857142857,
+            "avg_latency_s": 3.004
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 2.961
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.5333333333333333,
+            "avg_latency_s": 2.532
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.271
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.1875,
+            "avg_latency_s": 3.726
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.3157894736842105,
+            "avg_latency_s": 3.574
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.23076923076923078,
+            "avg_latency_s": 3.666
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.2857142857142857,
+            "avg_latency_s": 3.864
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.471
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 3.646
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.498
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.21875,
+            "avg_latency_s": 3.375
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.3157894736842105,
+            "avg_latency_s": 3.183
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.38461538461538464,
+            "avg_latency_s": 3.444
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.65
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.588
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.2,
+            "avg_latency_s": 3.261
+          }
+        }
+      }
+    },
+    "kanana_8b_int4": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.1
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.173
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.272
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.017
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.712
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.568
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.822
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.283
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.109375,
+            "avg_latency_s": 3.288
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.15789473684210525,
+            "avg_latency_s": 2.978
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 3.281
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 4.243
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.531
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 3.147
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.246
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.265625,
+            "avg_latency_s": 2.71
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.42105263157894735,
+            "avg_latency_s": 2.434
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 3.082
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.86
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.501
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.4666666666666667,
+            "avg_latency_s": 2.662
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.393
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.1875,
+            "avg_latency_s": 3.595
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.3157894736842105,
+            "avg_latency_s": 3.223
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.23076923076923078,
+            "avg_latency_s": 3.509
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 3.542
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 4.359
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.13333333333333333,
+            "avg_latency_s": 3.326
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.139
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.1875,
+            "avg_latency_s": 3.16
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.3157894736842105,
+            "avg_latency_s": 2.798
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.23076923076923078,
+            "avg_latency_s": 3.142
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.092
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.575
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.2,
+            "avg_latency_s": 3.047
+          }
+        }
+      }
+    },
+    "kanana_nano": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.767
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.046875,
+            "avg_latency_s": 2.253
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.05263157894736842,
+            "avg_latency_s": 2.19
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.185
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.174
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 2.16
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.13333333333333333,
+            "avg_latency_s": 2.124
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.557
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.15625,
+            "avg_latency_s": 2.405
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.2631578947368421,
+            "avg_latency_s": 2.215
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 2.299
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 2.474
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 2.504
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.2,
+            "avg_latency_s": 2.565
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.1,
+            "avg_latency_s": 1.756
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.171875,
+            "avg_latency_s": 1.277
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.3157894736842105,
+            "avg_latency_s": 1.045
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 1.355
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.476
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 1.331
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.2,
+            "avg_latency_s": 1.071
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.927
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.109375,
+            "avg_latency_s": 2.539
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.10526315789473684,
+            "avg_latency_s": 2.308
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 2.431
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 2.573
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 2.595
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.13333333333333333,
+            "avg_latency_s": 2.629
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.822
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.203125,
+            "avg_latency_s": 1.386
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.3157894736842105,
+            "avg_latency_s": 1.029
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.23076923076923078,
+            "avg_latency_s": 1.381
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 1.568
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 1.471
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.2,
+            "avg_latency_s": 1.435
+          }
+        }
+      }
+    },
+    "kanana_nano_int4": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.163
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.0625,
+            "avg_latency_s": 4.834
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.05263157894736842,
+            "avg_latency_s": 4.812
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.702
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 5.046
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 4.76
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.13333333333333333,
+            "avg_latency_s": 4.687
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.966
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.203125,
+            "avg_latency_s": 5.054
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.21052631578947367,
+            "avg_latency_s": 4.884
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 4.809
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.42857142857142855,
+            "avg_latency_s": 5.122
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 5.538
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.26666666666666666,
+            "avg_latency_s": 5.317
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.797
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.1875,
+            "avg_latency_s": 2.671
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.3157894736842105,
+            "avg_latency_s": 2.065
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 2.659
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.608
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 2.871
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.26666666666666666,
+            "avg_latency_s": 2.647
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.213
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.203125,
+            "avg_latency_s": 5.221
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.21052631578947367,
+            "avg_latency_s": 5.034
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.3076923076923077,
+            "avg_latency_s": 5.033
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 5.309
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 5.519
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.26666666666666666,
+            "avg_latency_s": 5.467
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.938
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.171875,
+            "avg_latency_s": 2.898
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.2631578947368421,
+            "avg_latency_s": 2.528
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.23076923076923078,
+            "avg_latency_s": 2.648
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 2.8
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.538
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.13333333333333333,
+            "avg_latency_s": 2.68
+          }
+        }
+      }
+    },
+    "open_ko_8b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.912
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.0625,
+            "avg_latency_s": 3.412
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.05263157894736842,
+            "avg_latency_s": 3.262
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 3.145
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 3.358
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.522
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 3.48
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.908
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.125,
+            "avg_latency_s": 3.635
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.15789473684210525,
+            "avg_latency_s": 3.486
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 3.623
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 3.432
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 4.255
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.13333333333333333,
+            "avg_latency_s": 3.497
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.762
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.140625,
+            "avg_latency_s": 3.058
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.2631578947368421,
+            "avg_latency_s": 2.913
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 2.706
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.988
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 4.049
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.2,
+            "avg_latency_s": 2.249
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.339
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.171875,
+            "avg_latency_s": 3.867
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.2631578947368421,
+            "avg_latency_s": 3.625
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.23076923076923078,
+            "avg_latency_s": 3.769
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 3.9
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.672
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.13333333333333333,
+            "avg_latency_s": 4.004
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.1,
+            "avg_latency_s": 4.215
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.109375,
+            "avg_latency_s": 3.236
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.21052631578947367,
+            "avg_latency_s": 3.513
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 2.589
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.031
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.218
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.895
+          }
+        }
+      }
+    },
+    "qwen25_3b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.003
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.03125,
+            "avg_latency_s": 1.902
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.65
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 1.992
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.994
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 1.969
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 2.008
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.897
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.109375,
+            "avg_latency_s": 2.164
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.15789473684210525,
+            "avg_latency_s": 2.193
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 2.2
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 2.753
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 1.851
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 2.124
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 0.732
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.0625,
+            "avg_latency_s": 0.739
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.10526315789473684,
+            "avg_latency_s": 0.652
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 0.714
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.019
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 0.849
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 0.702
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.236
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.125,
+            "avg_latency_s": 2.66
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.21052631578947367,
+            "avg_latency_s": 2.546
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 2.198
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 2.955
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 2.671
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 2.681
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 0.948
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.09375,
+            "avg_latency_s": 0.955
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.21052631578947367,
+            "avg_latency_s": 0.924
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.0,
+            "avg_latency_s": 0.889
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 1.048
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 1.027
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 0.984
+          }
+        }
+      }
+    },
+    "qwen25_3b_int4": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.268
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.015625,
+            "avg_latency_s": 4.066
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.803
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.729
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 4.498
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 4.749
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.084
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.425
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.109375,
+            "avg_latency_s": 4.009
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.15789473684210525,
+            "avg_latency_s": 3.603
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 4.159
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 4.519
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 4.257
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 3.778
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.696
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.09375,
+            "avg_latency_s": 1.5
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.15789473684210525,
+            "avg_latency_s": 1.218
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 1.533
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.731
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 1.83
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 1.458
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.437
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.125,
+            "avg_latency_s": 4.813
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.10526315789473684,
+            "avg_latency_s": 5.028
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.23076923076923078,
+            "avg_latency_s": 4.4
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 5.604
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 4.866
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.13333333333333333,
+            "avg_latency_s": 4.758
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.1,
+            "avg_latency_s": 1.922
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.109375,
+            "avg_latency_s": 1.813
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.15789473684210525,
+            "avg_latency_s": 1.6
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.15384615384615385,
+            "avg_latency_s": 1.659
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.598
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 2.442
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 1.526
+          }
+        }
+      }
+    },
+    "qwen25_7b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.16
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.046875,
+            "avg_latency_s": 2.737
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.59
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 2.7
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 2.548
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.151
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.06666666666666667,
+            "avg_latency_s": 2.597
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.154
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.0625,
+            "avg_latency_s": 2.58
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.05263157894736842,
+            "avg_latency_s": 2.198
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 2.859
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.004
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 2.915
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.13333333333333333,
+            "avg_latency_s": 2.11
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.03
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.15625,
+            "avg_latency_s": 1.987
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.2631578947368421,
+            "avg_latency_s": 1.952
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 2.135
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.0
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 2.169
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.26666666666666666,
+            "avg_latency_s": 1.795
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.1,
+            "avg_latency_s": 3.399
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.109375,
+            "avg_latency_s": 3.151
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.2631578947368421,
+            "avg_latency_s": 2.887
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 3.084
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.159
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 3.652
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.173
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 10,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.805
+          },
+          "ALL": {
+            "n": 70,
+            "pass_rate": 0.140625,
+            "avg_latency_s": 2.183
+          },
+          "IE": {
+            "n": 19,
+            "pass_rate": 0.21052631578947367,
+            "avg_latency_s": 1.805
+          },
+          "KU": {
+            "n": 13,
+            "pass_rate": 0.07692307692307693,
+            "avg_latency_s": 2.248
+          },
+          "MR": {
+            "n": 7,
+            "pass_rate": 0.14285714285714285,
+            "avg_latency_s": 2.328
+          },
+          "REFL": {
+            "n": 6,
+            "pass_rate": null,
+            "avg_latency_s": 2.262
+          },
+          "TR": {
+            "n": 15,
+            "pass_rate": 0.2,
+            "avg_latency_s": 2.09
+          }
+        }
+      }
+    }
+  },
+  "ko_translated": {
+    "bllossom_8b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.901
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.901
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.901
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.901
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.9
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.901
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.15,
+            "avg_latency_s": 5.948
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.03,
+            "avg_latency_s": 5.873
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.263
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.776
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.455
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.924
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 5.958
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 5.886
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.273
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.789
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.469
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.939
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.2,
+            "avg_latency_s": 5.938
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.04,
+            "avg_latency_s": 6.127
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.993
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.261
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.502
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.943
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 5.947
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 6.137
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.003
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.27
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.513
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.954
+          }
+        }
+      }
+    },
+    "hclova_seed_15b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.745
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.745
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.744
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.747
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.745
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.746
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 1.999
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 1.984
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.787
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.921
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.217
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.995
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.004
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.987
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.785
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.923
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.222
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.0
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 2.039
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 2.112
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.052
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.168
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.266
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.034
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.15,
+            "avg_latency_s": 2.043
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.03,
+            "avg_latency_s": 2.116
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.056
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.171
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.272
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.038
+          }
+        }
+      }
+    },
+    "hclova_seed_15b_int4": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.328
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.327
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.322
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.332
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.328
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.323
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 3.464
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 3.448
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.346
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.43
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.548
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.449
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 3.465
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 3.451
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.348
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.439
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.553
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.453
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 3.474
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 3.497
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.468
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.52
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.563
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.463
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 3.472
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 3.498
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.469
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.521
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.565
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.465
+          }
+        }
+      }
+    },
+    "kanana_8b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 3.207
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 3.321
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.81
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.137
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.055
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.398
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.4,
+            "avg_latency_s": 5.808
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.08,
+            "avg_latency_s": 5.142
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.273
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.919
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.755
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.957
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.15,
+            "avg_latency_s": 4.584
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.03,
+            "avg_latency_s": 4.417
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.673
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.574
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.128
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.124
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.25,
+            "avg_latency_s": 5.454
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.05,
+            "avg_latency_s": 5.7
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.661
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.001
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 6.186
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.196
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.15,
+            "avg_latency_s": 4.512
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.03,
+            "avg_latency_s": 4.938
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.94
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.47
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.619
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.15
+          }
+        }
+      }
+    },
+    "kanana_8b_int4": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.15,
+            "avg_latency_s": 3.058
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.03,
+            "avg_latency_s": 2.741
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.15
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.753
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.464
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.279
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.4,
+            "avg_latency_s": 4.511
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.08,
+            "avg_latency_s": 4.214
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.623
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.998
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.933
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.003
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.15,
+            "avg_latency_s": 3.42
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.03,
+            "avg_latency_s": 3.518
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.972
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.726
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.203
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.269
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 4.885
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 4.722
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.865
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.479
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.12
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.259
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.25,
+            "avg_latency_s": 3.886
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.05,
+            "avg_latency_s": 4.17
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.88
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.991
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.851
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.242
+          }
+        }
+      }
+    },
+    "kanana_nano": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 2.248
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 2.457
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.716
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.403
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.561
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.356
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.25,
+            "avg_latency_s": 2.739
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.05,
+            "avg_latency_s": 2.729
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.531
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.635
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.041
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.701
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.35,
+            "avg_latency_s": 2.347
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.07,
+            "avg_latency_s": 2.305
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.806
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.35
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.022
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.001
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.25,
+            "avg_latency_s": 2.64
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.05,
+            "avg_latency_s": 2.9
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.988
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.002
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.302
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.571
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.4,
+            "avg_latency_s": 2.311
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.08,
+            "avg_latency_s": 2.482
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.513
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.679
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.047
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.858
+          }
+        }
+      }
+    },
+    "kanana_nano_int4": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.76
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.763
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.903
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.776
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.692
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.684
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.4,
+            "avg_latency_s": 5.077
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.08,
+            "avg_latency_s": 4.873
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.339
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.707
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.295
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.948
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.25,
+            "avg_latency_s": 4.709
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.05,
+            "avg_latency_s": 4.147
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.799
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.233
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.876
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.117
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.3,
+            "avg_latency_s": 4.794
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.06,
+            "avg_latency_s": 5.018
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.257
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.918
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.4
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.723
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.45,
+            "avg_latency_s": 4.026
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.09,
+            "avg_latency_s": 4.469
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.373
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.501
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.056
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.391
+          }
+        }
+      }
+    },
+    "open_ko_8b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 2.54
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 2.657
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.422
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.809
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.37
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.144
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 2.602
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 3.706
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.942
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.988
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.027
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.971
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 2.55
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 3.722
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.903
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.666
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.359
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.132
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 3.692
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 4.145
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.677
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.232
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.427
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.699
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 3.288
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 4.064
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.293
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.256
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.611
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.874
+          }
+        }
+      }
+    },
+    "qwen25_3b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.399
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.604
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.477
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.862
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.533
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.751
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 1.782
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 1.91
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.658
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.298
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.147
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.666
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 1.052
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 1.179
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 0.887
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.583
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.314
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.061
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 2.028
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 2.107
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.99
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.522
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.458
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.538
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.2,
+            "avg_latency_s": 1.013
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.04,
+            "avg_latency_s": 1.308
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.333
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.857
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.328
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.01
+          }
+        }
+      }
+    },
+    "qwen25_3b_int4": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.76
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.893
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.846
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.171
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.325
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.364
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.295
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.643
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.903
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.477
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.554
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.985
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.763
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.411
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.083
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.312
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.543
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.353
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.05,
+            "avg_latency_s": 3.689
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.01,
+            "avg_latency_s": 4.587
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.026
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.617
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.674
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.93
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 1.827
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.965
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.193
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.625
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.375
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.805
+          }
+        }
+      }
+    },
+    "qwen25_7b": {
+      "no_node": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.257
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.463
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.379
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.481
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.412
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.787
+          }
+        }
+      },
+      "oracle": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 4.329
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 4.547
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.915
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.106
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.89
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.495
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.15,
+            "avg_latency_s": 3.378
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.03,
+            "avg_latency_s": 3.291
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.495
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.459
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.018
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.104
+          }
+        }
+      },
+      "retrieval": {
+        "advisory": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.1,
+            "avg_latency_s": 4.177
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.02,
+            "avg_latency_s": 4.425
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.894
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.544
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 5.056
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.457
+          }
+        },
+        "reflective": {
+          "ABS": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.698
+          },
+          "ALL": {
+            "n": 100,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.604
+          },
+          "IE": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.565
+          },
+          "KU": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 3.896
+          },
+          "MR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 4.1
+          },
+          "TR": {
+            "n": 20,
+            "pass_rate": 0.0,
+            "avg_latency_s": 2.762
+          }
+        }
+      }
+    }
+  }
+}

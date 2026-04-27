@@ -112,20 +112,94 @@ stock/services, stressors, and historical events (days-ago-indexed).
 }
 ```
 
-## Baseline results (Day 3 sweep, v0.1)
+## Baseline results (v0.2 expanded sweep)
 
-Kanana-1.5-2.1B-Instruct (fp16, single L40S) on `ko_native` with an
-embedding retriever (`intfloat/multilingual-e5-small`, top-5):
+Eleven SUT configurations across four model families and a 4-bit-NF4
+quantization axis, evaluated on `ko_native` with an embedding
+retriever (`intfloat/multilingual-e5-small`, top-5). Numbers below
+are advisory pass rate (contains-token, n = 64) at each memory
+condition; the v0.1 Kanana-1.5-2.1B headline (`kanana_nano` row) is
+preserved verbatim and shown for continuity.
 
-| condition | pass rate |
-|---|---:|
-| no-NODE (memoryless) | 4.7 % |
-| retrieval            | 10.9 % |
-| oracle (gold evidence) | 15.6 % |
+| SUT | params | quant | no_node | retrieval | oracle |
+|---|---:|---|---:|---:|---:|
+| kanana_nano          | 2.1 B | fp16 | 4.7 % | 10.9 % | 15.6 % |
+| kanana_nano_int4     | 2.1 B | int4 | 6.2 % | **20.3 %** | 20.3 % |
+| kanana_8b            | 8.0 B | fp16 | 1.6 % | 18.8 % |  7.8 % |
+| kanana_8b_int4       | 8.0 B | int4 | 0.0 % | 18.8 % | 10.9 % |
+| hclova_seed_15b      | 1.5 B | fp16 | 3.1 % | 10.9 % |  7.8 % |
+| hclova_seed_15b_int4 | 1.5 B | int4 | 0.0 % | 15.6 % | 14.1 % |
+| qwen25_3b            | 3.0 B | fp16 | 3.1 % | 12.5 % | 10.9 % |
+| qwen25_3b_int4       | 3.0 B | int4 | 1.6 % | 12.5 % | 10.9 % |
+| qwen25_7b            | 7.6 B | fp16 | 4.7 % | 10.9 % |  6.2 % |
+| bllossom_8b          | 8.0 B | fp16 | 3.1 % | 15.6 % |  9.4 % |
+| open_ko_8b           | 8.0 B | fp16 | 6.2 % | 17.2 % | 12.5 % |
 
-Full sweep (2 SUTs × 3 tracks × 3 conditions × advisory/reflective
-where applicable) is in the code repo under
+The dense-retrieval lift from §3.5 of the technical report
+generalizes across the lineup: every configuration records a
+positive `retrieval`−`no_node` delta (mean +11.8 pp). The
+reflective response policy beats advisory on every rubric across
+528 pairwise judge decisions per rubric; emotional attunement
+lands at 88.1 % reflective and open-question framing at 88.3 %
+(see Tables 5–6 in the technical report).
+
+Full sweep (11 SUTs × 3 tracks × 3 conditions × advisory/reflective)
+is in the code repo under
+`experiments/20260426_1242_v0.2_sweep_merged/`. The v0.1 reference
+2-SUT sweep used for the dataset's initial release remains at
 `experiments/20260423_1610_day3_sweep/`.
+
+## Models evaluated
+
+The v0.2 sweep covers four families across three parameter
+decades. Each entry below names the upstream HuggingFace
+checkpoint, the license under which the model is redistributed,
+and the role the model plays in the *Heard* evaluation.
+
+- **Kakao Kanana 1.5 series.**
+  [`kakaocorp/kanana-1.5-2.1b-instruct-2505`](https://huggingface.co/kakaocorp/kanana-1.5-2.1b-instruct-2505)
+  (Apache-2.0) is a Korean-native 2.1 B instruction-tuned model and
+  the primary on-device target for the *Heard* product. The v0.1
+  baseline numbers in the previous section are taken on this model.
+  [`kakaocorp/kanana-1.5-8b-instruct-2505`](https://huggingface.co/kakaocorp/kanana-1.5-8b-instruct-2505)
+  (Apache-2.0) is the 8 B sibling, included as a reference ceiling
+  for the family.
+- **NAVER HyperCLOVA-X SEED.**
+  [`naver-hyperclovax/HyperCLOVAX-SEED-Text-Instruct-1.5B`](https://huggingface.co/naver-hyperclovax/HyperCLOVAX-SEED-Text-Instruct-1.5B)
+  (HCX-SEED-Public, gated) is the 1.5 B Korean-native model from
+  NAVER, included once gated-access approval was granted. It is
+  the smallest Korean-native SUT in the lineup and the strongest
+  small-model int4 case.
+- **Alibaba Qwen 2.5.**
+  [`Qwen/Qwen2.5-3B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct)
+  and
+  [`Qwen/Qwen2.5-7B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct)
+  (both Apache-2.0) are multilingual baselines, included to
+  establish whether a non-Korean-native multilingual model is
+  competitive on the Korean tracks. Both place mid-pack on
+  `ko_native` retrieval.
+- **Korean-tuned Llama 3 derivatives.**
+  [`MLP-KTLim/llama-3-Korean-Bllossom-8B`](https://huggingface.co/MLP-KTLim/llama-3-Korean-Bllossom-8B)
+  and
+  [`beomi/Llama-3-Open-Ko-8B-Instruct-preview`](https://huggingface.co/beomi/Llama-3-Open-Ko-8B-Instruct-preview)
+  (both Llama-3 Community License) are Korean fine-tunes of Meta
+  Llama 3 8B, included to test whether a fine-tune of a stronger
+  base beats a Korean-native model at the same parameter count. On
+  `ko_native` retrieval they place above the multilingual Qwen
+  baselines and below the Kanana 8B reference.
+
+Three additional Korean SUTs were attempted but dropped from the
+final v0.2 lineup: `LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct`
+(`transformers` 4.57.6 lacks the `RopeParameters` symbol the
+EXAONE config imports), `yanolja/EEVE-Korean-Instruct-10.8B-v1.0`
+and `upstage/SOLAR-10.7B-Instruct-v1.0` (fp16 throughput too low
+to finish the sweep within the wall-clock budget). These remain
+candidates for a v0.3 expansion.
+
+The retriever
+[`intfloat/multilingual-e5-small`](https://huggingface.co/intfloat/multilingual-e5-small)
+(MIT) is shared across all SUT runs; the same top-5 cosine policy
+is applied to every model in the table above.
 
 ## Construction notes
 

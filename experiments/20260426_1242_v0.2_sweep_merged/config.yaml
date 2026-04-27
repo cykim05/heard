@@ -1,0 +1,22 @@
+run_dir: /data2/hai_chanyoung/heard/experiments/20260426_1242_v0.2_sweep_merged
+tracks: ['ko_native', 'en_subset', 'ko_translated']
+conditions: ['no_node', 'retrieval', 'oracle']
+policies: ['advisory', 'reflective']
+k: 5
+max_items_per_track: None
+suts:
+  - kanana_nano (kakaocorp/kanana-1.5-2.1b-instruct-2505, fp16)
+  - kanana_nano_int4 (kakaocorp/kanana-1.5-2.1b-instruct-2505, int4)
+  - kanana_8b (kakaocorp/kanana-1.5-8b-instruct-2505, fp16)
+  - kanana_8b_int4 (kakaocorp/kanana-1.5-8b-instruct-2505, int4)
+  - qwen25_3b (Qwen/Qwen2.5-3B-Instruct, fp16)
+  - qwen25_3b_int4 (Qwen/Qwen2.5-3B-Instruct, int4)
+  - qwen25_7b (Qwen/Qwen2.5-7B-Instruct, fp16)
+  - hclova_seed_15b (naver-hyperclovax/HyperCLOVAX-SEED-Text-Instruct-1.5B, fp16)
+  - hclova_seed_15b_int4 (naver-hyperclovax/HyperCLOVAX-SEED-Text-Instruct-1.5B, int4)
+  - bllossom_8b (MLP-KTLim/llama-3-Korean-Bllossom-8B, fp16)
+  - open_ko_8b (beomi/Llama-3-Open-Ko-8B-Instruct-preview, fp16)
+note: |
+  Merged from three GPU shards (sweep, sweep_gpu3, sweep_gpu6). EEVE 10.8B and
+  SOLAR 10.7B were dropped from the original SUT_CHOICES at runtime due to
+  insufficient throughput; their entries do not appear in results.jsonl.

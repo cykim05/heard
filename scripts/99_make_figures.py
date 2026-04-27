@@ -1,23 +1,18 @@
 #!/usr/bin/env python3
-"""Render two 21:9 multi-panel figures for the report.
+"""Render the v0.2 results figure for the report.
 
-Reads `experiments/<run_id>/metrics.csv` + `judge_aggregate.json`
-and produces a pair of PNGs at 21:9, each carrying three panels
-in a single row:
+Reads `experiments/<run_id>/metrics.csv`, `judge_aggregate.json`,
+and `results.jsonl` for paired item-level analysis. Produces a
+single 3-panel figure:
 
-  fig_main_results.png
-    ┌ NODE lift  ┐┌ Language axis ┐┌ Reflective win ┐
-    │ (ko_native)││ (Kanana ret.) ││ (4 rubrics)    │
-    └────────────┘└───────────────┘└────────────────┘
-
-  fig_ability_latency.png
-    ┌ Ability    ┐┌ Latency        ┐┌ Pareto        ┐
-    │ breakdown  ││ by condition   ││ lat vs acc    │
-    └────────────┘└────────────────┘└───────────────┘
+  fig_v02_results.png
+    ┌ NODE lift × 11  ┐┌ Reflective share ┐┌ int4 vs fp16     ┐
+    │ (ko_native)     ││ (per-SUT, judge) ││ (paired discord.)│
+    └─────────────────┘└──────────────────┘└──────────────────┘
 
 Usage:
     python scripts/99_make_figures.py \\
-        --run-dir experiments/20260423_1610_day3_sweep \\
+        --run-dir experiments/20260426_1242_v0.2_sweep_merged \\
         --out-dir report/figures
 """
 from __future__ import annotations
@@ -27,6 +22,7 @@ import csv
 import json
 import sys
 from collections import defaultdict
+from math import sqrt
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -46,6 +42,31 @@ C_REFLECT   = "#c23b22"   # red — MIRROR / reflective
 C_ADVISORY  = "#d89d6a"   # tan — advisory
 C_TIE       = "#dddddd"   # light — ties
 C_ACCENT    = "#f4b400"   # amber — headline emphasis
+
+
+# Display order and labels for the 11 v0.2 SUTs.
+SUT_ORDER = [
+    ("kanana_nano",          "Kanana 2.1B"),
+    ("kanana_nano_int4",     "Kanana 2.1B int4"),
+    ("kanana_8b",            "Kanana 8B"),
+    ("kanana_8b_int4",       "Kanana 8B int4"),
+    ("hclova_seed_15b",      "HCX-SEED 1.5B"),
+    ("hclova_seed_15b_int4", "HCX-SEED 1.5B int4"),
+    ("qwen25_3b",            "Qwen 2.5 3B"),
+    ("qwen25_3b_int4",       "Qwen 2.5 3B int4"),
+    ("qwen25_7b",            "Qwen 2.5 7B"),
+    ("bllossom_8b",          "Bllossom 8B"),
+    ("open_ko_8b",           "Open-Ko 8B"),
+]
+
+INT4_PAIRS = [
+    ("kanana_nano",     "kanana_nano_int4",     "Kanana 2.1B"),
+    ("hclova_seed_15b", "hclova_seed_15b_int4", "HCX-SEED 1.5B"),
+    ("kanana_8b",       "kanana_8b_int4",       "Kanana 8B"),
+    ("qwen25_3b",       "qwen25_3b_int4",       "Qwen 2.5 3B"),
+]
+
+RUBRICS = ["specificity", "non_directive", "emotional_attunement", "open_question"]
 
 
 def _base_style():
@@ -68,7 +89,7 @@ def _base_style():
         "grid.linewidth":   0.8,
         "xtick.color":      "#333333",
         "ytick.color":      "#333333",
-        "xtick.labelsize":  10,
+        "xtick.labelsize":  9,
         "ytick.labelsize":  10,
         "font.family":      "sans-serif",
         "font.size":        11,
@@ -78,14 +99,14 @@ def _base_style():
 
 
 def _load_metrics(path: Path) -> list[dict]:
+    out = []
     with path.open(encoding="utf-8") as f:
-        out = []
         for r in csv.DictReader(f):
             r["n"] = int(r["n"])
             r["pass_rate"] = float(r["pass_rate"]) if r["pass_rate"] else None
             r["avg_latency_s"] = float(r["avg_latency_s"])
             out.append(r)
-        return out
+    return out
 
 
 def _get(rows, *, track, sut, condition, policy, ability="ALL"):
@@ -97,228 +118,150 @@ def _get(rows, *, track, sut, condition, policy, ability="ALL"):
     return None
 
 
-def _annotate(ax, bars, ys, *, fmt="{:.1f}", above=2.5):
-    for b, y in zip(bars, ys):
-        if y is None:
-            continue
-        ax.text(b.get_x() + b.get_width() / 2, y + above,
-                fmt.format(y), ha="center", va="bottom",
-                fontsize=10, color="#222222", weight="600")
-
-
-# ─── panel renderers ─────────────────────────────────────────────
+# ─── panel A : NODE lift × 11 SUTs (ko_native, advisory) ─────────
 
 def panel_node_lift(ax, rows):
-    """Panel 1: NODE lift by condition × SUT on ko_native."""
-    conditions = ["no_node", "retrieval", "oracle"]
-    labels = ["no-NODE", "retrieval", "oracle"]
-    suts = [("kanana_nano", "Kanana 2.1B"), ("qwen25_3b", "Qwen 2.5 3B")]
-    colors = [C_NEUTRAL, C_MEMORY, C_ORACLE]
+    suts = SUT_ORDER
+    conds = [("no_node", "no-NODE", C_NEUTRAL),
+             ("retrieval", "retrieval", C_MEMORY),
+             ("oracle",    "oracle",    C_ORACLE)]
 
-    x = list(range(len(conditions)))
-    width = 0.36
-    for i, (sut_key, sut_label) in enumerate(suts):
+    # Sort by retrieval pass rate (descending) for a clean visual.
+    def _retrieval_pass(s):
+        m = _get(rows, track="ko_native", sut=s, condition="retrieval", policy="advisory")
+        return (m["pass_rate"] or 0) if m else 0
+
+    suts_sorted = sorted(suts, key=lambda x: -_retrieval_pass(x[0]))
+
+    n = len(suts_sorted)
+    width = 0.27
+    x = list(range(n))
+    for i, (cond_key, cond_lab, color) in enumerate(conds):
         ys = []
-        for cond in conditions:
+        for sut_key, _ in suts_sorted:
             m = _get(rows, track="ko_native", sut=sut_key,
-                     condition=cond, policy="advisory")
+                     condition=cond_key, policy="advisory")
             ys.append((m["pass_rate"] or 0) * 100 if m else 0)
-        offsets = [xi + (i - 0.5) * width for xi in x]
-        hatches = ["", "//"][i:i + 1] * len(ys)
-        bars = ax.bar(offsets, ys, width,
-                      color=[colors[c] for c in range(len(conditions))],
-                      edgecolor=("#333" if i == 0 else "white"),
-                      linewidth=1.0,
-                      alpha=0.95 if i == 0 else 0.6,
-                      label=sut_label,
-                      hatch=hatches[0] if i else None)
-        _annotate(ax, bars, ys)
+        offsets = [xi + (i - 1) * width for xi in x]
+        ax.bar(offsets, ys, width, color=color, edgecolor="white",
+               linewidth=0.8, label=cond_lab)
 
     ax.set_xticks(x)
-    ax.set_xticklabels(labels)
+    ax.set_xticklabels([lab for _, lab in suts_sorted], rotation=40, ha="right")
     ax.set_ylabel("Pass rate (%)")
-    ax.set_ylim(0, max(20, max(ys) * 1.35))
-    ax.set_title("a  NODE lift on ko_native (advisory)")
-    # annotation arrow: ×3.3
-    ax.annotate(
-        "×3.3 end-to-end (Kanana)", xy=(2 - 0.18, 15.6), xytext=(0.5, 18),
-        fontsize=10, color=C_ACCENT, weight="600",
-        arrowprops=dict(arrowstyle="->", color=C_ACCENT, lw=1.2),
-    )
-    ax.legend(loc="upper left")
+    ax.set_ylim(0, 26)
+    ax.set_title("a  NODE lift on ko_native — 11 v0.2 SUTs (advisory)")
+    ax.legend(loc="upper right", ncol=3)
 
 
-def panel_language_axis(ax, rows):
-    """Panel 2: language-axis pass rate for Kanana retrieval."""
-    tracks = ["en_subset", "ko_translated", "ko_native"]
-    labels = ["en_subset", "ko_translated", "ko_native"]
-    ys = []
-    for tr in tracks:
-        m = _get(rows, track=tr, sut="kanana_nano",
-                 condition="retrieval", policy="advisory")
-        ys.append((m["pass_rate"] or 0) * 100 if m else 0)
+# ─── panel B : reflective share per SUT (judge aggregate) ────────
 
-    x = list(range(len(tracks)))
-    colors = [C_NEUTRAL, C_MEMORY, C_DATA]
-    bars = ax.bar(x, ys, 0.55, color=colors, edgecolor="white", linewidth=1.2)
-    _annotate(ax, bars, ys)
+def panel_reflective(ax, aggregate):
+    # Aggregate over both retrieval-augmented conditions and all 4 rubrics.
+    sut_tot = defaultdict(lambda: {"adv": 0, "refl": 0, "tie": 0})
+    for cell, d in aggregate.items():
+        sut = cell.split("|")[0]
+        for r in RUBRICS:
+            sut_tot[sut]["adv"]  += d[r]["advisory_win"]
+            sut_tot[sut]["refl"] += d[r]["reflective_win"]
+            sut_tot[sut]["tie"]  += d[r]["tie"]
+
+    items = []
+    for sut_key, sut_lab in SUT_ORDER:
+        if sut_key not in sut_tot:
+            continue
+        t = sut_tot[sut_key]
+        n = t["adv"] + t["refl"] + t["tie"]
+        items.append((sut_lab, t["refl"] / n, t["adv"] / n, t["tie"] / n, n))
+    items.sort(key=lambda r: r[1])    # ascending, so largest reflective share at top
+
+    labels = [r[0] for r in items]
+    refl   = [r[1] * 100 for r in items]
+    adv    = [r[2] * 100 for r in items]
+    tie    = [r[3] * 100 for r in items]
+    y = list(range(len(items)))
+
+    ax.barh(y, refl,        color=C_REFLECT,  label="reflective wins")
+    ax.barh(y, adv, left=refl, color=C_ADVISORY, label="advisory wins")
+    ax.barh(y, tie, left=[a + b for a, b in zip(refl, adv)],
+            color=C_TIE, label="tie")
+    for yi, r in zip(y, refl):
+        ax.text(r - 1.5, yi, f"{r:.0f}%", ha="right", va="center",
+                color="white", weight="700", fontsize=10)
+    ax.set_yticks(y)
+    ax.set_yticklabels(labels)
+    ax.set_xlim(0, 100)
+    ax.set_xlabel("Decisions (%)")
+    ax.set_title("b  Reflective share per SUT  ·  192 decisions / SUT")
+    ax.legend(loc="lower right", ncol=1)
+    ax.grid(axis="y", visible=False)
+
+
+# ─── panel C : int4 vs fp16 paired discordance ───────────────────
+
+def _paired_discordance(results_path: Path):
+    # Build per-SUT item -> passed map for ko_native retrieval advisory.
+    by_sut = defaultdict(dict)
+    with results_path.open(encoding="utf-8") as f:
+        for line in f:
+            r = json.loads(line)
+            if r["track"] != "ko_native":      continue
+            if r["ability"] == "REFL":         continue
+            if r["policy"] != "advisory":      continue
+            if r["condition"] != "retrieval":  continue
+            by_sut[r["sut"]][r["item_id"]] = bool(r["passed_contains"])
+
+    out = []
+    for fp_key, i4_key, label in INT4_PAIRS:
+        fp = by_sut[fp_key]; q = by_sut[i4_key]
+        common = set(fp) & set(q)
+        fp_only = sum(1 for it in common if fp[it] and not q[it])
+        i4_only = sum(1 for it in common if q[it] and not fp[it])
+        both    = sum(1 for it in common if fp[it] and q[it])
+        n_disc  = fp_only + i4_only
+        z       = (i4_only - fp_only) / sqrt(n_disc) if n_disc else 0.0
+        fp_rate = (both + fp_only) / len(common) * 100 if common else 0
+        i4_rate = (both + i4_only) / len(common) * 100 if common else 0
+        out.append((label, fp_rate, i4_rate, fp_only, i4_only, z))
+    return out
+
+
+def panel_int4_paired(ax, results_path: Path):
+    data = _paired_discordance(results_path)
+    labels = [r[0] for r in data]
+    fp     = [r[1] for r in data]
+    i4     = [r[2] for r in data]
+    width = 0.36
+    x = list(range(len(labels)))
+    ax.bar([xi - width / 2 for xi in x], fp, width,
+           color=C_MEMORY, edgecolor="white", linewidth=0.8, label="fp16")
+    ax.bar([xi + width / 2 for xi in x], i4, width,
+           color=C_REFLECT, edgecolor="white", linewidth=0.8, label="int4")
+
+    # Annotate with discordance counts and z.
+    for xi, (_, fp_r, i4_r, fp_only, i4_only, z) in zip(x, data):
+        top = max(fp_r, i4_r)
+        ax.text(xi, top + 1.4,
+                f"int4 wins {i4_only} / fp16 wins {fp_only} (z={z:.1f})",
+                ha="center", va="bottom", fontsize=9, color="#444")
 
     ax.set_xticks(x)
-    ax.set_xticklabels(labels)
+    ax.set_xticklabels(labels, rotation=20, ha="right")
+    ax.set_ylim(0, 28)
     ax.set_ylabel("Pass rate (%)")
-    ax.set_ylim(0, max(16, max(ys) * 1.4))
-    ax.set_title("b  Language axis (Kanana retrieval)")
-    ax.text(0.5, max(ys) * 1.25,
-            "EN → KO-translated → KO-native\nmonotonic",
-            ha="left", fontsize=9, color="#666", style="italic")
+    ax.set_title("c  fp16 vs int4 paired (ko_native retrieval, n=64)")
+    ax.legend(loc="upper right", ncol=2)
 
 
-def panel_reflective_wins(ax, aggregate):
-    """Panel 3: reflective vs advisory wins, stacked per rubric."""
-    rubrics = ["specificity", "non_directive", "emotional_attunement", "open_question"]
-    rubric_labels = ["specificity", "non-directive", "emotional\nattunement", "open\nquestion"]
+# ─── composite ───────────────────────────────────────────────────
 
-    adv, refl, tie = [], [], []
-    for r in rubrics:
-        a = refl_ct = t = 0
-        for per_rubric in aggregate.values():
-            slot = per_rubric.get(r, {})
-            a += slot.get("advisory_win", 0)
-            refl_ct += slot.get("reflective_win", 0)
-            t += slot.get("tie", 0)
-        total = a + refl_ct + t
-        adv.append(a / total * 100 if total else 0)
-        refl.append(refl_ct / total * 100 if total else 0)
-        tie.append(t / total * 100 if total else 0)
-
-    x = list(range(len(rubrics)))
-    width = 0.62
-    ax.bar(x, adv, width, label="advisory wins",
-           color=C_ADVISORY, edgecolor="white", linewidth=1.0)
-    ax.bar(x, refl, width, bottom=adv, label="reflective wins",
-           color=C_REFLECT, edgecolor="white", linewidth=1.0)
-    ax.bar(x, tie, width, bottom=[a + r for a, r in zip(adv, refl)],
-           label="tie", color=C_TIE, edgecolor="white", linewidth=1.0)
-
-    # Annotate the reflective share on each bar.
-    for xi, (a, r) in enumerate(zip(adv, refl)):
-        ax.text(xi, a + r / 2, f"{r:.0f}%", ha="center", va="center",
-                fontsize=10, color="white", weight="700")
-
-    ax.set_xticks(x)
-    ax.set_xticklabels(rubric_labels)
-    ax.set_ylabel("Share of decisions (%)")
-    ax.set_ylim(0, 100)
-    ax.set_title("c  Reflective dominance (96 pairwise decisions / rubric)")
-    ax.legend(loc="lower right")
-
-
-def panel_ability_breakdown(ax, rows):
-    """Panel 4: per-ability pass rate on ko_native retrieval, 2 SUTs."""
-    abilities = ["IE", "MR", "KU", "TR", "ABS"]
-    suts = [("kanana_nano", "Kanana 2.1B", C_MEMORY),
-            ("qwen25_3b", "Qwen 2.5 3B", C_ORACLE)]
-
-    x = list(range(len(abilities)))
-    width = 0.38
-    for i, (sut_key, sut_label, color) in enumerate(suts):
-        ys = []
-        for ab in abilities:
-            m = _get(rows, track="ko_native", sut=sut_key,
-                     condition="retrieval", policy="advisory", ability=ab)
-            ys.append((m["pass_rate"] or 0) * 100 if m and m["pass_rate"] is not None else 0)
-        offsets = [xi + (i - 0.5) * width for xi in x]
-        bars = ax.bar(offsets, ys, width, color=color, alpha=0.9,
-                      edgecolor="white", linewidth=1.0, label=sut_label)
-        _annotate(ax, bars, ys, fmt="{:.0f}", above=1)
-
-    ax.set_xticks(x)
-    ax.set_xticklabels(abilities)
-    ax.set_ylabel("Pass rate (%)")
-    ax.set_title("d  Ability breakdown (ko_native, retrieval, advisory)")
-    ax.legend(loc="upper right")
-
-
-def panel_latency(ax, rows):
-    """Panel 5: mean latency per SUT × condition."""
-    conditions = ["no_node", "retrieval", "oracle"]
-    labels = ["no-NODE", "retrieval", "oracle"]
-    suts = [("kanana_nano", "Kanana 2.1B", C_MEMORY),
-            ("qwen25_3b", "Qwen 2.5 3B", C_ORACLE)]
-
-    x = list(range(len(conditions)))
-    width = 0.38
-    for i, (sut_key, sut_label, color) in enumerate(suts):
-        ys = []
-        for cond in conditions:
-            # Average over tracks for a representative mean.
-            rows_pick = [r for r in rows
-                         if r["sut"] == sut_key and r["condition"] == cond
-                         and r["policy"] == "advisory" and r["ability"] == "ALL"]
-            ys.append(sum(r["avg_latency_s"] for r in rows_pick) / len(rows_pick)
-                      if rows_pick else 0)
-        offsets = [xi + (i - 0.5) * width for xi in x]
-        bars = ax.bar(offsets, ys, width, color=color, alpha=0.9,
-                      edgecolor="white", linewidth=1.0, label=sut_label)
-        _annotate(ax, bars, ys, fmt="{:.2f}s", above=0.05)
-
-    ax.set_xticks(x)
-    ax.set_xticklabels(labels)
-    ax.set_ylabel("Mean latency per response (s)")
-    ax.set_title("e  Latency by SUT × condition")
-    ax.legend(loc="upper left")
-
-
-def panel_pareto(ax, rows):
-    """Panel 6: latency vs pass_rate (ko_native retrieval)."""
-    points = []
-    for r in rows:
-        if (r["track"] == "ko_native" and r["condition"] == "retrieval"
-                and r["policy"] == "advisory" and r["ability"] == "ALL"
-                and r["pass_rate"] is not None):
-            points.append((r["avg_latency_s"], r["pass_rate"] * 100, r["sut"]))
-
-    colors = {"kanana_nano": C_MEMORY, "qwen25_3b": C_ORACLE}
-    names = {"kanana_nano": "Kanana 2.1B", "qwen25_3b": "Qwen 2.5 3B"}
-    for lat, acc, sut in points:
-        ax.scatter(lat, acc, s=260, color=colors.get(sut, C_DATA),
-                   edgecolor="white", linewidth=2, zorder=3)
-        ax.annotate(names.get(sut, sut), (lat, acc),
-                    textcoords="offset points", xytext=(10, 10),
-                    fontsize=10, color="#222", weight="600")
-
-    ax.set_xlabel("Mean latency per response (s)")
-    ax.set_ylabel("ko_native pass rate (%)")
-    ax.set_title("f  Latency / accuracy Pareto (ko_native retrieval)")
-    # generous padding around the cloud
-    if points:
-        xs = [p[0] for p in points]; ys = [p[1] for p in points]
-        pad_x = max(0.3, (max(xs) - min(xs)) * 0.6)
-        pad_y = max(2.0, (max(ys) - min(ys)) * 0.6)
-        ax.set_xlim(min(xs) - pad_x, max(xs) + pad_x)
-        ax.set_ylim(min(ys) - pad_y, max(ys) + pad_y)
-
-
-# ─── composite figures ───────────────────────────────────────────
-
-def make_main_results(rows, aggregate, out_path: Path):
-    fig, axes = plt.subplots(1, 3, figsize=(21, 9), gridspec_kw={"wspace": 0.25})
+def make_v02(rows, aggregate, results_path: Path, out_path: Path):
+    fig, axes = plt.subplots(1, 3, figsize=(21, 8), gridspec_kw={"wspace": 0.32})
     panel_node_lift(axes[0], rows)
-    panel_language_axis(axes[1], rows)
-    panel_reflective_wins(axes[2], aggregate)
-    fig.suptitle("Figure — Main results  ·  Heard v0.1",
-                 fontsize=15, weight="700", y=0.97)
-    fig.savefig(out_path)
-    plt.close(fig)
-
-
-def make_details(rows, out_path: Path):
-    fig, axes = plt.subplots(1, 3, figsize=(21, 9), gridspec_kw={"wspace": 0.25})
-    panel_ability_breakdown(axes[0], rows)
-    panel_latency(axes[1], rows)
-    panel_pareto(axes[2], rows)
-    fig.suptitle("Figure — Ability / latency / Pareto  ·  ko_native",
-                 fontsize=15, weight="700", y=0.97)
+    panel_reflective(axes[1], aggregate)
+    panel_int4_paired(axes[2], results_path)
+    fig.suptitle("Figure — Heard v0.2 results across eleven SUTs",
+                 fontsize=15, weight="700", y=0.99)
     fig.savefig(out_path)
     plt.close(fig)
 
@@ -334,10 +277,11 @@ def main() -> int:
     args.out_dir.mkdir(parents=True, exist_ok=True)
     rows = _load_metrics(args.run_dir / "metrics.csv")
     aggregate = json.loads((args.run_dir / "judge_aggregate.json").read_text(encoding="utf-8"))
+    results = args.run_dir / "results.jsonl"
 
-    make_main_results(rows, aggregate, args.out_dir / f"fig_main_results.{args.ext}")
-    make_details(rows, args.out_dir / f"fig_ability_latency.{args.ext}")
-    print(f"wrote 2 figures (21:9) to {args.out_dir}")
+    out = args.out_dir / f"fig_v02_results.{args.ext}"
+    make_v02(rows, aggregate, results, out)
+    print(f"wrote {out}")
     return 0
 
 

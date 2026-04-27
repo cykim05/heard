@@ -1,0 +1,486 @@
+{
+  "kanana_nano|retrieval": {
+    "specificity": {
+      "advisory_win": 6,
+      "reflective_win": 15,
+      "tie": 3
+    },
+    "non_directive": {
+      "advisory_win": 8,
+      "reflective_win": 16,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 2,
+      "reflective_win": 22,
+      "tie": 0
+    },
+    "open_question": {
+      "advisory_win": 1,
+      "reflective_win": 22,
+      "tie": 1
+    }
+  },
+  "kanana_nano|oracle": {
+    "specificity": {
+      "advisory_win": 6,
+      "reflective_win": 18,
+      "tie": 0
+    },
+    "non_directive": {
+      "advisory_win": 8,
+      "reflective_win": 16,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 2,
+      "reflective_win": 19,
+      "tie": 3
+    },
+    "open_question": {
+      "advisory_win": 2,
+      "reflective_win": 21,
+      "tie": 1
+    }
+  },
+  "kanana_nano_int4|retrieval": {
+    "specificity": {
+      "advisory_win": 11,
+      "reflective_win": 13,
+      "tie": 0
+    },
+    "non_directive": {
+      "advisory_win": 7,
+      "reflective_win": 17,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 1,
+      "reflective_win": 20,
+      "tie": 3
+    },
+    "open_question": {
+      "advisory_win": 1,
+      "reflective_win": 20,
+      "tie": 3
+    }
+  },
+  "kanana_nano_int4|oracle": {
+    "specificity": {
+      "advisory_win": 9,
+      "reflective_win": 15,
+      "tie": 0
+    },
+    "non_directive": {
+      "advisory_win": 9,
+      "reflective_win": 15,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    },
+    "open_question": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    }
+  },
+  "qwen25_3b|retrieval": {
+    "specificity": {
+      "advisory_win": 7,
+      "reflective_win": 17,
+      "tie": 0
+    },
+    "non_directive": {
+      "advisory_win": 8,
+      "reflective_win": 16,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    },
+    "open_question": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    }
+  },
+  "qwen25_3b|oracle": {
+    "specificity": {
+      "advisory_win": 13,
+      "reflective_win": 9,
+      "tie": 2
+    },
+    "non_directive": {
+      "advisory_win": 5,
+      "reflective_win": 19,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 1,
+      "reflective_win": 18,
+      "tie": 5
+    },
+    "open_question": {
+      "advisory_win": 3,
+      "reflective_win": 20,
+      "tie": 1
+    }
+  },
+  "qwen25_3b_int4|retrieval": {
+    "specificity": {
+      "advisory_win": 11,
+      "reflective_win": 13,
+      "tie": 0
+    },
+    "non_directive": {
+      "advisory_win": 5,
+      "reflective_win": 19,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 1,
+      "reflective_win": 18,
+      "tie": 5
+    },
+    "open_question": {
+      "advisory_win": 1,
+      "reflective_win": 23,
+      "tie": 0
+    }
+  },
+  "qwen25_3b_int4|oracle": {
+    "specificity": {
+      "advisory_win": 13,
+      "reflective_win": 9,
+      "tie": 2
+    },
+    "non_directive": {
+      "advisory_win": 7,
+      "reflective_win": 17,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 2,
+      "reflective_win": 19,
+      "tie": 3
+    },
+    "open_question": {
+      "advisory_win": 0,
+      "reflective_win": 22,
+      "tie": 2
+    }
+  },
+  "hclova_seed_15b|retrieval": {
+    "specificity": {
+      "advisory_win": 5,
+      "reflective_win": 18,
+      "tie": 1
+    },
+    "non_directive": {
+      "advisory_win": 10,
+      "reflective_win": 14,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    },
+    "open_question": {
+      "advisory_win": 0,
+      "reflective_win": 22,
+      "tie": 2
+    }
+  },
+  "hclova_seed_15b|oracle": {
+    "specificity": {
+      "advisory_win": 5,
+      "reflective_win": 18,
+      "tie": 1
+    },
+    "non_directive": {
+      "advisory_win": 8,
+      "reflective_win": 16,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    },
+    "open_question": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    }
+  },
+  "hclova_seed_15b_int4|retrieval": {
+    "specificity": {
+      "advisory_win": 4,
+      "reflective_win": 19,
+      "tie": 1
+    },
+    "non_directive": {
+      "advisory_win": 10,
+      "reflective_win": 14,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    },
+    "open_question": {
+      "advisory_win": 1,
+      "reflective_win": 23,
+      "tie": 0
+    }
+  },
+  "hclova_seed_15b_int4|oracle": {
+    "specificity": {
+      "advisory_win": 8,
+      "reflective_win": 14,
+      "tie": 2
+    },
+    "non_directive": {
+      "advisory_win": 10,
+      "reflective_win": 14,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 1,
+      "reflective_win": 22,
+      "tie": 1
+    },
+    "open_question": {
+      "advisory_win": 1,
+      "reflective_win": 18,
+      "tie": 5
+    }
+  },
+  "bllossom_8b|retrieval": {
+    "specificity": {
+      "advisory_win": 6,
+      "reflective_win": 17,
+      "tie": 1
+    },
+    "non_directive": {
+      "advisory_win": 10,
+      "reflective_win": 14,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 2,
+      "reflective_win": 20,
+      "tie": 2
+    },
+    "open_question": {
+      "advisory_win": 6,
+      "reflective_win": 15,
+      "tie": 3
+    }
+  },
+  "bllossom_8b|oracle": {
+    "specificity": {
+      "advisory_win": 5,
+      "reflective_win": 17,
+      "tie": 2
+    },
+    "non_directive": {
+      "advisory_win": 8,
+      "reflective_win": 16,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 6,
+      "reflective_win": 18,
+      "tie": 0
+    },
+    "open_question": {
+      "advisory_win": 6,
+      "reflective_win": 17,
+      "tie": 1
+    }
+  },
+  "open_ko_8b|retrieval": {
+    "specificity": {
+      "advisory_win": 11,
+      "reflective_win": 12,
+      "tie": 1
+    },
+    "non_directive": {
+      "advisory_win": 8,
+      "reflective_win": 16,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 5,
+      "reflective_win": 18,
+      "tie": 1
+    },
+    "open_question": {
+      "advisory_win": 3,
+      "reflective_win": 19,
+      "tie": 2
+    }
+  },
+  "open_ko_8b|oracle": {
+    "specificity": {
+      "advisory_win": 14,
+      "reflective_win": 9,
+      "tie": 1
+    },
+    "non_directive": {
+      "advisory_win": 9,
+      "reflective_win": 15,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 9,
+      "reflective_win": 10,
+      "tie": 5
+    },
+    "open_question": {
+      "advisory_win": 4,
+      "reflective_win": 13,
+      "tie": 7
+    }
+  },
+  "kanana_8b|retrieval": {
+    "specificity": {
+      "advisory_win": 4,
+      "reflective_win": 20,
+      "tie": 0
+    },
+    "non_directive": {
+      "advisory_win": 8,
+      "reflective_win": 16,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    },
+    "open_question": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    }
+  },
+  "kanana_8b|oracle": {
+    "specificity": {
+      "advisory_win": 2,
+      "reflective_win": 20,
+      "tie": 2
+    },
+    "non_directive": {
+      "advisory_win": 8,
+      "reflective_win": 16,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    },
+    "open_question": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    }
+  },
+  "kanana_8b_int4|retrieval": {
+    "specificity": {
+      "advisory_win": 3,
+      "reflective_win": 21,
+      "tie": 0
+    },
+    "non_directive": {
+      "advisory_win": 9,
+      "reflective_win": 15,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    },
+    "open_question": {
+      "advisory_win": 3,
+      "reflective_win": 21,
+      "tie": 0
+    }
+  },
+  "kanana_8b_int4|oracle": {
+    "specificity": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    },
+    "non_directive": {
+      "advisory_win": 10,
+      "reflective_win": 14,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    },
+    "open_question": {
+      "advisory_win": 1,
+      "reflective_win": 22,
+      "tie": 1
+    }
+  },
+  "qwen25_7b|retrieval": {
+    "specificity": {
+      "advisory_win": 10,
+      "reflective_win": 13,
+      "tie": 1
+    },
+    "non_directive": {
+      "advisory_win": 6,
+      "reflective_win": 18,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 0,
+      "reflective_win": 22,
+      "tie": 2
+    },
+    "open_question": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    }
+  },
+  "qwen25_7b|oracle": {
+    "specificity": {
+      "advisory_win": 5,
+      "reflective_win": 17,
+      "tie": 2
+    },
+    "non_directive": {
+      "advisory_win": 7,
+      "reflective_win": 17,
+      "tie": 0
+    },
+    "emotional_attunement": {
+      "advisory_win": 0,
+      "reflective_win": 23,
+      "tie": 1
+    },
+    "open_question": {
+      "advisory_win": 0,
+      "reflective_win": 24,
+      "tie": 0
+    }
+  }
+}
