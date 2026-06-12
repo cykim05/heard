@@ -1,0 +1,12 @@
+sut,condition,n,pass_rate,n_pass,gold_hit_at5
+kanana_nano,no_node,64,0.0469,3,
+kanana_nano,bm25_retrieval,64,0.1406,9,0.3889
+kanana_nano,dense_retrieval,64,0.1094,7,0.3889
+kanana_8b,no_node,64,0.0156,1,
+kanana_8b,bm25_retrieval,64,0.1094,7,0.3889
+kanana_8b,dense_retrieval,64,0.1875,12,0.3889
+
+retriever_quality,metric,value,n_gold,,
+dense,gold_hit_at5,0.3889,54,,
+bm25,gold_hit_at5,0.3889,54,,
+dense,wiring_match_vs_v0.2,1.0,64,,

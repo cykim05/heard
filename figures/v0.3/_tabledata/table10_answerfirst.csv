@@ -1,0 +1,5 @@
+sut,oracle_base,oracle_af,retrieval,gap_closed_frac,delta_len_af_minus_base,overlap_base,overlap_af
+kanana_8b,0.0781,0.1094,0.1875,0.2857,-34.5,0.0149,0.0173
+kanana_8b_int4,0.1094,0.0625,0.1875,-0.6,-28.5,0.0158,0.0253
+qwen25_7b,0.0625,0.0781,0.1094,0.3333,8.1,0.0196,0.0178
+bllossom_8b,0.0938,0.0781,0.1562,-0.25,-1.2,0.0243,0.0232

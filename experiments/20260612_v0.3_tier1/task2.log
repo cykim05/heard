@@ -1,0 +1,23 @@
+2026-06-12 06:07:26 INFO    task2_bm25 | ko_native non-REFL items: 64
+2026-06-12 06:07:26 INFO    task2_bm25 | loading embedder (dense)…
+2026-06-12 06:07:38 INFO    task2_bm25 | BM25 tokenizer = kiwi_morpheme
+2026-06-12 06:07:42 INFO    task2_bm25 | built BM25 indices for personas: ['minseok_cafe', 'sunhee_hair', 'yejin_florist']
+2026-06-12 06:07:44 INFO    task2_bm25 | retriever-wiring check: dense top-5 ids match v0.2 on 64/64 items (100.0%)
+2026-06-12 06:07:44 INFO    task2_bm25 | gold-hit@5  dense=21/54 (38.9%)  bm25=21/54 (38.9%)
+2026-06-12 06:07:44 INFO    task2_bm25 | loading SUT kanana_nano (fp16)…
+2026-06-12 06:08:06 INFO    task2_bm25 |   loaded params=2.09B device=cuda:0
+2026-06-12 06:14:47 INFO    task2_bm25 | [kanana_nano] DONE  wall=423s  GPU_peak=5.13GB
+2026-06-12 06:14:47 INFO    task2_bm25 | loading SUT kanana_8b (fp16)…
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:19<00:58, 19.46s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:38<00:38, 19.29s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:58<00:19, 19.38s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:03<00:00, 13.74s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:03<00:00, 15.80s/it]
+2026-06-12 06:15:54 INFO    task2_bm25 |   loaded params=8.03B device=cuda:0
+2026-06-12 06:27:02 INFO    task2_bm25 | [kanana_8b] DONE  wall=735s  GPU_peak=16.69GB
+2026-06-12 06:27:02 INFO    task2_bm25 | Task 2 done. sanity OK.
+
+=== Task 2: BM25 vs dense (advisory, ko_native non-REFL n=64) ===
+sut             no_node     bm25    dense    d-nn  bm-nn   d-bm
+kanana_nano      0.0469   0.1406   0.1094  +0.062 +0.094 -0.031
+   sanity[kanana_nano] dense=0.1094 vs v0.2=0.1094  [OK]
+kanana_8b        0.0156   0.1094   0.1875  +0.172 +0.094 +0.078
+   sanity[kanana_8b] dense=0.1875 vs v0.2=0.1875  [OK]
+
+wiring match vs v0.2 = 1.000  gold-hit@5 dense=0.389 bm25=0.389

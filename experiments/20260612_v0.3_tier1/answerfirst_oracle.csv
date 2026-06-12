@@ -1,0 +1,7 @@
+sut,oracle_base,oracle_af,retrieval,delta_af_minus_base,gap_closed_frac,mean_len_base,mean_len_af,mean_recap_base,mean_recap_af
+kanana_8b,0.0781,0.1094,0.1875,0.0312,0.2857,215.9,181.4,0.0149,0.0173
+kanana_8b_int4,0.1094,0.0625,0.1875,-0.0469,-0.6,207.8,179.3,0.0158,0.0253
+qwen25_7b,0.0625,0.0781,0.1094,0.0156,0.3333,169.8,177.9,0.0196,0.0178
+bllossom_8b,0.0938,0.0781,0.1562,-0.0156,-0.25,352.6,351.4,0.0243,0.0232
+
+prediction_verdict,PARTIAL,deltas_pos=2/4,mean_gap_closed=-0.0577,,,,,,

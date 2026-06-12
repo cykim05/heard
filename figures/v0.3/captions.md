@@ -1,0 +1,10 @@
+# v0.3 figure captions (self-contained; keep long text out of the figures)
+
+## Figure 3 — figure3.{pdf,png}
+Retrieval recall is equal across retrievers; what differs is how the reader model uses it. **Left (a):** gold-hit@5 — share of items whose gold evidence id lands in the top-5 — is near-identical for dense (38.9%) and BM25 (38.9%) over the n=54 ko_native non-REFL items that carry evidence ids (10 ABS items have none). **Right (b):** contains-token pass rate (advisory policy, n=64 non-REFL, seed=42) for Kanana 2.1B and 8B under dense vs BM25 retrieval. The dense advantage is SUT-dependent: +7.8pp on 8B but -3.1pp on 2.1B (BM25 ahead). All bars carry Wilson 95% CIs (nobs=64 right, nobs=54 left). Colours: dense=blue, BM25=orange. Takeaway: the bottleneck is the reader, not the retriever.
+
+## Figure 4 — figure4.{pdf,png}
+Answer-first guardrail does not close the retrieval>oracle reversal. Bars show the fraction of the (retrieval - oracle_base) gap that the answer-first guardrail closes, per reversal SUT (advisory_answerfirst, condition=oracle, contains-token, n=64, seed=42). 0 = oracle baseline (no change); the blue dashed line at 100% marks retrieval-level (full closure). Negative bars (red) are shown as-is: two of four SUTs get worse, none reach retrieval, mean gap closed = -5.8%. Mechanism is unsupported: mean char-4gram recapitulation overlap with the oracle evidence is essentially unchanged (0.019 -> 0.021). The strong form of the v0.2 4.2 prediction is REFUTED.
+
+## Figure 2 (v2) — figure2_v2.{pdf,png}
+Enhanced v0.2 results figure. **(a)** NODE lift on ko_native (advisory, n=64) for all 11 SUTs, sorted by retrieval pass rate; every bar now carries a Wilson 95% CI and retrieval bars are value-labelled. **(b)** Reflective win-share per SUT (192 pairwise decisions/SUT, unchanged from v0.2). **(c)** fp16 vs int4 paired comparison on ko_native retrieval (n=64) with Wilson 95% CIs on each pass-rate bar plus the McNemar discordance counts and z. Colours unified to the fixed map: no_node=grey, retrieval=blue, oracle=sage, advisory=tan, reflective=red.

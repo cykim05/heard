@@ -34,6 +34,18 @@ LISTENING_SYSTEM_PROMPT = """\
 """
 
 
+# v0.3 Tier-1 · Task 3 — minimal-variant guardrail over ADVISORY.
+# Tests the v0.2 §4.2 falsifiable prediction that an answer-first guardrail
+# closes the retrieval>oracle reversal by suppressing context re-narration.
+# This is NOT a new policy family: it is ADVISORY with a single guardrail line
+# prepended, so the guardrail's effect is isolated from everything else.
+ADVISORY_ANSWERFIRST_GUARDRAIL = (
+    "질문에 먼저 답하라. 과거를 다시 서술하지 마라. "
+    "(Answer the question first. Do not re-narrate the past.)\n\n"
+)
+ADVISORY_ANSWERFIRST_SYSTEM_PROMPT = ADVISORY_ANSWERFIRST_GUARDRAIL + ADVISORY_SYSTEM_PROMPT
+
+
 USER_PROMPT_TEMPLATE = """\
 ## Retrieved memories (오늘 이전의 내 발화들)
 {retrieved_block}

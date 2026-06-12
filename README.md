@@ -6,6 +6,7 @@ Natural Language Processing (2150534701) · Term Project #1 · 2026 · Chanyoung
 
 [![Part 1 Proposal](https://img.shields.io/badge/Part_1-Proposal_PDF-6b7280?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](report/260419_NLP_termproject_1.pdf)
 [![Part 2 Technical Report](https://img.shields.io/badge/Part_2-Technical_Report-EF4444?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](report/report.pdf)
+[![Final Report](https://img.shields.io/badge/Submission-Final_Report_PDF-1F6FEB?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](20243053.pdf)
 [![HuggingFace Dataset](https://img.shields.io/badge/🤗_Dataset-heard--bench-FFD21E?style=for-the-badge)](https://huggingface.co/datasets/chanyoungkim/heard-bench)
 [![Code Apache 2.0](https://img.shields.io/badge/Code-Apache_2.0-0A84FF?style=for-the-badge)](LICENSE)
 [![Dataset CC-BY-4.0](https://img.shields.io/badge/Dataset-CC--BY--4.0-34C759?style=for-the-badge)](https://creativecommons.org/licenses/by/4.0/)

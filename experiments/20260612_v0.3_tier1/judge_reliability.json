@@ -1,0 +1,88 @@
+{
+  "source": "experiments/20260426_1242_v0.2_sweep_merged/judge_verdicts.jsonl",
+  "n_verdict_rows": 528,
+  "n_swap_pairs": 264,
+  "n_parse_failed": 0,
+  "judges": [
+    "j1_gpt4o_mini",
+    "j2_claude_haiku"
+  ],
+  "rubrics": [
+    "specificity",
+    "non_directive",
+    "emotional_attunement",
+    "open_question"
+  ],
+  "conditions_pooled": [
+    "oracle",
+    "retrieval"
+  ],
+  "position_consistency": {
+    "overall": 0.646780303030303,
+    "by_rubric": {
+      "specificity": 0.6022727272727273,
+      "non_directive": 0.3409090909090909,
+      "emotional_attunement": 0.8257575757575758,
+      "open_question": 0.8181818181818182
+    },
+    "by_judge": {
+      "j1_gpt4o_mini": 0.5984848484848485,
+      "j2_claude_haiku": 0.6950757575757576
+    },
+    "by_judge_rubric": {
+      "j1_gpt4o_mini:specificity": 0.6818181818181818,
+      "j1_gpt4o_mini:non_directive": 0.015151515151515152,
+      "j1_gpt4o_mini:emotional_attunement": 0.8181818181818182,
+      "j1_gpt4o_mini:open_question": 0.8787878787878788,
+      "j2_claude_haiku:specificity": 0.5227272727272727,
+      "j2_claude_haiku:non_directive": 0.6666666666666666,
+      "j2_claude_haiku:emotional_attunement": 0.8333333333333334,
+      "j2_claude_haiku:open_question": 0.7575757575757576
+    },
+    "n_decisions_per_order": 1056
+  },
+  "positional_preference": {
+    "note": "share of PHYSICAL slot-A picks among non-tie decisions; 0.5 == unbiased",
+    "overall_position_A_share": 0.3847290640394089,
+    "n_decided": 2030,
+    "by_judge": {
+      "j1_gpt4o_mini": 0.3291746641074856,
+      "j2_claude_haiku": 0.4433198380566802
+    },
+    "by_rubric": {
+      "specificity": 0.4505928853754941,
+      "non_directive": 0.17424242424242425,
+      "emotional_attunement": 0.4507042253521127,
+      "open_question": 0.4749498997995992
+    }
+  },
+  "inter_judge_agreement": {
+    "overall": {
+      "raw_agreement": 0.6212121212121212,
+      "cohen_kappa": 0.2568561355111579,
+      "n": 528
+    },
+    "by_rubric": {
+      "specificity": {
+        "raw_agreement": 0.49242424242424243,
+        "cohen_kappa": 0.21007502679528403,
+        "n": 132
+      },
+      "non_directive": {
+        "raw_agreement": 0.3484848484848485,
+        "cohen_kappa": 0.015608740894901177,
+        "n": 132
+      },
+      "emotional_attunement": {
+        "raw_agreement": 0.8106060606060606,
+        "cohen_kappa": 0.42034076936588805,
+        "n": 132
+      },
+      "open_question": {
+        "raw_agreement": 0.8333333333333334,
+        "cohen_kappa": 0.4926624737945493,
+        "n": 132
+      }
+    }
+  }
+}

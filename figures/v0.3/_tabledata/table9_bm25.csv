@@ -1,0 +1,3 @@
+sut,no_node,no_node_ci_lo,no_node_ci_hi,bm25,bm25_ci_lo,bm25_ci_hi,dense,dense_ci_lo,dense_ci_hi,delta_dense_minus_bm25,goldhit5_dense,goldhit5_bm25
+kanana_nano,0.0469,0.0161,0.129,0.1406,0.0758,0.2462,0.1094,0.054,0.209,-0.0312,0.3889,0.3889
+kanana_8b,0.0156,0.0028,0.0833,0.1094,0.054,0.209,0.1875,0.1106,0.2997,0.0781,0.3889,0.3889

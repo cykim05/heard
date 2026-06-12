@@ -9,6 +9,7 @@ from typing import Any
 from ..utils.llm_backend import LoadedModel, generate
 from .prompts import (
     ADVISORY_SYSTEM_PROMPT,
+    ADVISORY_ANSWERFIRST_SYSTEM_PROMPT,
     REFLECTIVE_SYSTEM_PROMPT,
     LISTENING_SYSTEM_PROMPT,
 )
@@ -16,6 +17,7 @@ from .prompts import (
 
 _POLICY_SYSTEM = {
     "advisory": ADVISORY_SYSTEM_PROMPT,
+    "advisory_answerfirst": ADVISORY_ANSWERFIRST_SYSTEM_PROMPT,
     "reflective": REFLECTIVE_SYSTEM_PROMPT,
     "listening": LISTENING_SYSTEM_PROMPT,
 }

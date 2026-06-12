@@ -1,0 +1,49 @@
+{
+  "run_id": "20260612_v0.3_tier1",
+  "date": "2026-06-12",
+  "hardware": "single L40S 48GB, CUDA_VISIBLE_DEVICES=7",
+  "purpose": "v0.3 Tier-1 upgrade — close three self-declared v0.2 limitations, anchor each to prior work, report before/after deltas.",
+  "global_constraints": {
+    "gold_criterion": "reused verbatim from src/eval/runner.py (ABS->_abs_passed, else answer_contains_tokens). Comparable to v0.2.",
+    "generation_params": {"max_new_tokens": 200, "temperature": 0.3, "seed": 42, "top_k": 5},
+    "diskcache": "judge/API diskcache key (model,messages,temperature,seed,response_format) untouched; Tasks 2/3 are local HF inference (no API/diskcache).",
+    "incremental_flush": true,
+    "execution": "sequential SUT load; per-step GPU peak mem + wall-clock logged."
+  },
+  "tasks": {
+    "task1_judge_reliability": {
+      "anchor": "Zheng et al. 2023 (MT-Bench) — position bias in LLM-as-a-judge",
+      "input": "experiments/20260426_1242_v0.2_sweep_merged/judge_verdicts.jsonl (528 rows / 2112 rubric-decisions)",
+      "new_api_calls": 0, "gpu": "none",
+      "outputs": ["judge_reliability.csv", "judge_reliability.json"]
+    },
+    "task2_bm25_baseline": {
+      "anchor": "dense-vs-sparse isolation; v0.2 §4.7 'BM25 baseline absent'",
+      "retriever": "rank_bm25 BM25Okapi + kiwipiepy morpheme tokenizer (corpus==query)",
+      "tokenizer_used": "kiwi_morpheme", "fallback_triggered": false,
+      "suts": ["kanana_nano", "kanana_8b"],
+      "scope": "ko_native, 64 non-REFL items, advisory, conditions {no_node, bm25_retrieval, dense_retrieval}",
+      "sanity_check": "dense retrieval reproduces v0.2 (kanana_nano 0.1094, kanana_8b 0.1875); dense top-5 ids match v0.2 100%",
+      "new_api_calls": 0,
+      "outputs": ["bm25_baseline.jsonl", "bm25_baseline.csv", "bm25_baseline_summary.json"]
+    },
+    "task3_answerfirst_oracle": {
+      "anchor": "v0.2 §4.2 falsifiable prediction — answer-first guardrail closes retrieval>oracle reversal",
+      "variant": "advisory_answerfirst = ADVISORY + one prepended guardrail line (minimal variant, not a new policy family)",
+      "guardrail": "질문에 먼저 답하라. 과거를 다시 서술하지 마라. (Answer the question first. Do not re-narrate the past.)",
+      "suts": ["kanana_8b", "kanana_8b_int4", "qwen25_7b", "bllossom_8b"],
+      "scope": "ko_native, 64 non-REFL items, condition=oracle only (oracle_base + retrieval columns reused from v0.2)",
+      "mechanism_probes": ["response length (chars)", "char-4gram recapitulation overlap vs oracle evidence"],
+      "new_api_calls": 0,
+      "outputs": ["answerfirst_oracle.jsonl", "answerfirst_oracle.csv", "answerfirst_oracle_summary.json"]
+    }
+  },
+  "wall_clock": {
+    "task1": "~instant (CPU re-analysis)",
+    "task2": "06:07:26 -> 06:27:02 (~19.6 min); kanana_nano 423s peak 5.13GB, kanana_8b 735s peak 16.69GB",
+    "task3": "06:28:28 -> 06:45:21 (~16.9 min); kanana_8b 179s/16.66GB, kanana_8b_int4 179s/6.43GB, qwen25_7b 254s/15.80GB, bllossom_8b 391s/17.47GB",
+    "total_gpu_wall_min": 36.5,
+    "max_gpu_peak_gb": 17.47
+  },
+  "new_paid_api_cost_usd": 0.0
+}

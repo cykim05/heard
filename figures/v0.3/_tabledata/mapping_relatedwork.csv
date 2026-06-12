@@ -1,0 +1,4 @@
+cited_work,motivating_limitation_section,v0.3_experiment,delta_conclusion
+"Zheng et al. 2023 (MT-Bench, pairwise judge position bias)",v0.2 pairwise wins reported without a judge position-bias audit,Task 1: position-consistency + inter-judge Cohen kappa,"emo/open robust (consistency 0.83/0.82, kappa 0.42/0.49); non_directive collapses (0.34, kappa 0.02)"
+"Robertson & Zaragoza 2009 (BM25 Okapi, sparse IR)",v0.2 4.7: 'BM25 baseline absent',"Task 2: BM25 vs dense, anchor SUTs","gold-hit@5 equal (dense 38.9% = BM25 38.9%); dense-BM25 pass = +7.8pp on 8B, -3.1pp on 2.1B -> bottleneck is reader, not retrieval"
+v0.2 4.2 self-prediction (answer-first guardrail),predicted answer-first guardrail closes retrieval>oracle reversal,"Task 3: advisory_answerfirst on oracle, 4 reversal SUTs","NOT confirmed: 2/4 improve, none reach retrieval, mean gap-closed -5.8%; recapitulation overlap ~unchanged"

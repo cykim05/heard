@@ -1,0 +1,26 @@
+{
+  "bm25_tokenizer": "kiwi_morpheme",
+  "tokenizer_fallback": false,
+  "k": 5,
+  "seed": 42,
+  "n_items_nonREFL": 64,
+  "n_gold_items": 54,
+  "retriever_wiring_match_vs_v02": 1.0,
+  "gold_hit_at5": {
+    "dense": 0.3888888888888889,
+    "bm25": 0.3888888888888889
+  },
+  "pass_rate": {
+    "kanana_nano|no_node": 0.046875,
+    "kanana_nano|bm25_retrieval": 0.140625,
+    "kanana_nano|dense_retrieval": 0.109375,
+    "kanana_8b|no_node": 0.015625,
+    "kanana_8b|bm25_retrieval": 0.109375,
+    "kanana_8b|dense_retrieval": 0.1875
+  },
+  "v02_dense_reference": {
+    "kanana_nano": 0.109375,
+    "kanana_8b": 0.1875
+  },
+  "sanity_dense_reproduces_v02": true
+}

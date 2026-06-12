@@ -69,3 +69,8 @@ Thumbs.db
 
 # Claude Code session config
 .claude/
+
+# Local deliverables bundle — duplicate copies of tracked docs/figures/
+# experiments gathered for hand-off; the canonical files live at their
+# source paths, so this folder is not pushed.
+deliverables/

@@ -1,0 +1,56 @@
+{
+  "guardrail": "질문에 먼저 답하라. 과거를 다시 서술하지 마라. (Answer the question first. Do not re-narrate the past.)",
+  "policy": "advisory_answerfirst",
+  "condition": "oracle",
+  "seed": 42,
+  "k": 5,
+  "n_items_nonREFL": 64,
+  "prediction_verdict": "PARTIAL",
+  "mean_gap_closed_frac": -0.05773809523809524,
+  "per_sut": {
+    "kanana_8b": {
+      "oracle_base": 0.0781,
+      "oracle_af": 0.1094,
+      "retrieval": 0.1875,
+      "delta": 0.0312,
+      "gap_closed_frac": 0.2857,
+      "mean_len_base": 215.9,
+      "mean_len_af": 181.4,
+      "mean_recap_base": 0.0149,
+      "mean_recap_af": 0.0173
+    },
+    "kanana_8b_int4": {
+      "oracle_base": 0.1094,
+      "oracle_af": 0.0625,
+      "retrieval": 0.1875,
+      "delta": -0.0469,
+      "gap_closed_frac": -0.6,
+      "mean_len_base": 207.8,
+      "mean_len_af": 179.3,
+      "mean_recap_base": 0.0158,
+      "mean_recap_af": 0.0253
+    },
+    "qwen25_7b": {
+      "oracle_base": 0.0625,
+      "oracle_af": 0.0781,
+      "retrieval": 0.1094,
+      "delta": 0.0156,
+      "gap_closed_frac": 0.3333,
+      "mean_len_base": 169.8,
+      "mean_len_af": 177.9,
+      "mean_recap_base": 0.0196,
+      "mean_recap_af": 0.0178
+    },
+    "bllossom_8b": {
+      "oracle_base": 0.0938,
+      "oracle_af": 0.0781,
+      "retrieval": 0.1562,
+      "delta": -0.0156,
+      "gap_closed_frac": -0.25,
+      "mean_len_base": 352.6,
+      "mean_len_af": 351.4,
+      "mean_recap_base": 0.0243,
+      "mean_recap_af": 0.0232
+    }
+  }
+}
